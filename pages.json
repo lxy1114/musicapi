@@ -1,0 +1,23 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index"    //首页-发现
+		},
+		{
+			"path": "pages/login/login"   //登录
+		},
+		{
+			"path": "pages/recommend/recommend"    //每日推荐
+		},
+		{
+			"path": "pages/play/play"    //每日推荐
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "custom"
+	}
+}
