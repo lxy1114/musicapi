@@ -1,6 +1,6 @@
 <template>
 	<view class="box">
-		<view class="songlist" v-for="(item,index) in list" :key="index" @click="goPlay(item)">
+		<view class="songlist" v-for="(item,index) in list" :key="index" @click="goPlay(index)">
 			<image class="songlist-img" :src="item.album.picUrl" mode="aspectFill"></image>
 			<view class="info">
 				<view class="info-title">{{item.album.name}}</view>
@@ -19,9 +19,9 @@ export default {
 		list: Array
 	},
 	methods: {
-		goPlay(item) {
+		goPlay(index) {
 			uni.navigateTo({
-				url: '/pages/play/play?id='+item.id
+				url: '/pages/play/play?index='+index
 			})
 		},
 	},

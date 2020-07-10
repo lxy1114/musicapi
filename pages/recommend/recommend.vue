@@ -56,6 +56,7 @@ export default {
 		getReSongs() {
 			api.reSongs().then(res => {
 				this.songList = res.recommend
+				uni.setStorageSync('songList',JSON.stringify(this.songList))
 			})
 		},
 	},
@@ -66,8 +67,13 @@ export default {
 		var year = new Date().getFullYear()
 		var month = new Date().getMonth()+1
 		var day = new Date().getDay()
-		this.date = year+'年'+month+'月'+day+'日'
-		this.getReSongs()
+		this.date = year+'年'+month+'月'+'10'+'日'
+		if(this.date == uni.getStorageSync('date')){
+			this.songList = JSON.parse(uni.getStorageSync('songList'))
+		}else{
+			this.getReSongs()
+		}
+		uni.setStorageSync('date',this.date)		
 	}
 }
 </script>

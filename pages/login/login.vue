@@ -45,7 +45,9 @@ export default {
 				phone: this.phone,
 				password: this.password
 			}).then(res => {
-				uni.navigateBack()
+				uni.navigateTo({
+					url: '/pages/index/index'
+				})
 			})
 		},
 		mailLogin() {
@@ -53,7 +55,9 @@ export default {
 				email: this.phone,
 				password: this.password
 			}).then(res => {
-				uni.navigateBack()
+				uni.navigateTo({
+					url: '/pages/index/index'
+				})
 			})
 		},
 	},

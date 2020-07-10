@@ -4,6 +4,7 @@ import baseUrl from '@/utils/domain'
 import login from './login'
 import home from './home'
 import recommend from './recommend'
+import song from './song'
 
 /**
  * 将业务所有接口统一起来便于维护
@@ -89,5 +90,6 @@ export default {
     // 首页相关接口
 	 ...login,
 	 ...home,
-	 ...recommend
+	 ...recommend,
+	 ...song
 }

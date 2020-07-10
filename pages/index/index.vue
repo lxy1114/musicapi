@@ -9,7 +9,7 @@
 		   </swiper>
 		</view> -->
 		<view class="nav">
-			<view class="nav-list" v-for="(item,index) in navList" :key="index">
+			<view class="nav-list" v-for="(item,index) in navList" :key="index" @click="goList(item)">
 				<view class="iconfont" :class="item.icon"></view>
 				<view class="bav-list-text">{{item.text}}</view>
 			</view>
@@ -31,7 +31,7 @@ export default {
 		return {
 			newSongList: [],
 			bannerList: [],
-			navList: [{icon: 'icon-jinrituijian',text: '每日推荐'},{icon: 'icon-gedan',text: '歌单'},
+			navList: [{icon: 'icon-jinrituijian',text: '每日推荐',url: 'recommend'},{icon: 'icon-gedan',text: '歌单'},
 						{icon: 'icon-geshou',text: '歌手'},{icon: 'icon-mv',text: 'MV'},
 						{icon: 'icon-luyinjishouyinjidiantai',text: '电台'}]
 		}
@@ -51,6 +51,15 @@ export default {
 			}).then(res => {
 				this.bannerList = res.banners
 			})
+		},
+		goList(item) {
+			if(item.url){
+				var url = '/pages/'+item.url+'/'+item.url
+				console.log(url)
+				uni.navigateTo({
+					url: url
+				})
+			}
 		},
 	},
 	onLoad() {
