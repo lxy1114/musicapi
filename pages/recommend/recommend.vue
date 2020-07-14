@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<view class="top"></view>
+		<view class="top" :style="'top:'+statusBarHeight+'upx'"></view>
 		<view class="con">
 			<view class="nav" :class="{'nav1': fixed}">
 				<view class="nav-list">
@@ -30,7 +30,8 @@ export default {
 			date: '',
 			navIndex: 1,
 			recommendList: [],
-			songList: []
+			songList: [],
+			statusBarHeight: 0
 		}
 	},
 	components: {
@@ -64,10 +65,11 @@ export default {
 		this.fixed = e.scrollTop >= 85
 	},
 	onLoad() {
+		this.statusBarHeight = uni.getSystemInfoSync().windowTop*2
 		var year = new Date().getFullYear()
 		var month = new Date().getMonth()+1
 		var day = new Date().getDay()
-		this.date = year+'年'+month+'月'+'10'+'日'
+		this.date = year+'年'+month+'月'+day+'日'
 		if(this.date == uni.getStorageSync('date')){
 			this.songList = JSON.parse(uni.getStorageSync('songList'))
 		}else{
@@ -82,7 +84,7 @@ export default {
 .top{
 	width: 100%;
 	height: 275upx;
-	background: url(../../static/images/banner.png) 100% 100% no-repeat;
+	// background: url(../../static/images/banner.png) 100% 100% no-repeat;
 	background-size: cover;
 	position: fixed;
 	top: 0upx;

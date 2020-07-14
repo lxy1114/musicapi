@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "pages/play/play"    //每日推荐
+		},
+		{
+			"path": "pages/songSheet/songSheet"    //歌单
 		}
 	],
 	"globalStyle": {

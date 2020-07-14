@@ -26,4 +26,9 @@
 		font-size: 28upx;
 		color: #999999;
 	}
+	::-webkit-scrollbar {
+	  width: 0;
+	  height: 0;
+	  color: transparent;
+	}
 </style>

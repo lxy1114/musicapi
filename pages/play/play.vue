@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
-		<image class="banner" :src="data.album.picUrl"></image>
-		<view class="title">{{data.name}}</view>
+		<!-- <image class="banner" :src="data.album.picUrl"></image> -->
+		<view class="title">{{data.album.name}}</view>
 		<view class="playbox">
 			<audio-box :data="data" @playPrev="playPrev" @playNext="playNext"></audio-box>
 		</view>
