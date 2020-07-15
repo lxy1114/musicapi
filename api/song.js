@@ -45,4 +45,14 @@ export default {
 	recommendSheet(data) {
 		return http.post('/personalized', data)
 	},
+	
+	// 歌手分类
+	singerCat(data) {
+		return http.get('/artist/list', data)
+	},
+	
+	// 搜索
+	search(data) {
+		return http.get('/search', data)
+	},
 }

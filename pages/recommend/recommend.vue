@@ -13,7 +13,9 @@
 			</view>
 			<view class="contain">
 				<pic-cart :list="recommendList" v-if="navIndex == 0"></pic-cart>
-				<song-list :list="songList" v-else></song-list>
+				<block v-else>
+					<song-list :list="songList" :picUrl="item.album.picUrl" :title="item.name" :name="item.album.artists" :index="index" v-for="(item,index) in songList" :key="index"></song-list>
+				</block>
 			</view>
 		</view>
 	</view>
@@ -40,12 +42,11 @@ export default {
 	},
 	watch: {
 		navIndex() {
-			// if(this.navIndex == 0 && this.recommendList = ''){
-			// 	this.getReResource()
-			// }else if(this.navIndex == 1 && this.songList = ''){
-			// 	this.getReSongs()
-			// }
-			// if(this.navIndex == 0)
+			if(this.navIndex == 0 && this.recommendList == ''){
+				this.getReResource()
+			}else if(this.navIndex == 1 && this.songList == ''){
+				this.getReSongs()
+			}
 		},
 	},
 	methods: {
@@ -57,7 +58,7 @@ export default {
 		getReSongs() {
 			api.reSongs().then(res => {
 				this.songList = res.recommend
-				uni.setStorageSync('songList',JSON.stringify(this.songList))
+				uni.setStorageSync('reSongList',JSON.stringify(this.songList))
 			})
 		},
 	},
@@ -70,12 +71,12 @@ export default {
 		var month = new Date().getMonth()+1
 		var day = new Date().getDay()
 		this.date = year+'年'+month+'月'+day+'日'
-		if(this.date == uni.getStorageSync('date')){
-			this.songList = JSON.parse(uni.getStorageSync('songList'))
+		if(this.date == uni.getStorageSync('date') && uni.getStorageSync('reSongList')){
+			this.songList = JSON.parse(uni.getStorageSync('reSongList'))
 		}else{
 			this.getReSongs()
 		}
-		uni.setStorageSync('date',this.date)		
+		uni.setStorageSync('date',this.date)	
 	}
 }
 </script>
@@ -84,8 +85,8 @@ export default {
 .top{
 	width: 100%;
 	height: 275upx;
-	// background: url(../../static/images/banner.png) 100% 100% no-repeat;
-	background-size: cover;
+	background: $uni-bg-color-system;
+	// background-size: cover;
 	position: fixed;
 	top: 0upx;
 }
@@ -117,7 +118,7 @@ export default {
 .nav.nav1{
 	position: fixed;
 	top: 0upx;
-	background: $uni-color-success;
+	background: $uni-bg-color-system;
 }
 .label{
 	border: 2upx solid #FFFFFF;

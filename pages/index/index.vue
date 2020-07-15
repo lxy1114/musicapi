@@ -10,7 +10,8 @@
 		</view> -->
 		<view class="nav">
 			<view class="nav-list" v-for="(item,index) in navList" :key="index" @click="goList(item)">
-				<view class="iconfont" :class="item.icon"></view>
+				<!-- <view class="iconfont" :class="item.icon"></view> -->
+				<image class="nav-list-icon" :src="'/static/images/'+item.icon+'.svg'" mode="widthFix"></image>
 				<view class="bav-list-text">{{item.text}}</view>
 			</view>
 		</view>
@@ -31,9 +32,9 @@ export default {
 		return {
 			newSongList: [],
 			bannerList: [],
-			navList: [{icon: 'icon-jinrituijian',text: '每日推荐',url: 'recommend'},{icon: 'icon-gedan',text: '歌单'},
-						{icon: 'icon-geshou',text: '歌手'},{icon: 'icon-mv',text: 'MV'},
-						{icon: 'icon-luyinjishouyinjidiantai',text: '电台'}]
+			navList: [{icon: 'recommend',text: '每日推荐',url: 'recommend'},{icon: 'sheet',text: '歌单',url: 'songSheet'},
+						{icon: 'singer',text: '歌手',url: 'singer'},{icon: 'mv',text: 'MV'},
+						{icon: 'radio',text: '电台'}]
 		}
 	},
 	components: {
@@ -69,7 +70,8 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="scss" scoped>
+@import '@/uni.scss';
 .swiper image{
 	width: 100%;
 }
@@ -81,6 +83,10 @@ export default {
 		font-size: 24upx;
 		color: #666666;
 		text-align: center;
+		&-icon{
+			width: 40upx;
+			height: 40upx;
+		}
 	}
 }
 </style>

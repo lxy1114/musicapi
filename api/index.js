@@ -5,6 +5,7 @@ import login from './login'
 import home from './home'
 import recommend from './recommend'
 import song from './song'
+import user from './user'
 
 /**
  * 将业务所有接口统一起来便于维护
@@ -30,7 +31,6 @@ http.interceptor.request = (config) => {
 http.interceptor.response = (response) => {
     //判断返回状态 执行相应操作
 	const { config, data: responseData } = response
-	console.log(response,2222)
 
  //    // console.log("【" + config.requestId + "】 地址：" + config.url)
  //    // console.log("【" + config.requestId + "】 请求参数：", config.originData)
@@ -48,7 +48,7 @@ http.interceptor.response = (response) => {
  //        }
  //    } else {
 	// 	uni.showToast({
-	// 	    image: '/static/images/icon-warning.png',
+	// 	    image: '/static/images/icon-warning.svg',
 	// 	    title: '抱歉,出错了'
 	// 	})
  //    }
@@ -91,5 +91,6 @@ export default {
 	 ...login,
 	 ...home,
 	 ...recommend,
-	 ...song
+	 ...song,
+	 ...user
 }

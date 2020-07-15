@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
-		<!-- <image class="banner" :src="data.album.picUrl"></image> -->
-		<view class="title">{{data.album.name}}</view>
+		<image class="banner" :src="data.album &&  data.album.picUrl || data.al && data.al.picUrl"></image>
+		<view class="title">{{data.album && data.album.name || data.name}}</view>
 		<view class="playbox">
 			<audio-box :data="data" @playPrev="playPrev" @playNext="playNext"></audio-box>
 		</view>
@@ -21,38 +21,85 @@ export default {
 	watch: {
 		index() {
 			this.data = this.songList[this.index]
+			console.log(this.data)
 		},
 	},
 	components: {
 		audioBox
 	},
 	methods: {
-		playPrev() {
-			this.index = this.index != 0 ? this.index-1 : this.songList.length-1
+		playPrev(playMode) {
+			this.index = typeof this.index == 'string' ? parseInt(this.index) : this.index
+			if(playMode == 'icon-loop' || playMode == 'icon-single'){
+				this.index = this.index != 0 ? this.index-1 : this.songList.length-1
+			}else if(playMode == 'icon-order'){
+				this.index = this.index != 0 ? this.index-1 : 0
+				if(this.index == 0){
+					uni.showToast({
+						title: '已播放至第一首',
+						icon: 'none'
+					})
+				}
+			}else{
+				this.index = this.getRandom(0,this.songList.length-1)
+			}	
 		},
-		playNext() {
-			this.index = this.index != this.songList.length-1 ? this.index+1 : 0
+		playNext(playMode) {
+			this.index = typeof this.index == 'string' ? parseInt(this.index) : this.index
+			if(playMode == 'icon-loop' || playMode == 'icon-single'){
+				this.index = this.index != this.songList.length-1 ? this.index+1 : 0
+			}else if(playMode == 'icon-order'){
+				this.index = this.index != this.songList.length-1 ? this.index+1 : this.songList.length-1
+				if(this.index == this.songList.length-1){
+					uni.showToast({
+						title: '已播放至最后一首',
+						icon: 'none'
+					})
+				}
+			}else{
+				this.index = this.getRandom(0,this.songList.length-1)
+			}	
 		},
+		getRandom(start, end, fixed=0) {
+			let differ = end - start
+			let random = Math.random()
+			return parseInt((start + differ * random).toFixed(fixed))
+		}
 	},
 	onLoad(e) {
 		this.songList = JSON.parse(uni.getStorageSync('songList'))
 		console.log(this.songList)
-		this.index = e.index
+		console.log(e)
+		if(!e.all){
+			console.log(111)
+			this.index = e.index
+		}else{
+			console.log(222)
+			var playMode = uni.getStorageSync('playMode')
+			this.index = playMode != 'random' ? 0 : this.getRandom(0,this.songList.length-1)
+		}
+		console.log(this.index)
 		this.data = this.songList[this.index]
+		console.log(this.data)
 	}
 }
 </script>
 
 <style lang="scss" scoped>
-page{
-	background: #996699;
+// page{
+// 	background: $uni-bg-color-system;
+// }
+.container{
+	min-height: 100vh;
+	background: $uni-bg-color-system;
+	padding-top: 200upx;
 }
 .banner{
 	display: block;
 	width: 360upx;
 	height: 360upx;
 	border-radius: 8upx;
-	margin: 30% auto 0upx;
+	margin: 0upx auto 0upx;
 }
 .title{
 	font-size: 32upx;

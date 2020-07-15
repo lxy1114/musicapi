@@ -5,9 +5,16 @@
 		</view>
 		<view class="num">{{currentTime+'/'+durationTime}}</view>
 		<view class="but">
-			<view class="but-text" @click="playPrev">上一个</view>
-			<view class="but-text" @click="play">{{pause ? '开始' : '暂停'}}</view>
-			<view class="but-text" @click="playNext">下一个</view>
+			<!-- <view class="iconfont" :class="typeList[type]" @click="getMode"></view>
+			<view class="iconfont icon-prev" @click="playPrev"></view>
+			<view class="iconfont" :class="pause ? 'icon-play' : 'icon-pause'" @click="play"></view>
+			<view class="iconfont icon-next" @click="playNext"></view>
+			<view class="iconfont icon-xihuan"></view> -->
+			<image class="but-icon" :src="'/static/images/'+typeList[type]+'.svg'" @click="getMode" mode="widthFix"></image>
+			<image class="but-icon" src="/static/images/prev.svg" @click="playPrev" mode="widthFix"></image>
+			<image class="but-icon" :src="pause ? '/static/images/play-1.svg' : '/static/images/pause.svg'" @click="play" mode="widthFix"></image>
+			<image class="but-icon" src="/static/images/next.svg" @click="playNext" mode="widthFix"></image>
+			<image class="but-icon" src="/static/images/unlike.svg" mode="widthFix"></image>
 		</view>
 	</view>
 </template>
@@ -26,7 +33,9 @@ export default {
 			current: 0,
 			pause: false,
 			currentTime: 0,
-			durationTime: 0
+			durationTime: 0,
+			typeList: ['order','loop','single','random'],
+			type: 0
 		}
 	},
 	watch: {
@@ -38,13 +47,17 @@ export default {
 			}
 		},
 		data() {
-			this.getAudio()
+			this.getUrl()
 		},
 		// audio() {
 		// 	console.log(audio)
 		// },
 	},
 	methods: {
+		getMode() {
+			this.type = this.type < this.typeList.length-1 ? this.type+1 : 0
+			uni.setStorageSync('playMode',this.typeList[this.type])
+		},
 		getAudio() {
 			audio.src = 'https://music.163.com/song/media/outer/url?id='+this.data.id+'.mp3'
 			audio.autoplay = true
@@ -62,13 +75,27 @@ export default {
 		},
 		getUrl() {
 			api.getUrl({
-				id: this.id
+				id: this.data.id
 			}).then(res => {
+				if(!res.data[0].url){
+					uni.showToast({
+						title: '暂时无法播放',
+						icon: 'none'
+					})
+					return this.$emit('playNext')
+				}
 				audio.src = res.data[0].url
-				console.log(audio)
 				audio.autoplay = true
 				audio.onCanplay((res) => {
-					console.log(res)
+					this.duration = audio.duration
+					this.durationTime = parseInt(audio.duration/60)+':'+parseInt(audio.duration%60)
+				})
+				audio.onTimeUpdate(() => {
+					this.current = audio.currentTime
+					this.currentTime = parseInt(audio.currentTime/60)+':'+parseInt(audio.currentTime%60)
+				})
+				audio.onEnded(() => {
+					this.$emit('playNext')
 				})
 			})
 		},
@@ -76,20 +103,23 @@ export default {
 			this.pause = !this.pause
 		},
 		playPrev() {
-			this.$emit('playPrev')
+			var playMode = uni.getStorageSync('playMode')
+			this.$emit('playPrev',playMode)
 		},
 		playNext() {
-			this.$emit('playNext')
+			var playMode = uni.getStorageSync('playMode')
+			this.$emit('playNext',playMode)
 		},
 	},
 	created() {		
-		this.getAudio()
+		this.getUrl()
 		// this.getUrl()
 	}
 }
 </script>
 
 <style lang="scss" scoped>
+@import '@/uni.scss';
 .total{
 	width: 690upx;
 	height: 4upx;
@@ -113,9 +143,16 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 690upx;
+	width: 630upx;
 	font-size: 28upx;
 	color: #FFFFFF;
 	margin: 30upx auto;
+	&-icon{
+		width: 50upx;
+		height: 50upx;
+	}
+}
+.iconfont{
+	font-size: 34upx;
 }
 </style>

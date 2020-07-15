@@ -1,7 +1,7 @@
 <template>
 	<view class="box">
-		<view class="recomlist" v-for="(item,index) in list" :key="index">
-			<image class="recomlist-img" :src="item.picUrl"></image>
+		<view class="recomlist" v-for="(item,index) in list" :key="index" @click="goList(item)">
+			<image class="recomlist-img" :src="item.picUrl || item.coverImgUrl"></image>
 			<view class="recomlist-text">{{item.name}}</view>
 		</view>
 	</view>
@@ -13,7 +13,12 @@ export default {
 		list: Array
 	},
 	methods: {
-		
+		goList(item) {
+			uni.setStorageSync('sheetDetail',item)
+			uni.navigateTo({
+				url: '/pages/songList/songList?id='+item.id
+			})
+		},
 	},
 	created() {
 		

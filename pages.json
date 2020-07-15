@@ -14,6 +14,21 @@
 		},
 		{
 			"path": "pages/songSheet/songSheet"    //歌单
+		},
+		{
+			"path": "pages/sheetCat/sheetCat"    //歌单分类
+		},
+		{
+			"path": "pages/sheet/sheet"    //歌单
+		},
+		{
+			"path": "pages/songList/songList"    //歌曲列表
+		},
+		{
+			"path": "pages/singer/singer"    //歌手
+		},
+		{
+			"path": "pages/searchResult/searchResult"    //搜索
 		}
 	],
 	"globalStyle": {

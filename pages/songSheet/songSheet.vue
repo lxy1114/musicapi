@@ -1,60 +1,65 @@
 <template>
 	<view class="container">
 		<view class="top">
-			<view class="top-nav" v-for="(item,index) in tags" :key="index">{{item.name}}</view>
-			<view class="top-more">
-				<view class="iconfont icon-gengduo1"></view>
+			<view class="top-nav" :class="{'top-nav1': navIndex == index}" v-for="(item,index) in tags" :key="index" @click="navTab(item,index)">
+				{{item.name}}
 			</view>
+			<navigator class="top-more" url="/pages/sheetCat/sheetCat">
+				<!-- <view class="iconfont icon-gengduo1"></view> -->
+				<image class="top-more-icon" src="/static/images/more.svg" mode="widthFix"></image>
+			</navigator>
+		</view>
+		<view class="con">
+			<pic-cart :list="list"></pic-cart>
 		</view>
 	</view>
 </template>
 
 <script>
 import api from '@/api'
+import picCart from '@/components/cart/picCart.vue'
 export default {
 	data() {
 		return {
 			catList: [],
 			sub: [],
-			tags: [{name: '推荐'}]
+			tags: [{name: '推荐'}],
+			navIndex: 0,
+			list: []
 		}
 	},
+	components: {
+		picCart
+	},
 	methods: {
-		getCatlist() {
-			api.catList().then(res => {
-				this.catList = res.categories
-				this.sub = res.sub
-			})
-		},
 		getHotCat() {
 			api.hotcat().then(res => {
-				this.tags = this.tags.concat(res.tags)
-				// this.getSelectSheet(res.tags[0].name)			
+				this.tags = this.tags.concat(res.tags)		
 			})
 		},
 		getRecommend() {
 			api.recommendSheet().then(res => {
-				console.log(res,55555)
+				this.list = res.result 
 			})
 		},
 		getSelectSheet(name) {
 			api.selectSheet({
 				cat: name
 			}).then(res => {
-				console.log(res,99999)
-				this.getSheetDetail(res.playlists[0].id)
+				this.list = res.playlists
 			})
 		},
-		getSheetDetail(id) {
-			api.sheetDetail({
-				id: id
-			}).then(res => {
-				
-			})
+		navTab(item,index) {
+			this.navIndex = index
+			this.list = []
+			if(index == 0){
+				this.getRecommend()
+			}else{
+				this.getSelectSheet(item.name)
+			}		
 		},
 	},
 	onLoad() {
-		this.getCatlist()
 		this.getHotCat()
 		this.getRecommend()
 	}
@@ -74,15 +79,37 @@ export default {
 		font-size: 28upx;
 		color: #333333;
 		text-align: center;
+		position: relative;
 	}
 	&-more{
 		width: 60upx;
-		height: 70upx;
+		height: 66upx;
 		background: #FFFFFF;
 		position: fixed;
-		top: 90upx;
+		top: 95upx;
 		right: 0upx;
 		text-align: center;
+		&-icon{
+			width: 30upx;
+			height: 30upx;
+		}
 	}
+	&-nav.top-nav1{
+		color: $uni-bg-color-system;
+	}
+	&-nav.top-nav1::after{
+		content: '';
+		display: block;
+		width: 50upx;
+		height: 4upx;
+		background: $uni-bg-color-system;
+		position: absolute;
+		bottom: 0upx;
+		left: 50%;
+		margin-left: -25upx;
+	}
+}
+.con{
+	padding: 30upx;
 }
 </style>
