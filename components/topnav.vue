@@ -1,6 +1,6 @@
 <template>
 	<view class="box">
-		<view class="nav" :class="{'nav1': navIndex == index}" v-for="(item,index) in list" :key="index" v-if="!search">{{item}}</view>
+		<view class="nav" :class="{'nav1': navIndex == index}" v-for="(item,index) in list" :key="index" v-if="!search" @click="navTab(item)">{{item.title}}</view>
 		<input class="search" v-if="search" @confirm="getSearch" v-model="keywords"/>
 		<!-- <view class="iconfont icon-sousuo" @click="getInput"></view> -->
 		<image class="search-icon" src="../static/images/search.svg" mode="widthFix" @click="getInput"></image>
@@ -15,12 +15,18 @@ export default {
 	},
 	data() {
 		return {
-			list: ['我的','发现','村落','视频'],
+			list: [{title: '我的',url: 'my'},{title: '发现',url: 'index'},{title: '村落',url: ''},
+					{title: '视频',url: ''}],
 			search: false,
 			keywords: ''
 		}
 	},
 	methods: {
+		navTab(item) {
+			uni.navigateTo({
+				url: '/pages/'+item.url+'/'+item.url
+			})
+		},
 		getInput() {
 			if(!this.search){
 				this.search = true

@@ -1,7 +1,11 @@
 <template>
 	<view class="singer">
 		<image class="singer-avatar" :src="avatar || '/static/images/avatar.svg'" mode="aspectFill"></image>
-		<view class="singer-name">{{name}}</view>
+		<view class="info">
+			<view class="singer-name">{{name}}</view>
+			<view class="text" v-if="albums">{{'专辑：'+albums}}</view>
+			<view class="text" v-if="mv">{{'MV：'+mv}}</view>
+		</view>
 	</view>
 </template>
 
@@ -9,7 +13,9 @@
 export default {
 	props: {
 		avatar: '',
-		name: ''
+		name: '',
+		albums: Number,
+		mv: Number
 	},
 	data() {
 		return {
@@ -37,6 +43,12 @@ export default {
 		height: 70upx;
 		border-radius: 100%;
 		margin-right: 20upx;
+	}
+	.text{
+		display: inline-block;
+		margin-right: 20upx;
+		font-size: 24upx;
+		color: #999999;
 	}
 }
 </style>

@@ -56,7 +56,7 @@ export default {
 	methods: {
 		getMode() {
 			this.type = this.type < this.typeList.length-1 ? this.type+1 : 0
-			uni.setStorageSync('playMode',this.typeList[this.type])
+			uni.setStorageSync('playMode',this.type)
 		},
 		getAudio() {
 			audio.src = 'https://music.163.com/song/media/outer/url?id='+this.data.id+'.mp3'
@@ -75,7 +75,7 @@ export default {
 		},
 		getUrl() {
 			api.getUrl({
-				id: this.data.id
+				id: this.data.id || this.data.song.id
 			}).then(res => {
 				if(!res.data[0].url){
 					uni.showToast({
@@ -112,6 +112,7 @@ export default {
 		},
 	},
 	created() {		
+		this.type = uni.getStorageSync('playMode')
 		this.getUrl()
 		// this.getUrl()
 	}

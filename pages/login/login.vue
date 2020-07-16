@@ -47,6 +47,7 @@ export default {
 				phone: this.phone,
 				password: this.password
 			}).then(res => {
+				uni.setStorageSync('loginInfo',res)
 				uni.navigateTo({
 					url: '/pages/index/index'
 				})

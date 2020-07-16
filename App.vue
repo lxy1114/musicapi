@@ -31,4 +31,16 @@
 	  height: 0;
 	  color: transparent;
 	}
+	.mask{
+		width: 100%;
+		height: 100%;
+		background: #000000;
+		opacity: 0.5;
+		position: fixed;
+		left: 0upx;
+		top: 0upx;
+	}
+	.placeholder{
+		font-size: 24upx;
+	}
 </style>

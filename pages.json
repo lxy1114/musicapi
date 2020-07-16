@@ -29,6 +29,15 @@
 		},
 		{
 			"path": "pages/searchResult/searchResult"    //搜索
+		},
+		{
+			"path": "pages/my/my"    //我的
+		},
+		{
+			"path": "pages/myCollec/myCollec"    //我的收藏
+		},
+		{
+			"path": "pages/myFollow/myFollow"    //我的关注
 		}
 	],
 	"globalStyle": {

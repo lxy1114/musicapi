@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
-		<image class="banner" :src="data.album &&  data.album.picUrl || data.al && data.al.picUrl"></image>
-		<view class="title">{{data.album && data.album.name || data.name}}</view>
+		<image class="banner" :src="data.album &&  data.album.picUrl || data.al && data.al.picUrl || data.song && data.song.al.picUrl"></image>
+		<view class="title">{{data.album && data.album.name || data.name || data.song && data.song.name}}</view>
 		<view class="playbox">
 			<audio-box :data="data" @playPrev="playPrev" @playNext="playNext"></audio-box>
 		</view>
@@ -29,33 +29,33 @@ export default {
 	},
 	methods: {
 		playPrev(playMode) {
+			if(this.index == 0){
+				return uni.showToast({
+					title: '已播放至第一首',
+					icon: 'none'
+				})
+			}
 			this.index = typeof this.index == 'string' ? parseInt(this.index) : this.index
-			if(playMode == 'icon-loop' || playMode == 'icon-single'){
+			if(playMode == 1 || playMode == 2){
 				this.index = this.index != 0 ? this.index-1 : this.songList.length-1
-			}else if(playMode == 'icon-order'){
+			}else if(playMode == 0){
 				this.index = this.index != 0 ? this.index-1 : 0
-				if(this.index == 0){
-					uni.showToast({
-						title: '已播放至第一首',
-						icon: 'none'
-					})
-				}
 			}else{
 				this.index = this.getRandom(0,this.songList.length-1)
 			}	
 		},
 		playNext(playMode) {
+			if(this.index == this.songList.length-1){
+				return uni.showToast({
+					title: '已播放至最后一首',
+					icon: 'none'
+				})
+			}
 			this.index = typeof this.index == 'string' ? parseInt(this.index) : this.index
-			if(playMode == 'icon-loop' || playMode == 'icon-single'){
+			if(playMode == 1 || playMode == 2){
 				this.index = this.index != this.songList.length-1 ? this.index+1 : 0
-			}else if(playMode == 'icon-order'){
+			}else if(playMode == 0){
 				this.index = this.index != this.songList.length-1 ? this.index+1 : this.songList.length-1
-				if(this.index == this.songList.length-1){
-					uni.showToast({
-						title: '已播放至最后一首',
-						icon: 'none'
-					})
-				}
 			}else{
 				this.index = this.getRandom(0,this.songList.length-1)
 			}	
@@ -71,16 +71,12 @@ export default {
 		console.log(this.songList)
 		console.log(e)
 		if(!e.all){
-			console.log(111)
 			this.index = e.index
 		}else{
-			console.log(222)
 			var playMode = uni.getStorageSync('playMode')
 			this.index = playMode != 'random' ? 0 : this.getRandom(0,this.songList.length-1)
 		}
-		console.log(this.index)
 		this.data = this.songList[this.index]
-		console.log(this.data)
 	}
 }
 </script>
