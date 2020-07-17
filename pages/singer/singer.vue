@@ -1,48 +1,61 @@
 <template>
 	<view class="container">
 		<view class="nav">
-			<view class="nav-title">类型</view>
-			<view class="nav-text" :class="{'nav-text1': type == item.id}" v-for="(item,index) in typeList" :key="index" @click="navTab(item,'type')">{{item.text}}</view>
+			<view class="nav-text" :class="{'nav-text1': initial == item}" v-for="(item,index) in navList" :key="index" @click="navTab(item)">{{item}}</view>
 		</view>
-		<view class="nav">
-			<view class="nav-title">地区</view>
-			<view class="nav-text" :class="{'nav-text1': area == item.id}" v-for="(item,index) in areaList" :key="index" @click="navTab(item,'area')">{{item.text}}</view>
+		<view class="con">
+			<singer-box v-for="(item,index) in list" :key="index" :avatar="item.picUrl" :name="item.name" :albums="item.albumSize" :music="item.musicSize" :followed="item.followed" @goDetail="goDetail(item)" @getFollow="getFollow(item)"></singer-box>
 		</view>
 	</view>
 </template>
 
 <script>
 import api from '@/api'
+import singerBox from '@/components/singer.vue'
 export default {
 	data() {
 		return {
-			offset:2,
+			offset: 1, 
 			list:[],
-			typeList: [{text: '全部',id: '-1'},{text: '男歌手',id: '1'},{text: '女歌手',id: '2'},{text: '乐队',id: '3'}],
-			areaList: [{text: '全部',id: '-1'},{text: '华语',id: '7'},{text: '欧美',id: '96'},{text: '日本',id: '8'},
-						{text: '韩国',id: '16'},{text: '其他',id: '0'}],
-			type: -1,
-			area: -1
+			navList: ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U',
+						'V','W','X','Y','Z'],
+			type: '',
+			area: '',
+			initial: 'A'
 		}
 	},
 	components: {
-		api
+		singerBox
 	},
 	methods: {
-		navTab(item,type) {
-			this.type = type == 'type' ? item.id : this.type
-			this.area = type == 'area' ? item.id : this.area
+		navTab(item) {
+			this.initial = item
 			this.offset = 1
 			this.list = []
 			this.getData()
 		},
 		getData() {
 			api.singerCat({
-				type: this.type,
-				area: this.area,
-				offset: this.offset*30
+				offset: this.offset*30,
+				initial: this.initial
 			}).then(res => {
 				this.list = this.list.concat(res.artists)
+			})
+		},
+		getFollow(item) {
+			api.collecSinger({
+				id: item.id,
+				t: item.followed ? 0 : 1
+			}).then(res => {
+				uni.showToast({
+					title: item.followed ? '取消关注成功' : '关注成功',
+					icon: 'none'
+				})
+			})
+		},
+		goDetail(item) {
+			uni.navigateTo({
+				url: '/pages/singerDetail/singerDetail?id='+item.id
 			})
 		},
 	},
@@ -59,20 +72,21 @@ export default {
 <style lang="scss" scoped>
 .nav{
 	padding: 0upx 30upx;
-	&-title{
-		display: inline-block;
-		font-size: 32upx;
-		color: #333333;
-		margin: 0upx 30upx 10upx 0upx;
-	}
 	&-text{
 		display: inline-block;
+		width: 60upx;
+		line-height: 30upx;
 		font-size: 28upx;
 		color: #666666;
-		margin-right: 30upx;
+		font-weight: bold;
+		text-align: center;
 	}
 	&-text.nav-text1{
-		color: $uni-text-color-system;
+		background: $uni-bg-color-system;
+		color: #FFFFFF;
 	}
+}
+.con{
+	padding: 30upx;
 }
 </style>

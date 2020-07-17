@@ -1,32 +1,44 @@
 <template>
 	<view class="content">
 		<top-nav navIndex="1"></top-nav>
-		<!-- <view class="swiper">
+		<view class="swiper">
 			<swiper indicator-dots="true" autoplay>
-				<swiper-item v-for="(item,index) in bannerList" :key="index">
+				<swiper-item v-for="(item,index) in bannerList" :key="index" @click="goPlay(bannerList,index)">
 					<image :src="item.pic" mode="widthFix"></image>
 				</swiper-item>
 		   </swiper>
-		</view> -->
+		</view>
 		<view class="nav">
 			<view class="nav-list" v-for="(item,index) in navList" :key="index" @click="goList(item)">
-				<!-- <view class="iconfont" :class="item.icon"></view> -->
 				<image class="nav-list-icon" :src="'/static/images/'+item.icon+'.svg'" mode="widthFix"></image>
 				<view class="bav-list-text">{{item.text}}</view>
 			</view>
 		</view>
-		<!-- <view v-for="(item,index) in newSongList" :key="index">
-			<image style="width: 50px;height: 50px;" :src="item.picUrl"></image>
-			<view>{{item.name}}</view>
+		<view class="title">
+			<view class="title-text">推荐新歌</view>
+			<view class="title-but" @click="playAll(newSongList)">播放全部</view>
 		</view>
-		<image v-for="(item,index) in bannerList" :key="index" :src="item.pic" mode="widthFix"></image> -->
+		<view class="newSong">
+			<new-song v-for="(item,index) in newSongList" :key="index" :cover="item.picUrl" :title="item.name" :name="item.song.artists" @goPlay="goPlay(newSongList,index)"></new-song>
+		</view>
+		<view class="title">推荐歌单</view>
+		<view class="recomm">
+			<sheet-box v-for="(item,index) in recommendList" :key="index" :picUrl="item.picUrl" :name="item.name" @goSongList="goSongList(item)"></sheet-box>
+		</view>
+		<view class="title">推荐MV</view>
+		<view class="recomm">
+			<mv-list v-for="(item,index) in mvList" :key="index" :picUrl="item.picUrl" :name="item.name" :duration="item.duration" @goSongList="goSongList(item)"></mv-list>
+		</view>
 	</view>
 </template>
 
 <script>
 import api from '@/api'
-
 import topNav from '@/components/topnav.vue'
+import myRecord from '@/components/record.vue'
+import sheetBox from '@/components/sheet.vue'
+import mvList from '@/components/mvList.vue'
+import newSong from '@/components/newSong.vue'
 export default {
 	data() {
 		return {
@@ -34,11 +46,17 @@ export default {
 			bannerList: [],
 			navList: [{icon: 'recommend',text: '每日推荐',url: 'recommend'},{icon: 'sheet',text: '歌单',url: 'songSheet'},
 						{icon: 'singer',text: '歌手',url: 'singer'},{icon: 'mv',text: 'MV'},
-						{icon: 'radio',text: '电台'}]
+						{icon: 'radio',text: '电台'}],
+			recommendList: [],
+			mvList: []
 		}
 	},
 	components: {
-		topNav
+		topNav,
+		myRecord,
+		sheetBox,
+		mvList,
+		newSong
 	},
 	methods: {
 		getNewSong() {
@@ -53,6 +71,18 @@ export default {
 				this.bannerList = res.banners
 			})
 		},
+		goPlay(list,index) {
+			uni.setStorageSync('songList',JSON.stringify(list))
+			uni.navigateTo({
+				url: '/pages/play/play?index='+index
+			})
+		},
+		playAll(list) {
+			uni.setStorageSync('songList',JSON.stringify(list))
+			uni.navigateTo({
+				url: '/pages/play/play?all=true'
+			})
+		},
 		goList(item) {
 			if(item.url){
 				var url = '/pages/'+item.url+'/'+item.url
@@ -62,10 +92,28 @@ export default {
 				})
 			}
 		},
+		goSongList(item) {
+			uni.setStorageSync('sheetDetail',item)
+			uni.navigateTo({
+				url: '/pages/songList/songList?id='+item.id
+			})
+		},
+		getReResource() {
+			api.reResource().then(res => {
+				this.recommendList = res.recommend
+			})
+		},
+		getRecommMv() {
+			api.recommendMV().then(res => {
+				this.mvList = res.result
+			})
+		},
 	},
 	onLoad() {
 		this.getNewSong()
 		this.getBanner()
+		this.getReResource()
+		this.getRecommMv()
 	},
 }
 </script>
@@ -88,5 +136,34 @@ export default {
 			height: 40upx;
 		}
 	}
+}
+.title{
+	display: flex;
+	align-items: center;
+	font-size: 32upx;
+	color: #333333;
+	font-weight: bold;
+	margin: 30upx 0upx 0upx 30upx;
+	&-but{
+		padding: 5upx 20upx;
+		border: 2upx solid #666666;
+		border-radius: 30upx;
+		font-size: 24upx;
+		color: #666666;
+		font-weight: 400;
+		position: absolute;
+		right: 30upx;
+	}
+}
+.recomm,{
+	padding: 30upx 0upx 0upx 30upx;
+	white-space: nowrap;
+	overflow-x: scroll;
+}
+.newSong{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 30upx 30upx 0upx;
 }
 </style>

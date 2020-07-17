@@ -1,8 +1,8 @@
 <template>
-	<view class="sheet">
+	<view class="sheet" @click="goList">
 		<image class="sheet-banner" :src="banner"></image>
 		<view class="sheet-name">{{name}}</view>
-		<view class="sheet-but" @click="click">{{ordered ? '取消收藏' : '删除'}}</view>
+		<view class="sheet-but" @click.stop="click">{{ordered ? '取消收藏' : '删除'}}</view>
 	</view>
 </template>
 
@@ -11,7 +11,6 @@ export default {
 	props: {
 		banner: '',
 		name: '',
-		id: '',
 		ordered: Boolean
 	},
 	data() {
@@ -22,6 +21,9 @@ export default {
 	methods: {
 		click() {
 			this.$emit('click')
+		},
+		goList() {
+			this.$emit('goList')
 		},
 	},
 	onLoad() {

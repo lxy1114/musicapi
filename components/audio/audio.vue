@@ -112,7 +112,7 @@ export default {
 		},
 	},
 	created() {		
-		this.type = uni.getStorageSync('playMode')
+		this.type = uni.getStorageSync('playMode') || 0
 		this.getUrl()
 		// this.getUrl()
 	}

@@ -55,4 +55,29 @@ export default {
 	search(data) {
 		return http.get('/search', data)
 	},
+	
+	// 歌手单曲
+	singerSong(data) {
+		return http.get('/artists', data)
+	},
+	
+	// 歌手MV
+	singerMV(data) {
+		return http.get('/artist/mv', data)
+	},
+	
+	// 歌手专辑
+	singerAlbums(data) {
+		return http.get('/artist/album', data)
+	},
+	
+	// 歌手描述
+	singerDesc(data) {
+		return http.get('/artist/desc', data)
+	},
+	
+	// 相似歌手
+	singerLiked(data) {
+		return http.get('/simi/artist', data)
+	},
 }

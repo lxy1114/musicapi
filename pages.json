@@ -38,7 +38,14 @@
 		},
 		{
 			"path": "pages/myFollow/myFollow"    //我的关注
+		},
+		{
+			"path": "pages/recordList/recordList"    //最近播放列表
+		},
+		{
+			"path": "pages/singerDetail/singerDetail"    //歌手详情
 		}
+		
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

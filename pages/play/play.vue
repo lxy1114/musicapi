@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<image class="banner" :src="data.album &&  data.album.picUrl || data.al && data.al.picUrl || data.song && data.song.al.picUrl"></image>
+		<image class="banner" :src="data.picUrl || data.album &&  data.album.picUrl || data.al && data.al.picUrl || data.song && data.song.al.picUrl"></image>
 		<view class="title">{{data.album && data.album.name || data.name || data.song && data.song.name}}</view>
 		<view class="playbox">
 			<audio-box :data="data" @playPrev="playPrev" @playNext="playNext"></audio-box>
@@ -68,13 +68,11 @@ export default {
 	},
 	onLoad(e) {
 		this.songList = JSON.parse(uni.getStorageSync('songList'))
-		console.log(this.songList)
-		console.log(e)
 		if(!e.all){
 			this.index = e.index
 		}else{
 			var playMode = uni.getStorageSync('playMode')
-			this.index = playMode != 'random' ? 0 : this.getRandom(0,this.songList.length-1)
+			this.index = playMode != 3 ? 0 : this.getRandom(0,this.songList.length-1)
 		}
 		this.data = this.songList[this.index]
 	}

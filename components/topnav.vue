@@ -11,7 +11,7 @@
 import api from '@/api'
 export default {
 	props: {
-		navIndex: Number
+		navIndex: ''
 	},
 	data() {
 		return {

@@ -6,7 +6,7 @@
 				<view class="nickname">{{loginInfo.profile.nickname || '未登录'}}</view>
 				<image class="gender" :src="loginInfo.profile.gender == 1 ? '/static/images/boy.svg' : '/static/images/girl.svg'" mode="widthFix"></image>
 			</view>
-			<view class="topbut">
+			<view class="topbut" v-if="loginInfo.profile">
 				<navigator class="topbut-list" v-for="(item,index) in topNav" :key="index" :url="'/pages/'+item.url+'/'+item.url">
 					<image class="topbut-list-icon" :src="item.icon" mode="widthFix"></image>
 					<view class="topbut-list-text">{{item.text}}</view>
@@ -18,9 +18,8 @@
 				<view class="title">
 					<view class="title-text" :class="{'title-text1': sheetNav == 0}" @click="sheetNav = 0">我的歌单</view>
 					<view class="title-text" :class="{'title-text1': sheetNav == 1}" @click="sheetNav = 1">收藏歌单</view>
-					<view class="title-more">更多</view>
 				</view>
-				<my-sheet v-for="(item,index) in sheetList" :key="index" :banner="item.coverImgUrl" :name="item.name" :id="item.id" :ordered="item.ordered" v-if="sheetNav == 0 && !item.ordered || sheetNav == 1 && item.ordered" @click="getDelete(item)"></my-sheet>
+				<my-sheet v-for="(item,index) in sheetList" :key="index" :banner="item.coverImgUrl" :name="item.name" :ordered="item.ordered" v-if="sheetNav == 0 && !item.ordered || sheetNav == 1 && item.ordered" @click="getDelete(item)" @goList="goList(item)"></my-sheet>
 				<view class="add" @click="add = true" v-if="sheetNav == 0">
 					<image class="add-icon" src="/static/images/add.svg" mode="widthFix"></image>
 					<view class="add-text">新建歌单</view>
@@ -29,7 +28,7 @@
 			<view class="block">
 				<view class="title">
 					<view class="title-text title-text1">最近播放</view>
-					<view class="title-more">更多</view>
+					<navigator class="title-more" url="/pages/recordList/recordList">更多</navigator>
 				</view>
 				<view class="myrecord">
 					<my-record v-for="(item,index) in recordList" :key="index" :cover="item.song.al.picUrl" :name="item.song.name" @goPlay="goPlay(item,index)"></my-record>
@@ -128,6 +127,7 @@ export default {
 				type: 0
 			}).then(res => {
 				this.recordList = res.allData
+				uni.setStorageSync('recordList',this.recordList)
 			})
 		},
 		login() {
@@ -184,6 +184,12 @@ export default {
 			uni.setStorageSync('songList',JSON.stringify(this.recordList))
 			uni.navigateTo({
 				url: '/pages/play/play?index='+index
+			})
+		},
+		goList(item) {
+			uni.setStorageSync('sheetDetail',item)
+			uni.navigateTo({
+				url: '/pages/songList/songList?id='+item.id
 			})
 		},
 	},

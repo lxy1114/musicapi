@@ -1,8 +1,8 @@
 <template>
 	<view class="container">
-		<line-nav :list="navList"></line-nav>
+		<line-nav :list="navList" @navTab="navTab"></line-nav>
 		<view class="con">
-			<user-box v-for="(item,index) in followList" :key="index" :avatar="item.avatarUrl" :name="item.nickname" :gender="item.gender" :followed="item.followed" @getFollow="getFollow(item,index)"></user-box>
+			<user-box v-for="(item,index) in list" :key="index" :avatar="item.avatarUrl" :name="item.nickname" :gender="item.gender" :followed="item.followed" @getFollow="getFollow(item,index)" v-if="navIndex == 0"></user-box>
 		</view>
 	</view>
 </template>
@@ -16,8 +16,10 @@ export default {
 		return {
 			navList: [{text: '关注'},{text: '粉丝'}],
 			loginInfo: {},
-			followList: [],
-			fansList: []
+			list: [],
+			navIndex: 0,
+			offset: 1,
+			lasttime: -1
 		}
 	},
 	components: {
@@ -25,11 +27,24 @@ export default {
 		userBox
 	},
 	methods: {
+		navTab(data) {
+			this.navIndex = data.index
+			this.offset = 1
+			this.list = []
+			if(this.navIndex == 0){
+				this.offset = 1
+				this.getFollowList()
+			}else{
+				this.lasttime = -1
+				this.getFans()
+			}
+		},
 		getFollowList() {
 			api.userFollow({
-				uid: this.loginInfo.profile.userId
+				uid: this.loginInfo.profile.userId,
+				offset: this.offset*30-30
 			}).then(res => {
-				this.followList = res.follow
+				this.list = this.list.concat(res.follow)
 			})
 		},
 		getFollow(item,index) {
@@ -44,9 +59,23 @@ export default {
 				item.followed = !item.followed
 			})
 		},
-		// getFans() {
-		// 	api.userFans
-		// },
+		getFans() {
+			api.userFans({
+				uid: this.loginInfo.profile.userId,
+				lasttime: this.lasttime
+			}).then(res => {
+				this.list = this.list.concat(res.followeds)
+				// this.lasttime = 
+			})
+		},
+	},
+	onReachBottom() {
+		if(this.navIndex == 0){
+			this.offset ++ 
+			this.getFollowList()
+		}else{
+			this.getFans()
+		}
 	},
 	onLoad() {
 		this.loginInfo = uni.getStorageSync('loginInfo') || {}

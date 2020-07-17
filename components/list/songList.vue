@@ -4,7 +4,9 @@
 			<image class="songlist-img" :src="picUrl" mode="aspectFill"></image>
 			<view class="info">
 				<view class="info-title">{{title}}</view>
-				<view class="info-text" v-for="(item,index) in name" :key="index">{{item.name}}{{index != name.length-1 ? '、' : ''}}</view>
+				<view class="info-text">
+					<view class="info-text-name" v-for="(item,index) in name" :key="index">{{item.name}}{{index != name.length-1 ? '、' : ''}}</view>
+				</view>
 			</view>
 			<view class="right">
 				<!-- <view class="iconfont icon-gengduo"></view> -->
@@ -56,8 +58,15 @@ export default {
 	margin-left: 20upx;
 	&-text{
 		display: inline-block;
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 		font-size: 24upx;
 		color: #999999;
+		&-name{
+			display: inline-block;
+		}
 	}
 }
 .right{

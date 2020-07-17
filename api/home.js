@@ -9,5 +9,5 @@ export default {
 	// banner图
 	getBanner(data) {
 		return http.post('/banner', data)
-	},
+	}
 }

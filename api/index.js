@@ -6,6 +6,7 @@ import home from './home'
 import recommend from './recommend'
 import song from './song'
 import user from './user'
+import video from './video'
 
 /**
  * 将业务所有接口统一起来便于维护
@@ -92,5 +93,6 @@ export default {
 	 ...home,
 	 ...recommend,
 	 ...song,
-	 ...user
+	 ...user,
+	 ...video
 }

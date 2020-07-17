@@ -2,20 +2,15 @@
 	<view class="container">
 		<view class="top" :style="'top:'+statusBarHeight+'upx'"></view>
 		<view class="con">
-			<view class="nav" :class="{'nav1': fixed}">
-				<view class="nav-list">
-					<view class="date">{{date}}</view>
+			<view class="nav" :class="{'nav1': fixed}" :style="fixed ? 'top:'+statusBarHeight+'upx' : 'top: 0upx'">
+				<view class="nav-play">
+					<image class="nav-play-icon" src="/static/images/play.svg" mode="widthFix"></image>
+					<view @click="playAll">全部播放</view>
 				</view>
-				<view class="nav-list">
-					<view class="label" :class="{'nav-text': navIndex == 0}" @click="navIndex = 0">推荐歌单</view>
-					<view class="label" :class="{'nav-text': navIndex == 1}" @click="navIndex = 1">推荐单曲</view>
-				</view>
+				<view class="date">{{date}}</view>
 			</view>
 			<view class="contain">
-				<pic-cart :list="recommendList" v-if="navIndex == 0"></pic-cart>
-				<block v-else>
-					<song-list :list="songList" :picUrl="item.album.picUrl" :title="item.name" :name="item.album.artists" :index="index" v-for="(item,index) in songList" :key="index"></song-list>
-				</block>
+				<song-list :list="songList" :picUrl="item.album.picUrl" :title="item.name" :name="item.album.artists" :index="index" v-for="(item,index) in songList" :key="index"></song-list>
 			</view>
 		</view>
 	</view>
@@ -40,25 +35,17 @@ export default {
 		picCart,
 		songList
 	},
-	watch: {
-		navIndex() {
-			if(this.navIndex == 0 && this.recommendList == ''){
-				this.getReResource()
-			}else if(this.navIndex == 1 && this.songList == ''){
-				this.getReSongs()
-			}
-		},
-	},
 	methods: {
-		getReResource() {
-			api.reResource().then(res => {
-				this.recommendList = res.recommend
-			})
-		},
 		getReSongs() {
 			api.reSongs().then(res => {
 				this.songList = res.recommend
 				uni.setStorageSync('reSongList',JSON.stringify(this.songList))
+			})
+		},
+		playAll() {
+			uni.setStorageSync('reSongList',JSON.stringify(this.songList))
+			uni.navigateTo({
+				url: '/pages/play/play?all=true'
 			})
 		},
 	},
@@ -76,6 +63,7 @@ export default {
 		}else{
 			this.getReSongs()
 		}
+		console.log(this.songList)
 		uni.setStorageSync('date',this.date)	
 	}
 }
@@ -85,40 +73,51 @@ export default {
 .top{
 	width: 100%;
 	height: 275upx;
-	background: $uni-bg-color-system;
-	// background-size: cover;
+	background: url(../../static/images/banner.png) 100% 100% no-repeat;
+	background-size: cover;
 	position: fixed;
 	top: 0upx;
 }
 .con{
 	width: 100%;
 	position: relative;
-	// background: #FFFFFF;
-	// border-radius: 16upx 16upx 0upx 0upx;
+	background: #FFFFFF;
+	border-radius: 16upx 16upx 0upx 0upx;
 	// height: 1200px;	
-	margin-top: 160upx;
+	margin-top: 200upx;
+	box-sizing: border-box;
 }
 .nav{
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	width: 100%;
+	background: #FFFFFF;
 	box-sizing: border-box;
-	font-size: 24upx;
-	padding: 20upx;
-	color: #FFFFFF;
-	// margin: 0upx 0upx 50upx;
+	padding: 30upx;
+	border-radius: 16upx 16upx 0upx 0upx;
+	font-size: 28upx;
+	color: #333333;
+	font-weight: bold;
 	position: relative;
-	z-index: 999;
-	&-list{
+	&-play{
 		display: flex;
 		align-items: center;
+		&-icon{
+			width: 32upx;
+			height: 32upx;
+			margin-right: 10upx;
+		}
+	}
+	.date{
+		font-weight: 400;
+		position: absolute;
+		right: 30upx;
 	}
 }
-.nav.nav1{
+.nav1{
+	width: 100%;
 	position: fixed;
 	top: 0upx;
-	background: $uni-bg-color-system;
+	z-index: 999;
 }
 .label{
 	border: 2upx solid #FFFFFF;
@@ -134,8 +133,7 @@ export default {
 }
 .contain{
 	background: #FFFFFF;
-	border-radius: 16upx 16upx 0upx 0upx;
 	height: 1200px;
-	padding: 30upx;
+	padding: 0upx 30upx 30upx;
 }
 </style>
