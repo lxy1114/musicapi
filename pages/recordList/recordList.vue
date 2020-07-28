@@ -30,7 +30,6 @@ export default {
 	},
 	onLoad() {
 		this.list = uni.getStorageSync('recordList')
-		console.log(this.list)
 	}
 }
 </script>

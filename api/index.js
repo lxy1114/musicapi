@@ -59,7 +59,7 @@ http.interceptor.response = (response) => {
 		})
 	}else if(response.statusCode != 200){
 		uni.showToast({
-			title: response.msg,
+			title: response.data.msg,
 			icon: 'none'
 		})
 	}

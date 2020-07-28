@@ -1,15 +1,11 @@
 <template>
 	<view class="box">
-		<view class="total">
+		<!-- <view class="total">
 			<view class="progress" :style="'width:'+(current/duration*100)+'%'"></view>
-		</view>
+		</view> -->
+		<slider :max="duration" :value="current" block-size="12" activeColor="#f0ad4e" @changing="changeCurrent"></slider>
 		<view class="num">{{currentTime+'/'+durationTime}}</view>
 		<view class="but">
-			<!-- <view class="iconfont" :class="typeList[type]" @click="getMode"></view>
-			<view class="iconfont icon-prev" @click="playPrev"></view>
-			<view class="iconfont" :class="pause ? 'icon-play' : 'icon-pause'" @click="play"></view>
-			<view class="iconfont icon-next" @click="playNext"></view>
-			<view class="iconfont icon-xihuan"></view> -->
 			<image class="but-icon" :src="'/static/images/'+typeList[type]+'.svg'" @click="getMode" mode="widthFix"></image>
 			<image class="but-icon" src="/static/images/prev.svg" @click="playPrev" mode="widthFix"></image>
 			<image class="but-icon" :src="pause ? '/static/images/play-1.svg' : '/static/images/pause.svg'" @click="play" mode="widthFix"></image>
@@ -25,7 +21,8 @@ var audio = uni.createInnerAudioContext()
 export default {
 	props: {
 		id: '',
-		data: {}
+		data: {},
+		lyricTime: ''
 	},
 	data() {
 		return {
@@ -49,11 +46,17 @@ export default {
 		data() {
 			this.getUrl()
 		},
-		// audio() {
-		// 	console.log(audio)
-		// },
+		current() {
+			this.getCurrent(this.current)
+		},
+		lyricTime() {
+			audio.currentTime = this.lyricTime
+		},
 	},
 	methods: {
+		getCurrent(current) {
+			this.$emit('getCurrent',current)
+		},
 		getMode() {
 			this.type = this.type < this.typeList.length-1 ? this.type+1 : 0
 			uni.setStorageSync('playMode',this.type)
@@ -73,6 +76,9 @@ export default {
 				this.$emit('playNext')
 			})
 		},
+		changeCurrent(e) {
+			audio.currentTime = e.detail.value
+		},
 		getUrl() {
 			api.getUrl({
 				id: this.data.id || this.data.song.id
@@ -90,12 +96,18 @@ export default {
 					this.duration = audio.duration
 					this.durationTime = parseInt(audio.duration/60)+':'+parseInt(audio.duration%60)
 				})
+				audio.onPlay((res) => {
+					this.$emit('onPlay')
+				})
 				audio.onTimeUpdate(() => {
 					this.current = audio.currentTime
 					this.currentTime = parseInt(audio.currentTime/60)+':'+parseInt(audio.currentTime%60)
 				})
 				audio.onEnded(() => {
 					this.$emit('playNext')
+				})
+				audio.onSeeking(() => {
+					
 				})
 			})
 		},

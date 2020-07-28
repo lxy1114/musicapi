@@ -6,6 +6,11 @@ export default {
 		return http.post('/song/url', data)
 	},
 	
+	// 音乐url
+	getlyric(data) {
+		return http.post('/lyric', data)
+	},
+	
 	// 歌单分类
 	catList(data) {
 		return http.post('/playlist/catlist', data)
