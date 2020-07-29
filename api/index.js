@@ -32,27 +32,6 @@ http.interceptor.request = (config) => {
 http.interceptor.response = (response) => {
     //判断返回状态 执行相应操作
 	const { config, data: responseData } = response
-
- //    // console.log("【" + config.requestId + "】 地址：" + config.url)
- //    // console.log("【" + config.requestId + "】 请求参数：", config.originData)
- //    // console.log("【" + config.requestId + "】 响应结果：", responseData)
-
- //    if (response.statusCode === 200) {
- //        if (responseData.code === 100404 || responseData.code === 100500 || responseData.code === 100600) {
-	// 		uni.clearStorageSync();
- //            uni.reLaunch({ url: '../login/login' })
- //        } else if (responseData.code !== 200) {
- //            uni.showToast({
- //                title: responseData.msg,
-	// 				 icon: 'none'
- //            })
- //        }
- //    } else {
-	// 	uni.showToast({
-	// 	    image: '/static/images/icon-warning.svg',
-	// 	    title: '抱歉,出错了'
-	// 	})
- //    }
    if(response.statusCode == 301){
 		uni.navigateTo({
 			url: '/pages/login/login'

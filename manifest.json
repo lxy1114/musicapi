@@ -49,10 +49,15 @@
                 "abiFilters" : [ "armeabi-v7a", "x86" ]
             },
             /* ios打包配置 */
-            "ios" : {},
+            "ios" : {
+                "UIBackgroundModes" : "audio"
+            },
             /* SDK配置 */
             "sdkConfigs" : {
                 "ad" : {}
+            },
+            "splashscreen" : {
+                "androidStyle" : "common"
             }
         }
     },
