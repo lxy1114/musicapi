@@ -43,4 +43,24 @@
 	.placeholder{
 		font-size: 24upx;
 	}
+	.linetitle{
+		font-size: 32upx;
+		line-height: 32upx;
+		color: #333333;
+		font-weight: bold;
+		margin-left: 20upx;
+		position: relative;
+		margin-bottom: 40upx;
+	}
+	.linetitle::before{
+		content: '';
+		display: block;
+		width: 6upx;
+		height: 100%;
+		border-radius: 10upx;
+		background: #617C77;
+		position: absolute;
+		top: 0upx;
+		left: -20upx;
+	}
 </style>

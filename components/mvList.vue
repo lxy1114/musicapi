@@ -1,5 +1,5 @@
 <template>
-	<view class="recomlist" @click="goSongList">
+	<view class="recomlist" @click="goVideo">
 		<view class="cover">
 			<image class="cover-img" :src="picUrl" mode="aspectFill"></image>
 			<view class="time-bg">
@@ -16,11 +16,12 @@ export default {
 	props: {
 		picUrl: '',
 		name: '',
-		duration: ''
+		duration: '',
+		data: Object
 	},
 	methods: {
-		goSongList(item) {
-			this.$emit('goSongList')
+		goVideo() {
+			this.$emit('goVideo',this.data)
 		},
 		getTime(time) {
 			time = time < 10 ? '0'+time : time

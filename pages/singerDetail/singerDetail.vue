@@ -3,7 +3,7 @@
 		<line-nav :list="navList" @navTab="navTab"></line-nav>
 		<view class="con">
 			<song-list v-for="(item,index) in detail.hotSongs" :key="index" :list="detail.hotSongs" :index="index" :picUrl="detail.artist.picUrl" :title="item.name" :name="[{name: detail.artist.name}]" v-if="navIndex == 0"></song-list>
-			<mv-list v-for="(item,index) in mvList" :key="index" :picUrl="item.imgurl" :duration="item.duration" :name="item.name" v-if="navIndex == 1"></mv-list>
+			<mv-list v-for="(item,index) in mvList" :key="index" :data="item" :picUrl="item.imgurl" :duration="item.duration" :name="item.name" v-if="navIndex == 1" @goVideo="goVideo"></mv-list>
 			<albums-box v-for="(item,index) in albumsList" :key="index" :picUrl="item.picUrl" :name="item.name" @goDetail="goDetail(item)" v-if="navIndex == 2"></albums-box>
 		</view>
 	</view>
@@ -67,6 +67,12 @@ export default {
 		},
 		goDetail(item) {
 			
+		},
+		goVideo(item) {
+			uni.setStorageSync('mvList',JSON.stringify(this.mvList))
+			uni.navigateTo({
+				url: '/pages/videoPlay/videoPlay?id='+item.id
+			})
 		},
 	},
 	onLoad(e) {

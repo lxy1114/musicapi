@@ -47,6 +47,12 @@
 		},
 		{
 			"path": "pages/scroll/scroll"    //测试滚动
+		},
+		{
+			"path": "pages/user/user"    //用户主页
+		},
+		{
+			"path": "pages/videoPlay/videoPlay"    //视频播放页
 		}
 		
 	],

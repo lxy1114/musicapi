@@ -4,7 +4,7 @@
 			<image class="top-banner" :src="sheetDetail.coverImgUrl || sheetDetail.picUrl"></image>
 			<view class="top-info">
 				<view class="top-info-name">{{sheetDetail.name}}</view>
-				<view class="user">
+				<view class="user" @click="goUser">
 					<image class="user-avatar" :src="user.profile && user.profile.avatarUrl"></image>
 					<view class="user-name">{{user.profile && user.profile.nickname}}</view>
 					<view class="iconfont icon-gengduo3" :style="'font-size:'+40+'upx'"></view>
@@ -68,6 +68,11 @@ export default {
 				}
 				this.list = res.playlist.tracks
 				this.getUser()
+			})
+		},
+		goUser() {
+			uni.navigateTo({
+				url: '/pages/user/user?userId='+this.sheetDetail.userId
 			})
 		},
 		getUser() {

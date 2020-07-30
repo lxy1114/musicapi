@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<!-- <view class="num" @touchmove="mouseMove" @touchend="mouseEnd" @touchstart="mouseStart" :style="'top:-'+top+'upx'"> -->
-		<scroll-view class="scroll" :scroll-y="true" :scroll-into-view="'scroll'+numIndex" :scroll-with-animation="animation" :data-index="numIndex" @scroll="setScroll">
+		<scroll-view class="scroll" :style="'height:'+height+'upx'" :scroll-y="true" :scroll-into-view="'scroll'+numIndex" :scroll-with-animation="animation" :data-index="numIndex" @scroll="setScroll">
 			<view class="num" :id="'scroll'+item" v-for="(item,index) in numList" :key="index"></view>
 			<view class="num" :style="numIndex+7 == index ? 'height: 80upx;line-height: 80upx;font-size: 36upx;font-weight: bold;opacity: 1;' : ''" :id="'scroll'+index" v-for="(item,index) in list" :key="index" @touchstart="touchstart" @touchend="touchend" @click="setLyric(index)">{{item.text}}</view>
 			<!-- <view class="current" :style="'top: '+scrollTop+'upx'"></view> -->
@@ -34,7 +34,8 @@ export default {
 			currentIndex: 0,
 			numList: [-7,-6,-5,-4,-3,-2,-1,],
 			animation: true,
-			touch: false
+			touch: false,
+			height: 0
 		}
 	},
 	methods: {
@@ -62,7 +63,9 @@ export default {
 		},
 	},
 	created() {
-		this.scrollTop = 420+uni.getSystemInfoSync().windowTop*2
+		var system = uni.getSystemInfoSync()
+		this.scrollTop = 420+system.windowTop*2		
+		this.height = (system.windowHeight-system.windowTop)*2
 		console.log(uni.getSystemInfoSync())
 		// var timer = setInterval(() => {
 		// 	this.numIndex ++

@@ -44,6 +44,9 @@ export default {
 		top() {
 			console.log(this.top)
 		},
+		data() {
+			uni.setStorageSync('songData',this.data)
+		},
 	},
 	components: {
 		audioBox,
@@ -149,6 +152,7 @@ export default {
 			this.index = playMode != 3 ? 0 : this.getRandom(0,this.songList.length-1)
 		}
 		this.data = this.songList[this.index]
+		this.getLyric()
 	}
 }
 </script>
@@ -161,7 +165,7 @@ export default {
 	width: 100%;
 	height: 100%;
 	position: fixed;
-	background: $uni-bg-color-system;
+	background: $color-play-bg;
 }
 .playswiper{
 	padding-top: 200upx;

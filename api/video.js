@@ -82,7 +82,7 @@ export default {
 	},
 	
 	// 视频点赞、评论、转发数
-	mvUrl(data) {
+	mvNum(data) {
 		return http.post('/video/detail/info', data)
 	},
 	
