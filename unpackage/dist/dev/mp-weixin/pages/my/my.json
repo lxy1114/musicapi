@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-sheet": "/components/mySheet",
+    "my-record": "/components/record"
+  }
+}

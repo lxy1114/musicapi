@@ -2,7 +2,7 @@
 	<view class="container">
 		<!-- <view class="num" @touchmove="mouseMove" @touchend="mouseEnd" @touchstart="mouseStart" :style="'top:-'+top+'upx'"> -->
 		<scroll-view class="scroll" :style="'height:'+height+'upx'" :scroll-y="true" :scroll-into-view="'scroll'+numIndex" :scroll-with-animation="animation" :data-index="numIndex" @scroll="setScroll">
-			<view class="num" :id="'scroll'+item" v-for="(item,index) in numList" :key="index"></view>
+			<view class="num" :id="'scroll'+item" v-for="(item,index1) in numList" :key="item"></view>
 			<view class="num" :style="numIndex+7 == index ? 'height: 80upx;line-height: 80upx;font-size: 36upx;font-weight: bold;opacity: 1;' : ''" :id="'scroll'+index" v-for="(item,index) in list" :key="index" @touchstart="touchstart" @touchend="touchend" @click="setLyric(index)">{{item.text}}</view>
 			<!-- <view class="current" :style="'top: '+scrollTop+'upx'"></view> -->
 			<view style="height: 500px;"></view>
@@ -19,9 +19,15 @@ export default {
 	},
 	watch: {
 		current() {
-			for(var i in this.list){
+			uni.setStorageSync('current',this.current)
+			for(var i=this.list.length-1; i>0; i--){
 				if(this.current >= parseFloat(this.list[i].time) && !this.touch){
 					this.numIndex = i-7
+					if(this.list[i].text != ''){
+						this.lyric = this.list[i].text
+						uni.setStorageSync('currentLyric',this.lyric)
+						break
+					}					
 				}
 			}
 		},
@@ -32,10 +38,11 @@ export default {
 			numIndex: -7,
 			scrollTop: 0,
 			currentIndex: 0,
-			numList: [-7,-6,-5,-4,-3,-2,-1,],
+			numList: [-7,-6,-5,-4,-3,-2,-1],
 			animation: true,
 			touch: false,
-			height: 0
+			height: 0,
+			lyric: ''
 		}
 	},
 	methods: {
@@ -66,10 +73,13 @@ export default {
 		var system = uni.getSystemInfoSync()
 		this.scrollTop = 420+system.windowTop*2		
 		this.height = (system.windowHeight-system.windowTop)*2
-		console.log(uni.getSystemInfoSync())
 		// var timer = setInterval(() => {
-		// 	this.numIndex ++
-		// },2000)
+		// 	var data = uni.getStorageSync()
+		// 	var cover = this.data.picUrl || this.data.album &&  this.data.album.picUrl || this.data.al && this.data.al.picUrl || this.data.song && this.data.song.al.picUrl
+		// 	var name = this.data.album && this.data.album.name || this.data.name || this.data.song && this.data.song.name
+		// 	var lyric = this.lyric
+		// 	var current = this.current
+		// },100)
 	}
 }
 </script>

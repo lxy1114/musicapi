@@ -1,0 +1,1 @@
+<view data-event-opts="{{[['tap',[['goList',['$event']]]]]}}" class="sheet data-v-44f67a28" bindtap="__e"><image class="sheet-banner data-v-44f67a28" src="{{banner}}"></image><view class="sheet-name data-v-44f67a28">{{name}}</view><view data-event-opts="{{[['tap',[['click',['$event']]]]]}}" class="sheet-but data-v-44f67a28" catchtap="__e">{{ordered?'取消收藏':'删除'}}</view></view>

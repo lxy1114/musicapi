@@ -1,0 +1,1 @@
+<view data-event-opts="{{[['tap',[['goSongList',['$event']]]]]}}" class="recomlist data-v-2481bc98" bindtap="__e"><image class="recomlist-img data-v-2481bc98" src="{{picUrl}}" mode="aspectFill"></image><view class="recomlist-text data-v-2481bc98">{{name}}</view></view>

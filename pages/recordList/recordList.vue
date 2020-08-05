@@ -4,7 +4,7 @@
 		<view class="con">
 			<song-list v-for="(item,index) in list" :list="list" :key="index" :picUrl="item.song.al.picUrl" :title="item.song.name" :name="item.song.ar" :index="index" v-if="navIndex == 0"></song-list>
 		</view>
-		<!-- <play-line></play-line> -->
+		<play-line></play-line>
 	</view>
 </template>
 

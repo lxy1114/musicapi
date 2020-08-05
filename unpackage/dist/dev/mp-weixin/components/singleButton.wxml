@@ -1,0 +1,1 @@
+<button data-event-opts="{{[['tap',[['submit',['$event']]]]]}}" class="button data-v-18e84f55" bindtap="__e">{{title}}</button>

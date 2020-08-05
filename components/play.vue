@@ -1,40 +1,71 @@
 <template>
 	<view class="box">
 		<view class="blank"></view>
-		<view class="play">
-			<image class="play-cover" :src="data.picUrl || data.album &&  data.album.picUrl || data.al && data.al.picUrl || data.song && data.song.al.picUrl || banner"></image>
-			<view class="play-title">{{data.album && data.album.name || data.name || data.song && data.song.name}}</view>
+		<view class="play" @click="goPlay">
+			<image class="play-cover" :src="songData.picUrl || songData.album &&  songData.album.picUrl || songData.al && songData.al.picUrl || songData.song && songData.song.al.picUrl || banner"></image>
+			<view class="info">
+				<view class="info-title">{{songData.album && songData.album.name || songData.name || songData.song && songData.song.name}}</view>				
+				<view class="info-lyric">{{currentLyric}}</view>
+			</view>
 			<view class="progress">
-				
+				<circle-progress :percent="percent"></circle-progress>
 			</view>
 			<image class="listicon" src="../static/images/list.svg" mode="widthFix"></image>
 		</view>
-		<audio @getCurrent="getCurrent"></audio>
 	</view>
 </template>
 
 <script>
-import audioBox from '@/components/audio/audio.vue'
+import circleProgress from '@/components/circle.vue'
 export default {
 	props: {
 		
 	},
 	components: {
-		audioBox
+		circleProgress
 	},
 	data() {
 		return {
-			data: {},
-			banner: '../../static/images/banner.png'
+			songData: {},
+			banner: '../../static/images/banner.png',
+			currentLyric: '',
+			current: '',
+			songList: '',
+			numList: [],
+			percent: 0
 		}
 	},
+	watch: {
+		songData() {
+			this.numList = []
+			var duration = this.songData.duration || this.songData.song.duration
+			this.duration = parseInt(duration/1000)
+			for(var i=0; i<this.duration; i++){
+				this.numList.push(i)
+			}
+		},
+		current() {
+			this.percent = this.current/this.duration*100
+		},
+	},
 	methods: {
-		getCurrent(current) {
-			console.log(current)
+		goPlay() {
+			uni.navigateTo({
+				url: '/pages/play/play?path=play'
+			})
 		},
 	},
 	created() {
-		this.data = uni.getStorageSync('songData')
+		this.currentLyric = uni.getStorageSync('currentLyric')
+		console.log(uni.getStorageSync('songData'))
+		var timer = setInterval(() => {
+			this.songData = uni.getStorageSync('songData')
+			this.currentLyric = uni.getStorageSync('currentLyric')
+			this.current = uni.getStorageSync('current')
+			this.songList = uni.getStorageSync('songList')
+			// console.log(uni.getStorageSync('songData'))
+			// console.log(uni.getStorageSync('currentLyric'),111)
+		},1000)
 	}
 }
 </script>
@@ -63,11 +94,24 @@ export default {
 		height: 60upx;
 		border-radius: 100%;
 	}
+}
+.info{
+	margin-left: 20upx;
 	&-title{
 		font-size: 28upx;
 		color: #333333;
-		margin-left: 20upx;
 	}
+	&-lyric{
+		font-size: 24upx;
+		color: #666666;
+		margin-top: 4upx;
+	}
+}
+.progress{
+	width: 50upx;
+	height: 50upx;
+	position: absolute;
+	right: 100upx;
 }
 .listicon{
 	width: 50upx;

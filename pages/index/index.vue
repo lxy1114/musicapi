@@ -27,7 +27,7 @@
 		</view>
 		<view class="title">推荐MV</view>
 		<view class="recomm">
-			<mv-list v-for="(item,index) in mvList" :key="index" :picUrl="item.picUrl" :name="item.name" :duration="item.duration" @goSongList="goSongList(item)"></mv-list>
+			<mv-list v-for="(item,index) in mvList" :key="index" :picUrl="item.picUrl" :name="item.name" :duration="item.duration" @goVideo="goVideo(item,index)"></mv-list>
 		</view>
 	</view>
 </template>
@@ -96,6 +96,12 @@ export default {
 			uni.setStorageSync('sheetDetail',item)
 			uni.navigateTo({
 				url: '/pages/songList/songList?id='+item.id
+			})
+		},
+		goVideo(item) {
+			uni.setStorageSync('mvList',JSON.stringify(this.mvList))
+			uni.navigateTo({
+				url: '/pages/videoPlay/videoPlay?id='+item.id+'&index='+index
 			})
 		},
 		getReResource() {

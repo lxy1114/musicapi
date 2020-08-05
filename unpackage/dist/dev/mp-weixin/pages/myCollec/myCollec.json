@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "line-nav": "/components/lineNav",
+    "song-list": "/components/list/songList",
+    "albums-box": "/components/albums",
+    "singer-box": "/components/singer",
+    "pic-cart": "/components/cart/picCart",
+    "user-box": "/components/user",
+    "video-list": "/components/videoList"
+  }
+}

@@ -1,5 +1,5 @@
 <template>
-	<view class="container">
+	<view class="container" :style="'height:'+height+'upx'">
 		<view class="nav">
 			<view class="nav-title" :class="{'nav-title1': navIndex == 0}" @click="navIndex = 0">手机号登录</view>
 			<view class="nav-title" :class="{'nav-title1': navIndex == 1}" @click="navIndex = 1">邮箱登录</view>
@@ -28,7 +28,8 @@ export default {
 		return {
 			navIndex: 0,
 			phone: '',
-			password: ''
+			password: '',
+			height: 0
 		}
 	},
 	components: {
@@ -66,32 +67,35 @@ export default {
 		},
 	},
 	onLoad() {
-		
+		var system = uni.getSystemInfoSync()
+		this.height = (system.windowHeight-system.windowTop)*2
 	},
 }
 </script>
 
 <style lang="scss" scoped>
 .container{
-	margin-top: 50%;
+	padding-top: 50%;
+	background: $color-bg;
 }
 .nav{
 	width: 60%;
 	line-height: 60upx;
 	margin: 0upx auto;
-	background: #F5F5F5;
+	background: #BAE2E0;
 	border-radius: 6upx;
 	margin-bottom: 100upx;
 	&-title{
 		display: inline-block;
 		width: 50%;
+		height: 100%;
 		font-size: 32upx;
-		color: #333333;
+		color: #628280;
 		text-align: center;
 	}
 	&-title.nav-title1{
-		background: $uni-bg-color-check;
-		color: $uni-text-color-check;
+		background: #8DB4B2;
+		color: #E0F6F5;
 	}
 }
 .list{
@@ -107,6 +111,7 @@ export default {
 	&-input{
 		width: 80%;
 		padding: 20upx;
+		color: #628280;
 	}
 	&-icon{
 		width: 44upx;
@@ -116,5 +121,8 @@ export default {
 .footer{
 	width: 690upx;
 	margin: 100upx auto;
+}
+.placeholder{
+	color: #E0F6F5;
 }
 </style>

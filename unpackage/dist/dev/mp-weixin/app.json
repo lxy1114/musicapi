@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/recommend/recommend",
+    "pages/play/play",
+    "pages/songSheet/songSheet",
+    "pages/sheetCat/sheetCat",
+    "pages/sheet/sheet",
+    "pages/songList/songList",
+    "pages/singer/singer",
+    "pages/searchResult/searchResult",
+    "pages/my/my",
+    "pages/myCollec/myCollec",
+    "pages/myFollow/myFollow",
+    "pages/recordList/recordList",
+    "pages/singerDetail/singerDetail",
+    "pages/scroll/scroll",
+    "pages/user/user",
+    "pages/videoPlay/videoPlay"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

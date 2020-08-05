@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "line-nav": "/components/lineNav",
+    "song-list": "/components/list/songList",
+    "play-line": "/components/play"
+  }
+}

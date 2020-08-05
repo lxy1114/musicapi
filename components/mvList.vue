@@ -7,7 +7,7 @@
 				<view class="duration">{{duration}}</view>
 			</view>
 		</view>
-		<view class="recomlist-text">{{name}}</view>
+		<view class="recomlist-text" :class="{'recomlist-text1': play}">{{name}}</view>
 	</view>
 </template>
 
@@ -17,7 +17,8 @@ export default {
 		picUrl: '',
 		name: '',
 		duration: '',
-		data: Object
+		data: Object,
+		play: Boolean
 	},
 	methods: {
 		goVideo() {
@@ -29,6 +30,7 @@ export default {
 		},
 	},
 	created() {
+		if(String(this.duration).indexOf(':') != -1 ) return
 		var minute = parseInt(this.duration/1000/60)
 		var second = parseInt(this.duration/1000%60)
 		second = this.getTime(second)
@@ -53,6 +55,9 @@ export default {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+	}
+	&-text.recomlist-text1{
+		color: $uni-color-warning;
 	}
 }
 .cover{

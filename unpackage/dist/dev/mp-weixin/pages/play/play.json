@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "audio-box": "/components/audio/audio",
+    "scroll-lyric": "/components/scroll"
+  }
+}

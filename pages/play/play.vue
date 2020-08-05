@@ -2,9 +2,9 @@
 	<view class="con">
 		<swiper class="container">
 			<swiper-item class="playswiper">
-				<image class="banner" :src="data.picUrl || data.album &&  data.album.picUrl || data.al && data.al.picUrl || data.song && data.song.al.picUrl"></image>
+<!-- 				<image class="banner" :src="data.picUrl || data.album &&  data.album.picUrl || data.al && data.al.picUrl || data.song && data.song.al.picUrl"></image>
 				<view class="title">{{data.album && data.album.name || data.name || data.song && data.song.name}}</view>
-				<view class="playbox">
+ -->				<view class="playbox">
 					<audio-box :data="data" :lyricTime="lyricTime" @playPrev="playPrev" @playNext="playNext" @getCurrent="getCurrent" @onPlay="onPlay"></audio-box>
 				</view>
 			</swiper-item>
@@ -114,11 +114,12 @@ export default {
 					var time = this.lyric[i].split(']')[0]
 					time = parseFloat(time.split(':')[0]*60)+parseFloat(time.split(':')[1])
 					time = this.toFixed(time,2)
+					var text = this.lyric[i].split(']')[1].replace(/\n/g,'')
 					var obj = {
 						time,
-						text: this.lyric[i].split(']')[1]
+						text 
 					}
-					this.lyricList.push(obj)
+					this.lyricList.push(obj)				
 				}
 				console.log(this.lyricList,99999)
 			})
@@ -145,6 +146,7 @@ export default {
 		this.height = (system.windowHeight-system.windowTop)*2
 		console.log(system)
 		this.songList = uni.getStorageSync('songList') ? JSON.parse(uni.getStorageSync('songList')) : JSON.parse(uni.getStorageSync('reSongList'))
+		if(e.path == 'play') return
 		if(!e.all){
 			this.index = e.index
 		}else{
@@ -152,6 +154,7 @@ export default {
 			this.index = playMode != 3 ? 0 : this.getRandom(0,this.songList.length-1)
 		}
 		this.data = this.songList[this.index]
+		uni.setStorageSync('songData',this.data)
 		this.getLyric()
 	}
 }

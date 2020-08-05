@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 .button{
-	background: $uni-color-success;
+	background: #91BAB8;
 	color: #FFFFFF;
 }
 </style>

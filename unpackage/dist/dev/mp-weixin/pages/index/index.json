@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "top-nav": "/components/topnav",
+    "my-record": "/components/record",
+    "sheet-box": "/components/sheet",
+    "mv-list": "/components/mvList",
+    "new-song": "/components/newSong"
+  }
+}

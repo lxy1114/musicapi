@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "singer-box": "/components/singer"
+  }
+}

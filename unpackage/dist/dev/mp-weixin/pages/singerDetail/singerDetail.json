@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "line-nav": "/components/lineNav",
+    "song-list": "/components/list/songList",
+    "mv-list": "/components/mvList",
+    "albums-box": "/components/albums"
+  }
+}
