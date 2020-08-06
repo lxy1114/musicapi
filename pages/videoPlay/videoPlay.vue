@@ -1,8 +1,9 @@
 <template>
 	<view class="container">
 		<video :src="data.url" v-if="data.url"></video>
+		<view class="novideo" v-else>{{data.msg}}</view>
 		<view class="mv">
-			<mv-list v-for="(item,index) in mvList" :key="index" :play="playIndex == index ? true : false" :picUrl="item.picUrl" :name="item.name" :duration="item.duration" @goVideo="goVideo(item,index)"></mv-list>
+			<mv-list v-for="(item,index) in mvList" :key="index" :play="playIndex == index ? true : false" :picUrl="item.picUrl || item.cover || item.coverUrl" :name="item.name || item.title" :duration="item.duration" @goVideo="goVideo(item,index)"></mv-list>
 		</view>
 	</view>
 </template>
@@ -15,10 +16,11 @@ export default {
 		return {
 			id: '',
 			data: {
-				url: 'http://vodkgeyttp8.vod.126.net/cloudmusic/b1c4/core/59b6/7d6ebb5401c6f77d160275d8e6134254.mp4?wsSecret=35230d0b41804d5ae9eef1f565089714&wsTime=1596101781'
+				url: ''
 			},
 			mvList: [],
-			playIndex: 0
+			playIndex: 0,
+			type: ''
 		}
 	},
 	components: {
@@ -26,11 +28,20 @@ export default {
 	},
 	methods: {
 		getUrl(id) {
-			api.mvUrl({
-				id: id || this.id
-			}).then(res => {
-				this.data = res.data
-			})
+			if(this.type == 'mv'){
+				api.mvUrl({
+					id: id || this.id
+				}).then(res => {
+					this.data = res.data
+				})
+			}else{
+				api.videoUrl({
+					id: id || this.id
+				}).then(res => {
+					console.log(res)
+					this.data = res.urls[0]
+				})
+			}
 		},
 		goVideo(item,index) {
 			this.getUrl(item.id)
@@ -39,6 +50,7 @@ export default {
 	},
 	onLoad(e) {
 		this.id = e.id || '10950149'
+		this.type = e.type || ''
 		this.getUrl()
 		this.mvList = JSON.parse(uni.getStorageSync('mvList'))
 		console.log(this.mvList)
@@ -48,9 +60,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-uni-video{
+uni-video,.novideo{
 	width: 750upx;
 	height: 400upx;
+}
+.novideo{
+	background: #000000;
+	line-height: 400upx;
+	font-size: 24upx;
+	color: rgba(255,255,255,0.7);
+	text-align: center;
 }
 .mv{
 	padding: 30upx;

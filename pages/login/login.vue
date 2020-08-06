@@ -5,12 +5,10 @@
 			<view class="nav-title" :class="{'nav-title1': navIndex == 1}" @click="navIndex = 1">邮箱登录</view>
 		</view>
 		<view class="list">
-			<!-- <view class="iconfont icon-zhanghaoguanli"></view> -->
 			<image class="list-icon" src="/static/images/user.svg" mode="widthFix"></image>
 			<input class="list-input" v-model="phone" :placeholder="navIndex == 0 ? '请输入手机号' : '请输入邮箱'" placeholder-class="placeholder"/>
 		</view>
 		<view class="list">
-			<!-- <view class="iconfont icon-mima"></view> -->
 			<image class="list-icon" src="/static/images/password.svg" mode="widthFix"></image>
 			<input class="list-input" v-model="password" placeholder="请输入密码" placeholder-class="placeholder"/>
 		</view>

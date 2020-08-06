@@ -1,9 +1,9 @@
 <template>
-	<view class="user">
+	<view class="user" @click="goUser">
 		<image class="user-avatar" :src="avatar" mode="aspectFill"></image>
 		<view class="user-name">{{name}}</view>
 		<image class="user-gender" :src="gender == 1 ? '/static/images/boy.svg' : '/static/images/girl.svg'" mode="widthFix"></image>
-		<view class="user-but" :class="{'user-but1': followed}" @click="getFollow">{{followed ? '取消关注' : '关注'}}</view>
+		<view class="user-but" :class="{'user-but1': followed}" @click.stop="getFollow">{{followed ? '取消关注' : '关注'}}</view>
 	</view>
 </template>
 
@@ -23,6 +23,9 @@ export default {
 	methods: {
 		getFollow() {
 			this.$emit('getFollow')
+		},
+		goUser() {
+			this.$emit('goUser')
 		},
 	},
 	onLoad() {

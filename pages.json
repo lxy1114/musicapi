@@ -53,6 +53,12 @@
 		},
 		{
 			"path": "pages/videoPlay/videoPlay"    //视频播放页
+		},
+		{
+			"path": "pages/search/search"    //搜索
+		},
+		{
+			"path": "pages/alikeSongs/alikeSongs"    //相似歌曲
 		}
 		
 	],

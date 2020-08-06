@@ -9,8 +9,7 @@
 				</view>
 			</view>
 			<view class="right">
-				<!-- <view class="iconfont icon-gengduo"></view> -->
-				<image class="right-icon" src="/static/images/more-1.svg" mode="widthFix"></image>
+				<image class="right-icon" src="/static/images/more-1.svg" mode="widthFix" @click.stop="getDetail"></image>
 			</view>
 		</view>
 	</view>
@@ -31,6 +30,9 @@ export default {
 			uni.navigateTo({
 				url: '/pages/play/play?index='+this.index
 			})
+		},
+		getDetail() {
+			this.$emit('getDetail')
 		},
 	},
 	created() {
@@ -56,6 +58,11 @@ export default {
 	font-size: 28upx;
 	color: #333333;
 	margin-left: 20upx;
+	&-title{
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 	&-text{
 		display: inline-block;
 		width: 100%;

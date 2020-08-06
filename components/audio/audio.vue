@@ -126,6 +126,12 @@ export default {
 	created() {		
 		this.type = uni.getStorageSync('playMode') || 0
 		this.getUrl()
+		var playInter = setInterval(() => {
+			uni.setStorageSync('songData',this.data)
+			uni.setStorageSync('current',this.current)
+			// console.log(uni.getStorageSync('currentLyric'),'存储当前歌词')
+			// console.log('存储')
+		},1000)
 		// this.getUrl()
 	}
 }

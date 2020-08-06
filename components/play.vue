@@ -63,8 +63,10 @@ export default {
 			this.currentLyric = uni.getStorageSync('currentLyric')
 			this.current = uni.getStorageSync('current')
 			this.songList = uni.getStorageSync('songList')
+			// console.log(uni.getStorageSync('currentLyric'),'获取当前歌词')
 			// console.log(uni.getStorageSync('songData'))
 			// console.log(uni.getStorageSync('currentLyric'),111)
+			// console.log('获取')
 		},1000)
 	}
 }

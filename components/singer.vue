@@ -1,5 +1,5 @@
 <template>
-	<view class="singer" @click="goDetail">
+	<view class="singer" @click="goSinger">
 		<image class="singer-avatar" :src="avatar || '/static/images/avatar.svg'" mode="aspectFill"></image>
 		<view class="info">
 			<view class="singer-name">{{name}}</view>
@@ -7,7 +7,7 @@
 			<view class="text" v-if="mv">{{'MV：'+mv}}</view>
 			<view class="text" v-if="music">{{'歌曲：'+music}}</view>
 		</view>
-		<view class="singer-but" @click.stop="getFollow">{{followed ? '取消关注' : '关注'}}</view>
+		<view class="singer-but" :class="{'singer-but1': followed}" @click.stop="getFollow">{{followed ? '取消关注' : '关注'}}</view>
 	</view>
 </template>
 
@@ -27,8 +27,8 @@ export default {
 		}
 	},
 	methods: {
-		goDetail() {
-			this.$emit('goDetail')
+		goSinger() {
+			this.$emit('goSinger')
 		},
 		getFollow() {
 			this.$emit('getFollow')
@@ -70,6 +70,10 @@ export default {
 		border: 2upx solid #d4237a;
 		position: absolute;
 		right: 0upx;
+	}
+	&-but.singer-but1{
+		color: #999999;
+		border-color: #999999;
 	}
 }
 </style>

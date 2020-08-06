@@ -125,4 +125,9 @@ export default {
 	collecAlbumsList(data) {
 		return http.post('/album/sublist', data)
 	},
+	
+	//已收藏音乐
+	collecSong(data) {
+		return http.post('/likelist', data)
+	},
 }

@@ -9,7 +9,7 @@
 				</view>
 			</swiper-item>
 			<swiper-item>	
-				<scroll-lyric :list="lyricList" :current="current" @setLyric="setLyric"></scroll-lyric>
+				<scroll-lyric :list="lyricList" :current="current" @setLyric="setLyric" @getCurrentLyric="getCurrentLyric"></scroll-lyric>
 			</swiper-item>
 	   </swiper>	
 	</view>
@@ -28,7 +28,7 @@ export default {
 			lyric: '',
 			lyricList: [],
 			current: '',
-			currentLyric: 0,
+			currentLyric: '',
 			playtime: 0,
 			top: 0,
 			translateY: 0,
@@ -63,6 +63,9 @@ export default {
 			for(var i in this.lyricList){
 				this.lyricTime = index == i ? this.lyricList[i].time : this.lyricTime
 			}
+		},
+		getCurrentLyric(lyric) {
+			this.currentLyric = lyric
 		},
 		playPrev(playMode) {
 			if(this.index == 0){

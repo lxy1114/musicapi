@@ -4,7 +4,7 @@
 			<image class="top-banner" :src="sheetDetail.coverImgUrl || sheetDetail.picUrl"></image>
 			<view class="top-info">
 				<view class="top-info-name">{{sheetDetail.name}}</view>
-				<view class="user" @click="goUser">
+				<view class="user" @click="goUser" v-if="type != 'albums'">
 					<image class="user-avatar" :src="user.profile && user.profile.avatarUrl"></image>
 					<view class="user-name">{{user.profile && user.profile.nickname}}</view>
 					<view class="iconfont icon-gengduo3" :style="'font-size:'+40+'upx'"></view>
@@ -22,12 +22,12 @@
 					<view class="like">
 						<!-- <view class="iconfont icon-xihuan"></view> -->
 						<image class="play-icon" src="/static/images/unlike-1.svg" mode="widthFix"></image>
-						<view class="like-num">{{sheetDetail.trackCount}}</view>
+						<view class="like-num">{{sheetDetail.subscribedCount}}</view>
 					</view>
 					<view class="like">
 						<!-- <view class="iconfont icon-pinglun"></view> -->
 						<image class="play-icon" src="/static/images/commet.svg" mode="widthFix"></image>
-						<view class="like-num">{{sheetDetail.subscribedCount}}</view>
+						<view class="like-num">{{sheetDetail.trackCount}}</view>
 					</view>
 				</view>
 			</view>
@@ -49,7 +49,8 @@ export default {
 			sheetDetail: {},
 			user: {},
 			statusBarHeight: 0,
-			fixed: false
+			fixed: false,
+			type: ''
 		}
 	},
 	components: {
@@ -68,6 +69,22 @@ export default {
 				}
 				this.list = res.playlist.tracks
 				this.getUser()
+			})
+		},
+		getAlbumsDetail() {
+			api.albumDetail({
+				id: this.id
+			}).then(res => {
+				this.sheetDetail = res.album
+				this.list = res.songs
+			})
+		},
+		getAlbumsNum() {
+			api.albumNum({
+				id: this.id
+			}).then(res => {
+				this.sheetDetail.trackCount = res.commentCount
+				this.sheetDetail.subscribedCount = res.subCount
 			})
 		},
 		goUser() {
@@ -95,7 +112,13 @@ export default {
 	onLoad(e) {
 		this.statusBarHeight = uni.getSystemInfoSync().windowTop*2
 		this.id = e.id || uni.getStorageSync('sheetDetail').id || 5007016293
-		this.getSheetDetail()
+		this.type = e.type ? e.type : ''
+		if(this.type == 'albums'){
+			this.getAlbumsDetail()
+			this.getAlbumsNum()
+		}else{
+			this.getSheetDetail()
+		}		
 		// this.sheetDetail = uni.getStorageSync('sheetDetail')
 		console.log(this.sheetDetail)
 		// this.getUser()
@@ -114,7 +137,7 @@ export default {
 	left: 0upx;
 	box-sizing: border-box;
 	padding: 40upx 30upx;
-	background: $uni-bg-color-system;
+	background: $color-bg;
 	color: #FFFFFF;
 	&-banner{
 		width: 200upx;

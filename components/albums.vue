@@ -1,5 +1,5 @@
 <template>
-	<view class="albums" @click="goDetail">
+	<view class="albums" @click="goAlbums">
 		<image class="albums-banner" :src="picUrl" mode="aspectFill"></image>
 		<view class="albums-label">
 			<view class="albums-label-text">{{name}}</view>
@@ -19,8 +19,8 @@ export default {
 		}
 	},
 	methods: {
-		goDetail() {
-			this.$emit('goDetail')
+		goAlbums() {
+			this.$emit('goAlbums')
 		},
 	},
 	created() {

@@ -1,5 +1,5 @@
 <template>
-	<view class="videolist">
+	<view class="videolist" @click="goPlay">
 		<view class="cover">
 			<image class="cover-img" :src="cover" mode="aspectFill"></image>
 			<view class="time-bg">
@@ -8,9 +8,12 @@
 			</view>
 		</view>
 		<view class="info">
-			<view class="title">{{title}}</view>
+			<view class="title" :class="{'title1': type == 'video'}">{{title}}</view>
 			<view class="text" v-if="text">{{text}}</view>
 			<view class="name">{{name}}</view>
+			<view class="label" v-if="label">
+				<view class="label-text" v-for="(item,index) in label" :key="index">{{item.userName}}</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -22,7 +25,9 @@ export default {
 		duration: Number,
 		title: '',
 		text: '',
-		name: ''
+		name: '',
+		label: Array,
+		type: String
 	},
 	data() {
 		return {
@@ -30,7 +35,9 @@ export default {
 		}
 	},
 	methods: {
-		
+		goPlay() {
+			this.$emit('goPlay')
+		},
 	},
 	created() {
 		
@@ -79,6 +86,9 @@ export default {
 		font-size: 36upx;
 		margin-bottom: 10upx;
 	}
+	.title.title1{
+		font-size: 28upx;
+	}
 	.text{
 		font-size: 28upx;
 		color: #999999;
@@ -90,6 +100,18 @@ export default {
 		font-size: 28upx;
 		color: #666666;
 		margin-top: 10upx;
+	}
+}
+.label{
+	margin-top: 20upx;
+	&-text{
+		display: inline-block;
+		padding: 2upx 10upx;
+		border-radius: 8upx;
+		background: #A5D6D4;
+		font-size: 24upx;
+		color: #ffffff;
+		margin-right: 20upx;
 	}
 }
 </style>

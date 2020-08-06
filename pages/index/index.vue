@@ -98,7 +98,7 @@ export default {
 				url: '/pages/songList/songList?id='+item.id
 			})
 		},
-		goVideo(item) {
+		goVideo(item,index) {
 			uni.setStorageSync('mvList',JSON.stringify(this.mvList))
 			uni.navigateTo({
 				url: '/pages/videoPlay/videoPlay?id='+item.id+'&index='+index

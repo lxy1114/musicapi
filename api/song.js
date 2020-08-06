@@ -6,7 +6,7 @@ export default {
 		return http.post('/song/url', data)
 	},
 	
-	// 音乐url
+	// 歌词
 	getlyric(data) {
 		return http.post('/lyric', data)
 	},
@@ -84,5 +84,60 @@ export default {
 	// 相似歌手
 	singerLiked(data) {
 		return http.get('/simi/artist', data)
+	},
+	
+	// 默认搜索关键词
+	searchDefault(data) {
+		return http.get('/search/default', data)
+	},
+	
+	// 热搜列表（简略）
+	searchHot(data) {
+		return http.get('/search/hot', data)
+	},
+	
+	// 热搜列表（详细）
+	searchHotDetail(data) {
+		return http.get('/search/hot/detail', data)
+	},
+	
+	// 搜索建议
+	searchSuggest(data) {
+		return http.get('/search/suggest', data)
+	},
+	
+	// 搜索多重匹配
+	searchMul(data) {
+		return http.get('/search/multimatch', data)
+	},
+	
+	// 专辑内容
+	albumDetail(data) {
+		return http.get('/album', data)
+	},
+	
+	// 专辑动态信息（如是否收藏,收藏数,评论数,分享数）
+	albumNum(data) {
+		return http.get('/album/detail/dynamic', data)
+	},
+	
+	// 喜欢歌曲
+	likeSong(data) {
+		return http.get('/like', data)
+	},
+	
+	// 对歌单添加或删除歌曲
+	addSong(data) {
+		return http.get('/playlist/tracks', data)
+	},
+	
+	// 相似歌曲
+	alikeSong(data) {
+		return http.get('/simi/song', data)
+	},
+	
+	// 歌曲详情
+	songDetail(data) {
+		return http.get('/song/detail', data)
 	},
 }

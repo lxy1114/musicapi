@@ -25,7 +25,7 @@ export default {
 					this.numIndex = i-7
 					if(this.list[i].text != ''){
 						this.lyric = this.list[i].text
-						uni.setStorageSync('currentLyric',this.lyric)
+						// this.$emit('getCurrentLyric',this.lyric)
 						break
 					}					
 				}
@@ -73,13 +73,6 @@ export default {
 		var system = uni.getSystemInfoSync()
 		this.scrollTop = 420+system.windowTop*2		
 		this.height = (system.windowHeight-system.windowTop)*2
-		// var timer = setInterval(() => {
-		// 	var data = uni.getStorageSync()
-		// 	var cover = this.data.picUrl || this.data.album &&  this.data.album.picUrl || this.data.al && this.data.al.picUrl || this.data.song && this.data.song.al.picUrl
-		// 	var name = this.data.album && this.data.album.name || this.data.name || this.data.song && this.data.song.name
-		// 	var lyric = this.lyric
-		// 	var current = this.current
-		// },100)
 	}
 }
 </script>
