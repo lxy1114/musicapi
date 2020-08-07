@@ -32,7 +32,7 @@ export default {
 .record{
 	display: inline-flex;
 	align-items: center;
-	width: 300upx;
+	width: 320upx;
 	box-sizing: border-box;
 	padding: 15upx 20upx;
 	background: #F8F8F8;

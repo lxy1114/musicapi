@@ -59,6 +59,9 @@
 		},
 		{
 			"path": "pages/alikeSongs/alikeSongs"    //相似歌曲
+		},
+		{
+			"path": "pages/mv/mv"    //mv
 		}
 		
 	],

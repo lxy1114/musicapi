@@ -2,10 +2,12 @@
 	<view class="container">
 		<line-nav :list="navList" @navTab="navTab"></line-nav>
 		<view class="con">
-			<song-list v-for="(item,index) in detail.hotSongs" :key="index" :list="detail.hotSongs" :index="index" :picUrl="detail.artist.picUrl" :title="item.name" :name="[{name: detail.artist.name}]" v-if="navIndex == 0"></song-list>
-			<mv-list v-for="(item,index) in mvList" :key="index" :data="item" :picUrl="item.imgurl" :duration="item.duration" :name="item.name" v-if="navIndex == 1" @goVideo="goVideo"></mv-list>
-			<albums-box v-for="(item,index) in albumsList" :key="index" :picUrl="item.picUrl" :name="item.name" @goDetail="goDetail(item)" v-if="navIndex == 2"></albums-box>
+			<song-list v-for="(item,index) in detail.hotSongs" :key="index" :list="detail.hotSongs" :index="index" :picUrl="detail.artist.picUrl" :title="item.name" :name="[{name: detail.artist.name}]" v-if="navIndex == 0" @getDetail="getDetail(item)"></song-list>
+			<mv-block v-for="(item,index) in mvList" :key="index" :data="item" :picUrl="item.imgurl" :duration="item.duration" :name="item.name" v-if="navIndex == 1" @goVideo="goVideo(item,index)"></mv-block>
+			<albums-box v-for="(item,index) in albumsList" :key="index" :picUrl="item.picUrl" :name="item.name" @goAlbums="goAlbums(item,index)" v-if="navIndex == 2"></albums-box>
 		</view>
+		<view class="mask" v-if="popupShow" @click="popupShow = false"></view>
+		<song-popup :data="popupData" v-if="popupShow" @getHide="getHide"></song-popup >
 	</view>
 </template>
 
@@ -13,8 +15,9 @@
 import api from '@/api'
 import lineNav from '@/components/lineNav.vue'
 import songList from '@/components/list/songList.vue'
-import mvList from '@/components/mvList.vue'
+import mvBlock from '@/components/mvBlock.vue'
 import albumsBox from '@/components/albums.vue'
+import songPopup from '@/components/popup/song.vue'
 export default {
 	data() {
 		return {
@@ -24,14 +27,17 @@ export default {
 			songList: [],
 			detail: {},
 			mvList: [],
-			albumsList: []
+			albumsList: [],
+			popupShow: false,
+			popupData: {}
 		}
 	},
 	components: {
 		lineNav,
 		songList,
-		mvList,
-		albumsBox
+		mvBlock,
+		albumsBox,
+		songPopup
 	},
 	methods: {
 		navTab(data) {
@@ -65,14 +71,23 @@ export default {
 				this.albumsList = res.hotAlbums
 			})
 		},
-		goDetail(item) {
-			
+		goAlbums(item,index) {
+			uni.navigateTo({
+				url: '/pages/songList/songList?id='+item.id+'&type=albums'
+			})
 		},
-		goVideo(item) {
+		goVideo(item,index) {
 			uni.setStorageSync('mvList',JSON.stringify(this.mvList))
 			uni.navigateTo({
-				url: '/pages/videoPlay/videoPlay?id='+item.id
+				url: '/pages/videoPlay/videoPlay?id='+item.id+'&type=mv&playIndex='+index
 			})
+		},
+		getDetail(item) {
+			this.popupData = item
+			this.popupShow = true
+		},
+		getHide() {
+			this.popupShow = false
 		},
 	},
 	onLoad(e) {

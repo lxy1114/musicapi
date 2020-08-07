@@ -59,6 +59,10 @@ export default {
 				id: this.data.id,
 				like: this.data.status ? false : true
 			}).then(res => {
+				uni.showToast({
+					title: '收藏成功！',
+					icon: 'none'
+				})
 				this.$emit('getCollec')
 				this.getHide()
 			})

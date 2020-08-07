@@ -4,7 +4,7 @@
 			<view class="nav-text" :class="{'nav-text1': initial == item}" v-for="(item,index) in navList" :key="index" @click="navTab(item)">{{item}}</view>
 		</view>
 		<view class="con">
-			<singer-box v-for="(item,index) in list" :key="index" :avatar="item.picUrl" :name="item.name" :albums="item.albumSize" :music="item.musicSize" :followed="item.followed" @goDetail="goDetail(item)" @getFollow="getFollow(item)"></singer-box>
+			<singer-box v-for="(item,index) in list" :key="index" :avatar="item.picUrl" :name="item.name" :albums="item.albumSize" :music="item.musicSize" :followed="item.followed" @goSinger="goSinger(item)" @getFollow="getFollow(item)"></singer-box>
 		</view>
 	</view>
 </template>
@@ -53,7 +53,7 @@ export default {
 				})
 			})
 		},
-		goDetail(item) {
+		goSinger(item) {
 			uni.navigateTo({
 				url: '/pages/singerDetail/singerDetail?id='+item.id
 			})

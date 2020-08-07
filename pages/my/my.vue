@@ -31,7 +31,7 @@
 					<navigator class="title-more" url="/pages/recordList/recordList">更多</navigator>
 				</view>
 				<view class="myrecord">
-					<my-record v-for="(item,index) in recordList" :key="index" :cover="item.song.al.picUrl" :name="item.song.name" @goPlay="goPlay(item,index)"></my-record>
+					<my-record v-for="(item,index) in recordList" :key="index" :cover="item.song.al.picUrl" :name="item.song.name" @goPlay="goPlay(item,index)" v-if="index < 6"></my-record>
 				</view>
 			</view>
 		</view>
@@ -364,7 +364,7 @@ export default {
 	}
 }
 .myrecord{
-	white-space: nowrap;
-	overflow-x: scroll;
+	// white-space: nowrap;
+	// overflow-x: scroll;
 }
 </style>
