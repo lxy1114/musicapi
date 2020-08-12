@@ -2,9 +2,9 @@
 	<view class="con">
 		<swiper class="container">
 			<swiper-item class="playswiper">
-<!-- 				<image class="banner" :src="data.picUrl || data.album &&  data.album.picUrl || data.al && data.al.picUrl || data.song && data.song.al.picUrl"></image>
+				<image class="banner" :src="data.picUrl || data.album &&  data.album.picUrl || data.al && data.al.picUrl || data.song && data.song.al.picUrl"></image>
 				<view class="title">{{data.album && data.album.name || data.name || data.song && data.song.name}}</view>
- -->				<view class="playbox">
+				<view class="playbox">
 					<audio-box :data="data" :lyricTime="lyricTime" @playPrev="playPrev" @playNext="playNext" @getCurrent="getCurrent" @onPlay="onPlay"></audio-box>
 				</view>
 			</swiper-item>

@@ -26,7 +26,7 @@ export default {
 					if(this.list[i].text != ''){
 						this.lyric = this.list[i].text
 						// this.$emit('getCurrentLyric',this.lyric)
-						break
+						break;
 					}					
 				}
 			}
