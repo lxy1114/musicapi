@@ -61,7 +61,7 @@ export default {
 			var that = this
 			setTimeout(() => {
 				this.touch = false
-			},2000)
+			},3000)
 		},
 		setLyric(index) {
 			if(index == this.numIndex+7){

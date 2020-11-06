@@ -3,8 +3,17 @@
 		<!-- <view class="total">
 			<view class="progress" :style="'width:'+(current/duration*100)+'%'"></view>
 		</view> -->
-		<slider :max="duration" :value="current" block-size="12" activeColor="#f0ad4e" @changing="changeCurrent"></slider>
-		<view class="num">{{currentTime+'/'+durationTime}}</view>
+		<slider-box 
+			:duration="duration" 
+			max="345" 
+			left="15" 
+			backColor="#f0ad4e" 
+			size="10" 
+			:current="current" 
+			@changing="changeCurrent">
+		</slider-box>
+		<!-- <slider :max="duration" :value="current" block-size="12" activeColor="#f0ad4e" @changing="changeCurrent"></slider> -->
+		<view class="num">{{$utils.setNumber(currentTime)+'/'+$utils.setNumber(durationTime)}}</view>
 		<view class="but">
 			<image class="but-icon" :src="'/static/images/'+typeList[type]+'.svg'" @click="getMode" mode="widthFix"></image>
 			<image class="but-icon" src="/static/images/prev.svg" @click="playPrev" mode="widthFix"></image>
@@ -17,12 +26,16 @@
 
 <script>
 import api from '@/api'
+import sliderBox from '@/components/slider.vue'
 var audio = uni.createInnerAudioContext()
 export default {
 	props: {
 		id: '',
 		data: {},
 		lyricTime: ''
+	},
+	components: {
+		sliderBox
 	},
 	data() {
 		return {
@@ -77,7 +90,8 @@ export default {
 			})
 		},
 		changeCurrent(e) {
-			audio.currentTime = e.detail.value
+			console.log(e)
+			audio.currentTime = e
 		},
 		getUrl() {
 			api.getUrl({
@@ -156,7 +170,7 @@ export default {
 .num{
 	font-size: 24upx;
 	color: #FFFFFF;
-	margin-left: 30upx;
+	margin-top: 10upx;
 }
 .but{
 	display: flex;
