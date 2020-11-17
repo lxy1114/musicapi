@@ -25,6 +25,8 @@
 /* 透明度 */
 /* 文章场景相关 */
 .container.data-v-b237504c {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding-top: 50%;
   background: #9ECBC9;
 }
@@ -33,7 +35,8 @@
   line-height: 60rpx;
   margin: 0rpx auto;
   background: #BAE2E0;
-  border-radius: 6rpx;
+  -webkit-border-radius: 6rpx;
+          border-radius: 6rpx;
   margin-bottom: 100rpx;
 }
 .nav-title.data-v-b237504c {

@@ -24,9 +24,16 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-uni-video.data-v-9e4b47b4 {
+uni-video.data-v-9e4b47b4, .novideo.data-v-9e4b47b4 {
   width: 750rpx;
   height: 400rpx;
+}
+.novideo.data-v-9e4b47b4 {
+  background: #000000;
+  line-height: 400rpx;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
 }
 .mv.data-v-9e4b47b4 {
   padding: 30rpx;

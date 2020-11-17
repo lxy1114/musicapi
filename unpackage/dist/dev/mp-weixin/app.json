@@ -17,7 +17,12 @@
     "pages/singerDetail/singerDetail",
     "pages/scroll/scroll",
     "pages/user/user",
-    "pages/videoPlay/videoPlay"
+    "pages/videoPlay/videoPlay",
+    "pages/search/search",
+    "pages/alikeSongs/alikeSongs",
+    "pages/mv/mv",
+    "pages/comment/comment",
+    "pages/singerIns/singerIns"
   ],
   "subPackages": [],
   "window": {
@@ -26,6 +31,5 @@
     "navigationBarBackgroundColor": "#FFFFFF",
     "backgroundColor": "#F8F8F8"
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

@@ -1,5 +1,9 @@
 <template>
-	<view class="container" :style="'height:'+height+'upx'">
+	<view 
+		class="container" 
+		:style="{
+			height: height ? height+'rpx' : '100vh'
+		}">
 		<view class="nav">
 			<view class="nav-title" :class="{'nav-title1': navIndex == 0}" @click="navIndex = 0">手机号登录</view>
 			<view class="nav-title" :class="{'nav-title1': navIndex == 1}" @click="navIndex = 1">邮箱登录</view>
@@ -65,14 +69,16 @@ export default {
 		},
 	},
 	onLoad() {
-		var system = uni.getSystemInfoSync()
-		this.height = (system.windowHeight-system.windowTop)*2
+		// #ifndef MP-WEIXIN		
+		this.height = uni.getSystemInfoSync().windowHeight*2
+		// #endif
 	},
 }
 </script>
 
 <style lang="scss" scoped>
 .container{
+	box-sizing: border-box;
 	padding-top: 50%;
 	background: $color-bg;
 }

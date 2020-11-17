@@ -62,8 +62,13 @@
 		},
 		{
 			"path": "pages/mv/mv"    //mv
+		},
+		{
+			"path": "pages/comment/comment"    //歌曲评论
+		},
+		{
+			"path": "pages/singerIns/singerIns"    //歌曲评论
 		}
-		
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

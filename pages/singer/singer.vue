@@ -54,6 +54,7 @@ export default {
 			})
 		},
 		goSinger(item) {
+			uni.setStorageSync('singerDetail',item)
 			uni.navigateTo({
 				url: '/pages/singerDetail/singerDetail?id='+item.id
 			})

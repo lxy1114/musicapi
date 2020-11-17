@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "line-nav": "/components/lineNav",
+    "mv-block": "/components/mvBlock"
+  }
+}

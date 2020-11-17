@@ -6,6 +6,7 @@
     "singer-box": "/components/singer",
     "pic-cart": "/components/cart/picCart",
     "user-box": "/components/user",
-    "video-list": "/components/videoList"
+    "video-list": "/components/videoList",
+    "song-popup": "/components/popup/song"
   }
 }

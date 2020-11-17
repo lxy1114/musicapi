@@ -49,12 +49,14 @@
   color: #FFFFFF;
 }
 .search.data-v-027c65a9 {
-  width: 80%;
-  height: 60%;
-  border: 2rpx solid #999999;
-  border-radius: 60rpx;
+  width: 83%;
+  height: 85%;
+  border: 2rpx solid #9ECBC9;
+  -webkit-border-radius: 60rpx;
+          border-radius: 60rpx;
   margin-left: 30rpx;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0rpx 30rpx;
 }
 .search-icon.data-v-027c65a9 {
@@ -62,5 +64,9 @@
   height: 40rpx;
   position: absolute;
   right: 30rpx;
+}
+.cancel.data-v-027c65a9 {
+  font-size: 28rpx;
+  margin-left: 30rpx;
 }
 

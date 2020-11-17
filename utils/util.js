@@ -17,4 +17,32 @@ export default {
 		}
 		return value
 	},
+	getTime(time) {
+		var current = new Date().getTime()
+		var difference = current-time
+		var date = ''
+		if(difference <= 60){
+			date = '刚刚'
+		}else if(difference <= 60*60){
+			date = parseInt(difference/60)+'分钟前'
+		}else if(new Date().getFullYear() == new Date(time).getFullYear() && new Date().getMonth() == new Date(time).getMonth() && new Date().getDate() == new Date(time).getDate()){
+			date = this.getNumber(new Date(time).getHours())+':'+this.getNumber(new Date(time).getMinutes())
+		}else{
+			date = new Date(time).getFullYear()+'-'+this.getNumber(new Date(time).getMonth()+1)+'-'+this.getNumber(new Date(time).getDate())+' '+this.getNumber(new Date(time).getHours())+':'+this.getNumber(new Date(time).getMinutes())
+		}
+		return date
+	},
+	getNumber(number) {
+		if(String(number).length == 1){
+			number = '0'+number
+		}
+		return number
+	},
+	getDura(duration) {
+		if(String(duration).indexOf(':') != -1 ) return
+		var minute = parseInt(duration/1000/60)
+		var second = parseInt(duration/1000%60)
+		duration = this.getNumber(minute)+':'+this.getNumber(second)
+		return duration
+	},
 }

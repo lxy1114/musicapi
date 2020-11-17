@@ -39,7 +39,8 @@
 .sheet-banner.data-v-44f67a28 {
   width: 70rpx;
   height: 70rpx;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   margin-right: 20rpx;
 }
 .sheet-name.data-v-44f67a28 {
@@ -53,7 +54,8 @@
   height: 40rpx;
   line-height: 40rpx;
   border: 2rpx solid #d4237a;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   font-size: 28rpx;
   color: #d4237a;
   text-align: center;

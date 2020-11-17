@@ -74,4 +74,7 @@ export default {
 		}
 	}
 }
+.list:nth-last-child(1){
+	border-style: none;
+}
 </style>

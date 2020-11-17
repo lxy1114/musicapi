@@ -77,6 +77,9 @@
   font-size: 36rpx;
   margin-bottom: 10rpx;
 }
+.info .title.title1.data-v-b73cb6e4 {
+  font-size: 28rpx;
+}
 .info .text.data-v-b73cb6e4 {
   font-size: 28rpx;
   color: #999999;
@@ -88,5 +91,18 @@
   font-size: 28rpx;
   color: #666666;
   margin-top: 10rpx;
+}
+.label.data-v-b73cb6e4 {
+  margin-top: 20rpx;
+}
+.label-text.data-v-b73cb6e4 {
+  display: inline-block;
+  padding: 2rpx 10rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
+  background: #A5D6D4;
+  font-size: 24rpx;
+  color: #ffffff;
+  margin-right: 20rpx;
 }
 

@@ -41,7 +41,8 @@
           align-items: center;
   width: 100%;
   height: 80rpx;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0rpx 30rpx;
   overflow: hidden;
   border-top: 2rpx solid #EEEEEE;
@@ -50,12 +51,26 @@
 .play-cover.data-v-1f45e222 {
   width: 60rpx;
   height: 60rpx;
-  border-radius: 100%;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
 }
-.play-title.data-v-1f45e222 {
+.info.data-v-1f45e222 {
+  margin-left: 20rpx;
+}
+.info-title.data-v-1f45e222 {
   font-size: 28rpx;
   color: #333333;
-  margin-left: 20rpx;
+}
+.info-lyric.data-v-1f45e222 {
+  font-size: 24rpx;
+  color: #666666;
+  margin-top: 4rpx;
+}
+.progress.data-v-1f45e222 {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 100rpx;
 }
 .listicon.data-v-1f45e222 {
   width: 50rpx;

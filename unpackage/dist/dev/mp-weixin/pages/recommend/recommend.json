@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "pic-cart": "/components/cart/picCart",
-    "song-list": "/components/list/songList"
+    "song-list": "/components/list/songList",
+    "song-popup": "/components/popup/song"
   }
 }

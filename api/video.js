@@ -26,11 +26,6 @@ export default {
 		return http.post('/personalized/newsong', data)
 	},
 	
-	// 推荐电台
-	recommendDj(data) {
-		return http.post('/personalized/djprogram', data)
-	},
-	
 	// MV排行
 	mvRanking(data) {
 		return http.post('/top/mv', data)

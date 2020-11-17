@@ -12,7 +12,7 @@
 /******/ 		var moduleId, chunkId, i = 0, resolves = [];
 /******/ 		for(;i < chunkIds.length; i++) {
 /******/ 			chunkId = chunkIds[i];
-/******/ 			if(installedChunks[chunkId]) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) {
 /******/ 				resolves.push(installedChunks[chunkId][0]);
 /******/ 			}
 /******/ 			installedChunks[chunkId] = 0;
@@ -48,6 +48,7 @@
 /******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
 /******/ 			}
 /******/ 		}
+/******/
 /******/ 		return result;
 /******/ 	}
 /******/
@@ -104,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/mvList":1,"components/newSong":1,"components/record":1,"components/sheet":1,"components/topnav":1,"components/singleButton":1,"components/cart/picCart":1,"components/list/songList":1,"components/audio/audio":1,"components/scroll":1,"components/singer":1,"components/albums":1,"components/lineNav":1,"components/user":1,"components/videoList":1,"components/mySheet":1,"components/play":1,"components/userSheet":1};
+/******/ 		var cssChunks = {"components/mvList":1,"components/newSong":1,"components/record":1,"components/sheet":1,"components/topnav":1,"components/singleButton":1,"components/cart/picCart":1,"components/list/songList":1,"components/popup/song":1,"components/audio/audio":1,"components/scroll":1,"components/singer":1,"components/albums":1,"components/lineNav":1,"components/user":1,"components/videoList":1,"components/mySheet":1,"components/play":1,"components/mvBlock":1,"components/userSheet":1,"components/slider":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/mvList":"components/mvList","components/newSong":"components/newSong","components/record":"components/record","components/sheet":"components/sheet","components/topnav":"components/topnav","components/singleButton":"components/singleButton","components/cart/picCart":"components/cart/picCart","components/list/songList":"components/list/songList","components/audio/audio":"components/audio/audio","components/scroll":"components/scroll","components/singer":"components/singer","components/albums":"components/albums","components/lineNav":"components/lineNav","components/user":"components/user","components/videoList":"components/videoList","components/mySheet":"components/mySheet","components/play":"components/play","components/userSheet":"components/userSheet"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/mvList":"components/mvList","components/newSong":"components/newSong","components/record":"components/record","components/sheet":"components/sheet","components/topnav":"components/topnav","components/singleButton":"components/singleButton","components/cart/picCart":"components/cart/picCart","components/list/songList":"components/list/songList","components/popup/song":"components/popup/song","components/audio/audio":"components/audio/audio","components/scroll":"components/scroll","components/singer":"components/singer","components/albums":"components/albums","components/lineNav":"components/lineNav","components/user":"components/user","components/videoList":"components/videoList","components/mySheet":"components/mySheet","components/play":"components/play","components/mvBlock":"components/mvBlock","components/circle":"components/circle","components/userSheet":"components/userSheet","components/slider":"components/slider"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {
@@ -170,6 +171,8 @@
 /******/ 				}
 /******/ 				script.src = jsonpScriptSrc(chunkId);
 /******/
+/******/ 				// create error before stack unwound to get useful stacktrace later
+/******/ 				var error = new Error();
 /******/ 				onScriptComplete = function (event) {
 /******/ 					// avoid mem leaks in IE.
 /******/ 					script.onerror = script.onload = null;
@@ -179,7 +182,8 @@
 /******/ 						if(chunk) {
 /******/ 							var errorType = event && (event.type === 'load' ? 'missing' : event.type);
 /******/ 							var realSrc = event && event.target && event.target.src;
-/******/ 							var error = new Error('Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')');
+/******/ 							error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 							error.name = 'ChunkLoadError';
 /******/ 							error.type = errorType;
 /******/ 							error.request = realSrc;
 /******/ 							chunk[1](error);

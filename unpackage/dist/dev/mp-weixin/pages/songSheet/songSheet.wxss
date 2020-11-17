@@ -29,7 +29,6 @@
   border-bottom: 2rpx solid #EEEEEE;
   white-space: nowrap;
   overflow-x: scroll;
-  padding-right: 60rpx;
 }
 .top-nav.data-v-07e5dd48 {
   display: inline-block;

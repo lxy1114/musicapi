@@ -32,15 +32,26 @@
 				</view>
 			</view>
 			<view class="con-list">
-				<song-list :list="list" :picUrl="item.al.picUrl" :title="item.name" :name="item.ar" :index="index" v-for="(item,index) in list" :key="index"></song-list>
+				<song-list 
+					:list="list" 
+					:picUrl="item.al.picUrl" 
+					:title="item.name" 
+					:name="item.ar" 
+					:index="index" 
+					v-for="(item,index) in list" 
+					:key="index" 
+					@getDetail="getDetail(item)">
+				</song-list>
 			</view>
 		</view>	
+		<song-popup :data="popupData" v-if="popupShow" @getHide="popupShow = false"></song-popup>
 	</view>
 </template>
 
 <script>
 import api from '@/api'
 import songList from '@/components/list/songList.vue'
+import songPopup from '@/components/popup/song.vue'
 export default {
 	data() {
 		return {
@@ -50,11 +61,14 @@ export default {
 			user: {},
 			statusBarHeight: 0,
 			fixed: false,
-			type: ''
+			type: '',
+			popupData: {},
+			popupShow: false
 		}
 	},
 	components: {
-		songList
+		songList,
+		songPopup
 	},
 	methods: {
 		getSheetDetail(id) {
@@ -70,6 +84,10 @@ export default {
 				this.list = res.playlist.tracks
 				this.getUser()
 			})
+		},
+		getDetail(item) {
+			this.popupData = item
+			this.popupShow = true
 		},
 		getAlbumsDetail() {
 			api.albumDetail({

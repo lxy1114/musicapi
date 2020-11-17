@@ -1,6 +1,6 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],[
-/* 0 */,
-/* 1 */
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
+
+/***/ 1:
 /*!************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js ***!
   \************************************************************/
@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.createApp = createApp;exports.createComponent = createComponent;exports.createPage = createPage;exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(n);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}
+Object.defineProperty(exports, "__esModule", { value: true });exports.createApp = createApp;exports.createComponent = createComponent;exports.createPage = createPage;exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}
 
 var _toString = Object.prototype.toString;
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -363,7 +363,144 @@ var baseApi = /*#__PURE__*/Object.freeze({
   upx2px: upx2px,
   addInterceptor: addInterceptor,
   removeInterceptor: removeInterceptor,
-  interceptors: interceptors });
+  interceptors: interceptors });var
+
+
+EventChannel = /*#__PURE__*/function () {
+  function EventChannel(id, events) {var _this = this;_classCallCheck(this, EventChannel);
+    this.id = id;
+    this.listener = {};
+    this.emitCache = {};
+    if (events) {
+      Object.keys(events).forEach(function (name) {
+        _this.on(name, events[name]);
+      });
+    }
+  }_createClass(EventChannel, [{ key: "emit", value: function emit(
+
+    eventName) {for (var _len3 = arguments.length, args = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {args[_key3 - 1] = arguments[_key3];}
+      var fns = this.listener[eventName];
+      if (!fns) {
+        return (this.emitCache[eventName] || (this.emitCache[eventName] = [])).push(args);
+      }
+      fns.forEach(function (opt) {
+        opt.fn.apply(opt.fn, args);
+      });
+      this.listener[eventName] = fns.filter(function (opt) {return opt.type !== 'once';});
+    } }, { key: "on", value: function on(
+
+    eventName, fn) {
+      this._addListener(eventName, 'on', fn);
+      this._clearCache(eventName);
+    } }, { key: "once", value: function once(
+
+    eventName, fn) {
+      this._addListener(eventName, 'once', fn);
+      this._clearCache(eventName);
+    } }, { key: "off", value: function off(
+
+    eventName, fn) {
+      var fns = this.listener[eventName];
+      if (!fns) {
+        return;
+      }
+      if (fn) {
+        for (var i = 0; i < fns.length;) {
+          if (fns[i].fn === fn) {
+            fns.splice(i, 1);
+            i--;
+          }
+          i++;
+        }
+      } else {
+        delete this.listener[eventName];
+      }
+    } }, { key: "_clearCache", value: function _clearCache(
+
+    eventName) {
+      var cacheArgs = this.emitCache[eventName];
+      if (cacheArgs) {
+        for (; cacheArgs.length > 0;) {
+          this.emit.apply(this, [eventName].concat(cacheArgs.shift()));
+        }
+      }
+    } }, { key: "_addListener", value: function _addListener(
+
+    eventName, type, fn) {
+      (this.listener[eventName] || (this.listener[eventName] = [])).push({
+        fn: fn,
+        type: type });
+
+    } }]);return EventChannel;}();
+
+
+var eventChannels = {};
+
+var eventChannelStack = [];
+
+var id = 0;
+
+function initEventChannel(events) {var cache = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+  id++;
+  var eventChannel = new EventChannel(id, events);
+  if (cache) {
+    eventChannels[id] = eventChannel;
+    eventChannelStack.push(eventChannel);
+  }
+  return eventChannel;
+}
+
+function getEventChannel(id) {
+  if (id) {
+    var eventChannel = eventChannels[id];
+    delete eventChannels[id];
+    return eventChannel;
+  }
+  return eventChannelStack.shift();
+}
+
+var navigateTo = {
+  args: function args(fromArgs, toArgs) {
+    var id = initEventChannel(fromArgs.events).id;
+    if (fromArgs.url) {
+      fromArgs.url = fromArgs.url + (fromArgs.url.indexOf('?') === -1 ? '?' : '&') + '__id__=' + id;
+    }
+  },
+  returnValue: function returnValue(fromRes, toRes) {
+    fromRes.eventChannel = getEventChannel();
+  } };
+
+
+function findExistsPageIndex(url) {
+  var pages = getCurrentPages();
+  var len = pages.length;
+  while (len--) {
+    var page = pages[len];
+    if (page.$page && page.$page.fullPath === url) {
+      return len;
+    }
+  }
+  return -1;
+}
+
+var redirectTo = {
+  name: function name(fromArgs) {
+    if (fromArgs.exists === 'back' && fromArgs.delta) {
+      return 'navigateBack';
+    }
+    return 'redirectTo';
+  },
+  args: function args(fromArgs) {
+    if (fromArgs.exists === 'back' && fromArgs.url) {
+      var existsPageIndex = findExistsPageIndex(fromArgs.url);
+      if (existsPageIndex !== -1) {
+        var delta = getCurrentPages().length - 1 - existsPageIndex;
+        if (delta > 0) {
+          fromArgs.delta = delta;
+        }
+      }
+    }
+  } };
 
 
 var previewImage = {
@@ -412,6 +549,8 @@ function addSafeAreaInsets(result) {
   }
 }
 var protocols = {
+  redirectTo: redirectTo,
+  navigateTo: navigateTo,
   previewImage: previewImage,
   getSystemInfo: {
     returnValue: addSafeAreaInsets },
@@ -499,7 +638,12 @@ function wrapper(methodName, method) {
       if (typeof arg2 !== 'undefined') {
         args.push(arg2);
       }
-      var returnValue = wx[options.name || methodName].apply(wx, args);
+      if (isFn(options.name)) {
+        methodName = options.name(arg1);
+      } else if (isStr(options.name)) {
+        methodName = options.name;
+      }
+      var returnValue = wx[methodName].apply(wx, args);
       if (isSyncApi(methodName)) {// 同步 api
         return processReturnValue(methodName, returnValue, options.returnValue, isContextApi(methodName));
       }
@@ -627,7 +771,7 @@ function initTriggerEvent(mpInstance) {
     }
   }
   var oldTriggerEvent = mpInstance.triggerEvent;
-  mpInstance.triggerEvent = function (event) {for (var _len3 = arguments.length, args = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {args[_key3 - 1] = arguments[_key3];}
+  mpInstance.triggerEvent = function (event) {for (var _len4 = arguments.length, args = new Array(_len4 > 1 ? _len4 - 1 : 0), _key4 = 1; _key4 < _len4; _key4++) {args[_key4 - 1] = arguments[_key4];}
     return oldTriggerEvent.apply(mpInstance, [customize(event)].concat(args));
   };
 }
@@ -640,7 +784,7 @@ function initHook(name, options) {
     };
   } else {
     options[name] = function () {
-      initTriggerEvent(this);for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {args[_key4] = arguments[_key4];}
+      initTriggerEvent(this);for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {args[_key5] = arguments[_key5];}
       return oldHook.apply(this, args);
     };
   }
@@ -760,7 +904,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"qingM","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -861,6 +1005,11 @@ function initProperties(props) {var isBehavior = arguments.length > 1 && argumen
     properties.vueId = {
       type: String,
       value: '' };
+
+    // 用于字节跳动小程序模拟抽象节点
+    properties.generic = {
+      type: Object,
+      value: null };
 
     properties.vueSlots = { // 小程序不能直接定义 $slots 的 props，所以通过 vueSlots 转换到 $slots
       type: null,
@@ -1103,7 +1252,7 @@ function getContextVm(vm) {
   return $parent && $parent.$parent;
 }
 
-function handleEvent(event) {var _this = this;
+function handleEvent(event) {var _this2 = this;
   event = wrapper$1(event);
 
   // [['tap',[['handle',[1,2,a]],['handle1',[1,2,a]]]]]
@@ -1134,14 +1283,14 @@ function handleEvent(event) {var _this = this;
       eventsArray.forEach(function (eventArray) {
         var methodName = eventArray[0];
         if (methodName) {
-          var handlerCtx = _this.$vm;
+          var handlerCtx = _this2.$vm;
           if (handlerCtx.$options.generic) {// mp-weixin,mp-toutiao 抽象节点模拟 scoped slots
             handlerCtx = getContextVm(handlerCtx) || handlerCtx;
           }
           if (methodName === '$emit') {
             handlerCtx.$emit.apply(handlerCtx,
             processEventArgs(
-            _this.$vm,
+            _this2.$vm,
             event,
             eventArray[1],
             eventArray[2],
@@ -1160,14 +1309,17 @@ function handleEvent(event) {var _this = this;
             }
             handler.once = true;
           }
-          ret.push(handler.apply(handlerCtx, processEventArgs(
-          _this.$vm,
+          var params = processEventArgs(
+          _this2.$vm,
           event,
           eventArray[1],
           eventArray[2],
           isCustom,
-          methodName)));
+          methodName);
 
+          // 参数尾部增加原始事件对象用于复杂表达式内获取额外数据
+          // eslint-disable-next-line no-sparse-arrays
+          ret.push(handler.apply(handlerCtx, (Array.isArray(params) ? params : []).concat([,,,,,,,,,, event])));
         }
       });
     }
@@ -1352,8 +1504,65 @@ function parseApp(vm) {
 }
 
 function createApp(vm) {
+  _vue.default.prototype.getOpenerEventChannel = function () {
+    if (!this.__eventChannel__) {
+      this.__eventChannel__ = new EventChannel();
+    }
+    return this.__eventChannel__;
+  };
+  var callHook = _vue.default.prototype.__call_hook;
+  _vue.default.prototype.__call_hook = function (hook, args) {
+    if (hook === 'onLoad' && args && args.__id__) {
+      this.__eventChannel__ = getEventChannel(args.__id__);
+      delete args.__id__;
+    }
+    return callHook.call(this, hook, args);
+  };
   App(parseApp(vm));
   return vm;
+}
+
+var encodeReserveRE = /[!'()*]/g;
+var encodeReserveReplacer = function encodeReserveReplacer(c) {return '%' + c.charCodeAt(0).toString(16);};
+var commaRE = /%2C/g;
+
+// fixed encodeURIComponent which is more conformant to RFC3986:
+// - escapes [!'()*]
+// - preserve commas
+var encode = function encode(str) {return encodeURIComponent(str).
+  replace(encodeReserveRE, encodeReserveReplacer).
+  replace(commaRE, ',');};
+
+function stringifyQuery(obj) {var encodeStr = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : encode;
+  var res = obj ? Object.keys(obj).map(function (key) {
+    var val = obj[key];
+
+    if (val === undefined) {
+      return '';
+    }
+
+    if (val === null) {
+      return encodeStr(key);
+    }
+
+    if (Array.isArray(val)) {
+      var result = [];
+      val.forEach(function (val2) {
+        if (val2 === undefined) {
+          return;
+        }
+        if (val2 === null) {
+          result.push(encodeStr(key));
+        } else {
+          result.push(encodeStr(key) + '=' + encodeStr(val2));
+        }
+      });
+      return result.join('&');
+    }
+
+    return encodeStr(key) + '=' + encodeStr(val);
+  }).filter(function (x) {return x.length > 0;}).join('&') : null;
+  return res ? "?".concat(res) : '';
 }
 
 function parseBaseComponent(vueComponentOptions)
@@ -1478,9 +1687,15 @@ function parseBasePage(vuePageOptions, _ref6)
 
   initHooks(pageOptions.methods, hooks$1, vuePageOptions);
 
-  pageOptions.methods.onLoad = function (args) {
-    this.$vm.$mp.query = args; // 兼容 mpvue
-    this.$vm.__call_hook('onLoad', args);
+  pageOptions.methods.onLoad = function (query) {
+    this.options = query;
+    var copyQuery = Object.assign({}, query);
+    delete copyQuery.__id__;
+    this.$page = {
+      fullPath: '/' + (this.route || this.is) + stringifyQuery(copyQuery) };
+
+    this.$vm.$mp.query = query; // 兼容 mpvue
+    this.$vm.__call_hook('onLoad', query);
   };
 
   return pageOptions;
@@ -1590,7 +1805,298 @@ var uni$1 = uni;var _default =
 uni$1;exports.default = _default;
 
 /***/ }),
-/* 2 */
+
+/***/ 10:
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \**********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode, /* vue-cli only */
+  components, // fixed by xxxxxx auto components
+  renderjs // fixed by xxxxxx renderjs
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // fixed by xxxxxx auto components
+  if (components) {
+    if (!options.components) {
+      options.components = {}
+    }
+    var hasOwn = Object.prototype.hasOwnProperty
+    for (var name in components) {
+      if (hasOwn.call(components, name) && !hasOwn.call(options.components, name)) {
+        options.components[name] = components[name]
+      }
+    }
+  }
+  // fixed by xxxxxx renderjs
+  if (renderjs) {
+    (renderjs.beforeCreate || (renderjs.beforeCreate = [])).unshift(function() {
+      this[renderjs.__module] = this
+    });
+    (options.mixins || (options.mixins = [])).push(renderjs)
+  }
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+
+/***/ 11:
+/*!**********************************************!*\
+  !*** E:/prac/qingM/static/icon/iconfont.css ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+    if(false) { var cssReload; }
+  
+
+/***/ }),
+
+/***/ 12:
+/*!***********************************!*\
+  !*** E:/prac/qingM/utils/util.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  setNumber: function setNumber(number) {
+    if (number == 0) {
+      return '00:00';
+    }
+    var minute = number.split(':')[0];
+    var second = number.split(':')[1];
+    minute = this.setDigit(minute);
+    second = this.setDigit(second);
+    var result = minute + ':' + second;
+    return result;
+  },
+  setDigit: function setDigit(value) {
+    value = typeof value == 'string' ? value : String(value);
+    if (value.length == 1) {
+      value = '0' + value;
+    }
+    return value;
+  },
+  getTime: function getTime(time) {
+    var current = new Date().getTime();
+    var difference = current - time;
+    var date = '';
+    if (difference <= 60) {
+      date = '刚刚';
+    } else if (difference <= 60 * 60) {
+      date = parseInt(difference / 60) + '分钟前';
+    } else if (new Date().getFullYear() == new Date(time).getFullYear() && new Date().getMonth() == new Date(time).getMonth() && new Date().getDate() == new Date(time).getDate()) {
+      date = this.getNumber(new Date(time).getHours()) + ':' + this.getNumber(new Date(time).getMinutes());
+    } else {
+      date = new Date(time).getFullYear() + '-' + this.getNumber(new Date(time).getMonth() + 1) + '-' + this.getNumber(new Date(time).getDate()) + ' ' + this.getNumber(new Date(time).getHours()) + ':' + this.getNumber(new Date(time).getMinutes());
+    }
+    return date;
+  },
+  getNumber: function getNumber(number) {
+    if (String(number).length == 1) {
+      number = '0' + number;
+    }
+    return number;
+  },
+  getDura: function getDura(duration) {
+    if (String(duration).indexOf(':') != -1) return;
+    var minute = parseInt(duration / 1000 / 60);
+    var second = parseInt(duration / 1000 % 60);
+    duration = this.getNumber(minute) + ':' + this.getNumber(second);
+    return duration;
+  } };exports.default = _default;
+
+/***/ }),
+
+/***/ 19:
+/*!**********************************!*\
+  !*** E:/prac/qingM/api/index.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 20));
+var _domain = _interopRequireDefault(__webpack_require__(/*! @/utils/domain */ 21));
+
+var _login = _interopRequireDefault(__webpack_require__(/*! ./login */ 22));
+var _home = _interopRequireDefault(__webpack_require__(/*! ./home */ 23));
+var _recommend = _interopRequireDefault(__webpack_require__(/*! ./recommend */ 24));
+var _song = _interopRequireDefault(__webpack_require__(/*! ./song */ 25));
+var _user = _interopRequireDefault(__webpack_require__(/*! ./user */ 26));
+var _video = _interopRequireDefault(__webpack_require__(/*! ./video */ 27));
+var _dj = _interopRequireDefault(__webpack_require__(/*! ./dj */ 398));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+/**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * 将业务所有接口统一起来便于维护
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * 如果项目很大可以将 url 独立成文件，接口分成不同的模块
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       */
+
+_utils.default.config.baseUrl = _domain.default;
+
+//设置请求前拦截器
+_utils.default.interceptor.request = function (config) {
+  var token = uni.getStorageSync('TOKEN');
+
+  //添加通用参数
+  config.header = {
+    token: token,
+    "Content-Type": "application/x-www-form-urlencoded" };
+
+  config.originData = config.data;
+};
+
+//设置请求结束后拦截器
+_utils.default.interceptor.response = function (response) {
+  //判断返回状态 执行相应操作
+  var config = response.config,responseData = response.data;
+  if (response.statusCode == 301) {
+    uni.navigateTo({
+      url: '/pages/login/login' });
+
+  } else if (response.statusCode != 200) {
+    uni.showToast({
+      title: response.data.msg,
+      icon: 'none' });
+
+  }
+
+  return responseData;
+};
+
+// 默认全部导出  import api from '@/common/vmeitime-http/'
+var _default = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
+  // 公共接口
+  // 上传
+  upload: function upload(data) {
+    var token = uni.getStorageSync('TOKEN');
+    return new Promise(function (resolve, reject) {
+      uni.uploadFile(_objectSpread({
+        url: _domain.default + '?store_id=1&r=socket/upload/index',
+        name: 'file',
+        header: { token: token } },
+      data)).
+      then(function (_ref) {var _ref2 = _slicedToArray(_ref, 2),err = _ref2[0],res = _ref2[1];
+        if (err) {
+          reject(err);
+        } else {
+          resolve(JSON.parse(res.data));
+        }
+      });
+    });
+  } },
+
+_login.default),
+_home.default),
+_recommend.default),
+_song.default),
+_user.default),
+_video.default),
+_dj.default);exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
   \******************************************************************************************/
@@ -2341,11 +2847,13 @@ Dep.SharedObject.targetStack = [];
 function pushTarget (target) {
   Dep.SharedObject.targetStack.push(target);
   Dep.SharedObject.target = target;
+  Dep.target = target;
 }
 
 function popTarget () {
   Dep.SharedObject.targetStack.pop();
   Dep.SharedObject.target = Dep.SharedObject.targetStack[Dep.SharedObject.targetStack.length - 1];
+  Dep.target = Dep.SharedObject.target;
 }
 
 /*  */
@@ -7114,7 +7622,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"qingM","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7135,14 +7643,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"qingM","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"qingM","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7186,13 +7694,14 @@ function cloneWithData(vm) {
   }, ret);
 
   // vue-composition-api
-  var rawBindings = vm.__secret_vfa_state__ && vm.__secret_vfa_state__.rawBindings;
+  var compositionApiState = vm.__composition_api_state__ || vm.__secret_vfa_state__;
+  var rawBindings = compositionApiState && compositionApiState.rawBindings;
   if (rawBindings) {
     Object.keys(rawBindings).forEach(function (key) {
       ret[key] = vm[key];
     });
   }
-  
+
   //TODO 需要把无用数据处理掉，比如 list=>l0 则 list 需要移除，否则多传输一份数据
   Object.assign(ret, vm.$mp.data || {});
   if (
@@ -7227,7 +7736,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"qingM","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -7515,7 +8024,7 @@ function internalMixin(Vue) {
   };
 
   Vue.prototype.__map = function(val, iteratee) {
-    //TODO 暂不考虑 string,number
+    //TODO 暂不考虑 string
     var ret, i, l, keys, key;
     if (Array.isArray(val)) {
       ret = new Array(val.length);
@@ -7529,6 +8038,13 @@ function internalMixin(Vue) {
       for (i = 0, l = keys.length; i < l; i++) {
         key = keys[i];
         ret[key] = iteratee(val[key], key, i);
+      }
+      return ret
+    } else if (typeof val === 'number') {
+      ret = new Array(val);
+      for (i = 0, l = val; i < l; i++) {
+        // 第一个参数暂时仍和小程序一致
+        ret[i] = iteratee(i, i);
       }
       return ret
     }
@@ -7626,285 +8142,8 @@ internalMixin(Vue);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-/* 3 */
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
 
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 4 */
-/*!********************************!*\
-  !*** E:/prac/qingM/pages.json ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */
-/*!**********************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js ***!
-  \**********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode, /* vue-cli only */
-  components, // fixed by xxxxxx auto components
-  renderjs // fixed by xxxxxx renderjs
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // fixed by xxxxxx auto components
-  if (components) {
-    if (!options.components) {
-      options.components = {}
-    }
-    var hasOwn = Object.prototype.hasOwnProperty
-    for (var name in components) {
-      if (hasOwn.call(components, name) && !hasOwn.call(options.components, name)) {
-        options.components[name] = components[name]
-      }
-    }
-  }
-  // fixed by xxxxxx renderjs
-  if (renderjs) {
-    (renderjs.beforeCreate || (renderjs.beforeCreate = [])).unshift(function() {
-      this[renderjs.__module] = this
-    });
-    (options.mixins || (options.mixins = [])).push(renderjs)
-  }
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-/* 11 */
-/*!**********************************************!*\
-  !*** E:/prac/qingM/static/icon/iconfont.css ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-    if(false) { var cssReload; }
-  
-
-/***/ }),
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */
-/*!**********************************!*\
-  !*** E:/prac/qingM/api/index.js ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 19));
-var _domain = _interopRequireDefault(__webpack_require__(/*! @/utils/domain */ 20));
-
-var _login = _interopRequireDefault(__webpack_require__(/*! ./login */ 21));
-var _home = _interopRequireDefault(__webpack_require__(/*! ./home */ 22));
-var _recommend = _interopRequireDefault(__webpack_require__(/*! ./recommend */ 23));
-var _song = _interopRequireDefault(__webpack_require__(/*! ./song */ 24));
-var _user = _interopRequireDefault(__webpack_require__(/*! ./user */ 25));
-var _video = _interopRequireDefault(__webpack_require__(/*! ./video */ 26));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(n);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
-
-/**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             * 将业务所有接口统一起来便于维护
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             * 如果项目很大可以将 url 独立成文件，接口分成不同的模块
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             *
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             */
-
-_utils.default.config.baseUrl = _domain.default;
-
-//设置请求前拦截器
-_utils.default.interceptor.request = function (config) {
-  var token = uni.getStorageSync('TOKEN');
-
-  //添加通用参数
-  config.header = {
-    token: token,
-    "Content-Type": "application/x-www-form-urlencoded" };
-
-  config.originData = config.data;
-};
-
-//设置请求结束后拦截器
-_utils.default.interceptor.response = function (response) {
-  //判断返回状态 执行相应操作
-  var config = response.config,responseData = response.data;
-  if (response.statusCode == 301) {
-    uni.navigateTo({
-      url: '/pages/login/login' });
-
-  } else if (response.statusCode != 200) {
-    uni.showToast({
-      title: response.data.msg,
-      icon: 'none' });
-
-  }
-
-  return responseData;
-};
-
-// 默认全部导出  import api from '@/common/vmeitime-http/'
-var _default = _objectSpread({
-  // 公共接口
-  // 上传
-  upload: function upload(data) {
-    var token = uni.getStorageSync('TOKEN');
-    return new Promise(function (resolve, reject) {
-      uni.uploadFile(_objectSpread({
-        url: _domain.default + '?store_id=1&r=socket/upload/index',
-        name: 'file',
-        header: { token: token } },
-      data)).
-      then(function (_ref) {var _ref2 = _slicedToArray(_ref, 2),err = _ref2[0],res = _ref2[1];
-        if (err) {
-          reject(err);
-        } else {
-          resolve(JSON.parse(res.data));
-        }
-      });
-    });
-  } },
-
-_login.default, {},
-_home.default, {},
-_recommend.default, {},
-_song.default, {},
-_user.default, {},
-_video.default);exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 19 */
+/***/ 20:
 /*!************************************!*\
   !*** E:/prac/qingM/utils/index.js ***!
   \************************************/
@@ -8076,7 +8315,8 @@ function _reqlog(req) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 20 */
+
+/***/ 21:
 /*!*************************************!*\
   !*** E:/prac/qingM/utils/domain.js ***!
   \*************************************/
@@ -8089,7 +8329,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 baseUrl;exports.default = _default;
 
 /***/ }),
-/* 21 */
+
+/***/ 22:
 /*!**********************************!*\
   !*** E:/prac/qingM/api/login.js ***!
   \**********************************/
@@ -8097,7 +8338,7 @@ baseUrl;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 19));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 20));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 
 {
   // 账号密码登录
@@ -8115,7 +8356,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   } };exports.default = _default;
 
 /***/ }),
-/* 22 */
+
+/***/ 23:
 /*!*********************************!*\
   !*** E:/prac/qingM/api/home.js ***!
   \*********************************/
@@ -8123,7 +8365,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 19));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 20));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 
 {
   // 推荐新音乐
@@ -8137,7 +8379,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   } };exports.default = _default;
 
 /***/ }),
-/* 23 */
+
+/***/ 24:
 /*!**************************************!*\
   !*** E:/prac/qingM/api/recommend.js ***!
   \**************************************/
@@ -8145,7 +8388,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 19));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 20));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 
 {
   // 每日推荐歌单
@@ -8159,7 +8402,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   } };exports.default = _default;
 
 /***/ }),
-/* 24 */
+
+/***/ 25:
 /*!*********************************!*\
   !*** E:/prac/qingM/api/song.js ***!
   \*********************************/
@@ -8167,7 +8411,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 19));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 20));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 
 {
   // 音乐url
@@ -8175,9 +8419,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     return _utils.default.post('/song/url', data);
   },
 
-  // 音乐url
+  // 歌词
   getlyric: function getlyric(data) {
     return _utils.default.post('/lyric', data);
+  },
+
+  // 歌曲评论
+  getComment: function getComment(data) {
+    return _utils.default.post('/comment/music', data);
   },
 
   // 歌单分类
@@ -8253,10 +8502,66 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   // 相似歌手
   singerLiked: function singerLiked(data) {
     return _utils.default.get('/simi/artist', data);
+  },
+
+  // 默认搜索关键词
+  searchDefault: function searchDefault(data) {
+    return _utils.default.get('/search/default', data);
+  },
+
+  // 热搜列表（简略）
+  searchHot: function searchHot(data) {
+    return _utils.default.get('/search/hot', data);
+  },
+
+  // 热搜列表（详细）
+  searchHotDetail: function searchHotDetail(data) {
+    return _utils.default.get('/search/hot/detail', data);
+  },
+
+  // 搜索建议
+  searchSuggest: function searchSuggest(data) {
+    return _utils.default.get('/search/suggest', data);
+  },
+
+  // 搜索多重匹配
+  searchMul: function searchMul(data) {
+    return _utils.default.get('/search/multimatch', data);
+  },
+
+  // 专辑内容
+  albumDetail: function albumDetail(data) {
+    return _utils.default.get('/album', data);
+  },
+
+  // 专辑动态信息（如是否收藏,收藏数,评论数,分享数）
+  albumNum: function albumNum(data) {
+    return _utils.default.get('/album/detail/dynamic', data);
+  },
+
+  // 喜欢歌曲
+  likeSong: function likeSong(data) {
+    return _utils.default.get('/like', data);
+  },
+
+  // 对歌单添加或删除歌曲
+  addSong: function addSong(data) {
+    return _utils.default.get('/playlist/tracks', data);
+  },
+
+  // 相似歌曲
+  alikeSong: function alikeSong(data) {
+    return _utils.default.get('/simi/song', data);
+  },
+
+  // 歌曲详情
+  songDetail: function songDetail(data) {
+    return _utils.default.get('/song/detail', data);
   } };exports.default = _default;
 
 /***/ }),
-/* 25 */
+
+/***/ 26:
 /*!*********************************!*\
   !*** E:/prac/qingM/api/user.js ***!
   \*********************************/
@@ -8264,7 +8569,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 19));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 20));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 
 {
   // 用户详情
@@ -8390,10 +8695,16 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   //已收藏专辑
   collecAlbumsList: function collecAlbumsList(data) {
     return _utils.default.post('/album/sublist', data);
+  },
+
+  //已收藏音乐
+  collecSong: function collecSong(data) {
+    return _utils.default.post('/likelist', data);
   } };exports.default = _default;
 
 /***/ }),
-/* 26 */
+
+/***/ 27:
 /*!**********************************!*\
   !*** E:/prac/qingM/api/video.js ***!
   \**********************************/
@@ -8401,7 +8712,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 19));var _allMV$newMV$official;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default = (_allMV$newMV$official = {
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 20));var _allMV$newMV$official;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default = (_allMV$newMV$official = {
 
 
   // 全部MV
@@ -8427,11 +8738,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   // 推荐新音乐
   recommendNewSongs: function recommendNewSongs(data) {
     return _utils.default.post('/personalized/newsong', data);
-  },
-
-  // 推荐电台
-  recommendDj: function recommendDj(data) {
-    return _utils.default.post('/personalized/djprogram', data);
   },
 
   // MV排行
@@ -8509,6 +8815,77 @@ data) {
   return _utils.default.post('/toplist/detail', data);
 }), _allMV$newMV$official);exports.default = _default;
 
+/***/ }),
+
+/***/ 3:
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 398:
+/*!*******************************!*\
+  !*** E:/prac/qingM/api/dj.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = _interopRequireDefault(__webpack_require__(/*! @/utils */ 20));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+
+{
+  // 推荐电台
+  recommendDj: function recommendDj(data) {
+    return _utils.default.post('/personalized/djprogram', data);
+  },
+
+  // 电台节目
+  djProgram: function djProgram(data) {
+    return _utils.default.post('/dj/program', data);
+  },
+
+  // 电台节目详情
+  djProgramDetail: function djProgramDetail(data) {
+    return _utils.default.post('/dj/program/detail', data);
+  } };exports.default = _default;
+
+/***/ }),
+
+/***/ 4:
+/*!********************************!*\
+  !*** E:/prac/qingM/pages.json ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
 /***/ })
-]]);
+
+}]);
 //# sourceMappingURL=../../.sourcemap/mp-weixin/common/vendor.js.map

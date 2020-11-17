@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<video :src="data.url" v-if="data && data.url"></video>
+		<video :src="url" v-if="url"></video>
 		<view class="novideo" v-else>{{data && data.msg || '暂无播放源'}}</view>
 		<view class="mv">
 			<mv-list v-for="(item,index) in mvList" :key="index" :play="playIndex == index ? true : false" :picUrl="item.picUrl || item.cover || item.coverUrl || item.imgurl" :name="item.name || item.title" :duration="item.duration" @goVideo="goVideo(item,index)"></mv-list>
@@ -20,7 +20,8 @@ export default {
 			},
 			mvList: [],
 			playIndex: 0,
-			type: ''
+			type: '',
+			url: ''
 		}
 	},
 	components: {
@@ -33,6 +34,7 @@ export default {
 					id: id || this.id
 				}).then(res => {
 					this.data = res.data
+					this.url = res.data.url
 				})
 			}else{
 				api.videoUrl({
@@ -40,6 +42,7 @@ export default {
 				}).then(res => {
 					console.log(res)
 					this.data = res.urls[0]
+					this.url = res.urls[0].url
 				})
 			}
 		},

@@ -98,8 +98,10 @@ export default {
 			this.type = type == 'type' ? item : this.type
 			this.order = type == 'order' ? item : this.order
 			if(this.navIndex == 0){
+				this.allList = []
 				this.getAll()
 			}else{
+				this.newList = []
 				this.getNew()
 			}
 		},

@@ -4,7 +4,7 @@
 			<image class="cover-img" :src="picUrl" mode="aspectFill"></image>
 			<view class="time-bg">
 				<image class="play" src="/static/images/play-2.svg" mode="widthFix"></image>
-				<view class="duration">{{duration}}</view>
+				<view class="duration">{{$utils.getDura(duration)}}</view>
 			</view>
 		</view>
 		<view class="recomlist-text" :class="{'recomlist-text1': play}">{{name}}</view>
@@ -30,11 +30,11 @@ export default {
 		},
 	},
 	created() {
-		if(String(this.duration).indexOf(':') != -1 ) return
-		var minute = parseInt(this.duration/1000/60)
-		var second = parseInt(this.duration/1000%60)
-		second = this.getTime(second)
-		this.duration = minute+':'+second
+		// if(String(this.duration).indexOf(':') != -1 ) return
+		// var minute = parseInt(this.duration/1000/60)
+		// var second = parseInt(this.duration/1000%60)
+		// second = this.getTime(second)
+		// this.duration = minute+':'+second
 	}
 }
 </script>

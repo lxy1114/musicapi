@@ -4,6 +4,9 @@
 			<swiper-item class="playswiper">
 				<image class="banner" :src="data.picUrl || data.album &&  data.album.picUrl || data.al && data.al.picUrl || data.song && data.song.al.picUrl"></image>
 				<view class="title">{{data.album && data.album.name || data.name || data.song && data.song.name}}</view>
+				<view class="btn">
+					<view class="btn-text" @click="goComment">评论</view>
+				</view>
 				<view class="playbox">
 					<audio-box :data="data" :lyricTime="lyricTime" @playPrev="playPrev" @playNext="playNext" @getCurrent="getCurrent" @onPlay="onPlay"></audio-box>
 				</view>
@@ -57,6 +60,13 @@ export default {
 			this.top = index*30
 			uni.pageScrollTo({
 				scrollTop: index*30
+			})
+		},
+		goComment() {
+			var id = this.data.id || this.data.song.id
+			uni.setStorageSync('commentSinger',this.data)
+			uni.navigateTo({
+				url: '/pages/comment/comment?id='+id
 			})
 		},
 		setLyric(index) {
@@ -190,9 +200,18 @@ export default {
 	text-align: center;
 	color: #FFFFFF;
 }
+.btn{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 690rpx;
+	margin: 32% auto 0rpx;
+	font-size: 28rpx;
+	color: #FFFFFF;
+}
 .playbox{
 	width: 690upx;
-	margin: 45% auto 0upx;
+	margin: 30rpx auto 0upx;
 }
 .lyric{
 	color: #FFFFFF;

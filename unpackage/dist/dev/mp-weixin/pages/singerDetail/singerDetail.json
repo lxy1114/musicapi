@@ -2,7 +2,8 @@
   "usingComponents": {
     "line-nav": "/components/lineNav",
     "song-list": "/components/list/songList",
-    "mv-list": "/components/mvList",
-    "albums-box": "/components/albums"
+    "mv-block": "/components/mvBlock",
+    "albums-box": "/components/albums",
+    "song-popup": "/components/popup/song"
   }
 }

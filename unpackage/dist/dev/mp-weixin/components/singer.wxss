@@ -39,7 +39,8 @@
 .singer-avatar.data-v-59256677 {
   width: 70rpx;
   height: 70rpx;
-  border-radius: 100%;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
   margin-right: 20rpx;
 }
 .singer .text.data-v-59256677 {
@@ -52,11 +53,16 @@
   width: 150rpx;
   height: 40rpx;
   line-height: 40rpx;
-  border-radius: 50rpx;
+  -webkit-border-radius: 50rpx;
+          border-radius: 50rpx;
   color: #d4237a;
   text-align: center;
   border: 2rpx solid #d4237a;
   position: absolute;
   right: 0rpx;
+}
+.singer-but.singer-but1.data-v-59256677 {
+  color: #999999;
+  border-color: #999999;
 }
 

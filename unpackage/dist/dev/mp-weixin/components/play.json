@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "audio-box": "/components/audio/audio"
+    "circle-progress": "/components/circle"
   }
 }

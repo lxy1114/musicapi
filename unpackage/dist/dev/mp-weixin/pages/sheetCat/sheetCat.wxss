@@ -56,10 +56,14 @@
   height: 50rpx;
   line-height: 50rpx;
   border: 2rpx solid #EEEEEE;
-  border-radius: 60rpx;
+  -webkit-border-radius: 60rpx;
+          border-radius: 60rpx;
   margin-bottom: 20rpx;
   margin-right: 20rpx;
   font-size: 24rpx;
   text-align: center;
+}
+.list.data-v-1f342c66:nth-last-child(1) {
+  border-style: none;
 }
 

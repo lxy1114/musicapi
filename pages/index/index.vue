@@ -45,8 +45,7 @@ export default {
 			newSongList: [],
 			bannerList: [],
 			navList: [{icon: 'recommend',text: '每日推荐',url: 'recommend'},{icon: 'sheet',text: '歌单',url: 'songSheet'},
-						{icon: 'singer',text: '歌手',url: 'singer'},{icon: 'mv',text: 'MV'},
-						{icon: 'radio',text: '电台'}],
+						{icon: 'singer',text: '歌手',url: 'singer'},{icon: 'mv',text: 'MV',url: 'mv'}],
 			recommendList: [],
 			mvList: []
 		}
@@ -133,13 +132,13 @@ export default {
 	margin-top: 30upx;
 	&-list{
 		display: inline-block;
-		width: 20%;
+		width: 25%;
 		font-size: 24upx;
 		color: #666666;
 		text-align: center;
 		&-icon{
-			width: 40upx;
-			height: 40upx;
+			width: 50upx;
+			height: 50upx;
 		}
 	}
 }

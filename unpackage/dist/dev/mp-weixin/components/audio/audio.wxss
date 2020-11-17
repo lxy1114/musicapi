@@ -66,7 +66,7 @@
 .num.data-v-0068901c {
   font-size: 24rpx;
   color: #FFFFFF;
-  margin-left: 30rpx;
+  margin-top: 10rpx;
 }
 .but.data-v-0068901c {
   display: -webkit-box;

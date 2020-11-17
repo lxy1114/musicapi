@@ -10,9 +10,19 @@
 				<view class="date">{{date}}</view>
 			</view>
 			<view class="contain">
-				<song-list :list="songList" :picUrl="item.album.picUrl" :title="item.name" :name="item.album.artists" :index="index" v-for="(item,index) in songList" :key="index"></song-list>
+				<song-list 
+					:list="songList" 
+					:picUrl="item.album.picUrl" 
+					:title="item.name" 
+					:name="item.album.artists" 
+					:index="index" 
+					v-for="(item,index) in songList" 
+					:key="index"
+					@getDetail="getDetail(item)">
+				</song-list>
 			</view>
 		</view>
+		<song-popup :data="popupData" v-if="popupShow" @getHide="popupShow = false"></song-popup>
 	</view>
 </template>
 
@@ -20,6 +30,7 @@
 import api from '@/api'
 import picCart from '@/components/cart/picCart.vue'
 import songList from '@/components/list/songList.vue'
+import songPopup from '@/components/popup/song.vue'
 export default {
 	data() {
 		return {
@@ -28,12 +39,15 @@ export default {
 			navIndex: 1,
 			recommendList: [],
 			songList: [],
-			statusBarHeight: 0
+			statusBarHeight: 0,
+			popupData: {},
+			popupShow: false
 		}
 	},
 	components: {
 		picCart,
-		songList
+		songList,
+		songPopup
 	},
 	methods: {
 		getReSongs() {
@@ -48,6 +62,10 @@ export default {
 				url: '/pages/play/play?all=true'
 			})
 		},
+		getDetail(item) {
+			this.popupData = item
+			this.popupShow = true
+		},
 	},
 	onPageScroll(e) {
 		this.fixed = e.scrollTop >= 85
@@ -56,15 +74,14 @@ export default {
 		this.statusBarHeight = uni.getSystemInfoSync().windowTop*2
 		var year = new Date().getFullYear()
 		var month = new Date().getMonth()+1
-		var day = new Date().getDay()
+		var day = new Date().getDate()
 		this.date = year+'年'+month+'月'+day+'日'
 		if(this.date == uni.getStorageSync('date') && uni.getStorageSync('reSongList')){
 			this.songList = JSON.parse(uni.getStorageSync('reSongList'))
 		}else{
 			this.getReSongs()
 		}
-		console.log(this.songList)
-		uni.setStorageSync('date',this.date)	
+		uni.setStorageSync('date',this.date)
 	}
 }
 </script>

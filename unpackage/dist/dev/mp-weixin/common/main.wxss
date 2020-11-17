@@ -52,7 +52,8 @@ uni-button:after{
 	display: block;
 	width: 6rpx;
 	height: 100%;
-	border-radius: 10rpx;
+	-webkit-border-radius: 10rpx;
+	        border-radius: 10rpx;
 	background: #617C77;
 	position: absolute;
 	top: 0rpx;

@@ -7,6 +7,7 @@ import recommend from './recommend'
 import song from './song'
 import user from './user'
 import video from './video'
+import dj from './dj'
 
 /**
  * 将业务所有接口统一起来便于维护
@@ -73,5 +74,6 @@ export default {
 	 ...recommend,
 	 ...song,
 	 ...user,
-	 ...video
+	 ...video,
+	 ...dj
 }

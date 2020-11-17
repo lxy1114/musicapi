@@ -11,6 +11,11 @@ export default {
 		return http.post('/lyric', data)
 	},
 	
+	// 歌曲评论
+	getComment(data) {
+		return http.post('/comment/music', data)
+	},
+	
 	// 歌单分类
 	catList(data) {
 		return http.post('/playlist/catlist', data)

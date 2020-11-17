@@ -4,10 +4,9 @@
 			<view class="top-nav" :class="{'top-nav1': navIndex == index}" v-for="(item,index) in tags" :key="index" @click="navTab(item,index)">
 				{{item.name}}
 			</view>
-			<navigator class="top-more" url="/pages/sheetCat/sheetCat">
-				<!-- <view class="iconfont icon-gengduo1"></view> -->
+			<!-- <navigator class="top-more" url="/pages/sheetCat/sheetCat">
 				<image class="top-more-icon" src="/static/images/more.svg" mode="widthFix"></image>
-			</navigator>
+			</navigator> -->
 		</view>
 		<view class="con">
 			<pic-cart :list="list"></pic-cart>
@@ -34,7 +33,8 @@ export default {
 	methods: {
 		getHotCat() {
 			api.hotcat().then(res => {
-				this.tags = this.tags.concat(res.tags)		
+				this.tags = this.tags.concat(res.tags)
+				this.tags.push({name: '更多'})
 			})
 		},
 		getRecommend() {
@@ -50,7 +50,12 @@ export default {
 			})
 		},
 		navTab(item,index) {
-			this.navIndex = index
+			if(item.name == '更多'){
+				return uni.navigateTo({
+					url: '/pages/sheetCat/sheetCat'
+				})
+			}
+			this.navIndex = index			
 			this.list = []
 			if(index == 0){
 				this.getRecommend()
@@ -72,7 +77,6 @@ export default {
 	border-bottom: 2upx solid #EEEEEE;
 	white-space: nowrap;
 	overflow-x: scroll;
-	padding-right: 60upx;
 	&-nav{
 		display: inline-block;
 		padding: 0upx 30upx;

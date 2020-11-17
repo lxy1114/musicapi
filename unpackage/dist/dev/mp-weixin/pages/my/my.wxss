@@ -26,7 +26,8 @@
 /* 文章场景相关 */
 .top.data-v-0be17cc6 {
   width: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -45,7 +46,8 @@
 .top-info .avatar.data-v-0be17cc6 {
   width: 70rpx;
   height: 70rpx;
-  border-radius: 100%;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
   margin-right: 20rpx;
 }
 .gender.data-v-0be17cc6 {
@@ -73,7 +75,8 @@
   background: #FFFFFF;
   position: relative;
   margin-top: -20rpx;
-  border-radius: 16rpx 16rpx 0rpx 0rpx;
+  -webkit-border-radius: 16rpx 16rpx 0rpx 0rpx;
+          border-radius: 16rpx 16rpx 0rpx 0rpx;
   padding: 30rpx;
 }
 .block.data-v-0be17cc6 {
@@ -113,9 +116,11 @@
           justify-content: center;
   width: 100%;
   height: 80rpx;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border: 2rpx solid #666666;
-  border-radius: 16rpx;
+  -webkit-border-radius: 16rpx;
+          border-radius: 16rpx;
   font-size: 34rpx;
   color: #666666;
   margin-top: 30rpx;
@@ -127,10 +132,12 @@
 }
 .addbox.data-v-0be17cc6 {
   width: 660rpx;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 40rpx 0rpx;
   background: #FFFFFF;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   position: fixed;
   top: 40%;
   left: 45rpx;
@@ -141,8 +148,10 @@
   height: 60rpx;
   text-align: left;
   border: 2rpx solid #666666;
-  border-radius: 8rpx;
-  box-sizing: border-box;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 10rpx 20rpx;
   margin: 0rpx auto;
 }
@@ -159,7 +168,8 @@
   display: inline-block;
   width: 20rpx;
   height: 20rpx;
-  border-radius: 100%;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
   border: 2rpx solid #666666;
 }
 .addbox-check.addbox-check1.data-v-0be17cc6 {
@@ -184,7 +194,8 @@
 .addbox .addbox-but view.data-v-0be17cc6 {
   padding: 10rpx 60rpx;
   border: 2rpx solid #666666;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
   font-size: 28rpx;
   color: #666666;
 }
@@ -193,9 +204,5 @@
   border-color: #4cd964;
   color: #FFFFFF;
   margin-left: 50rpx;
-}
-.myrecord.data-v-0be17cc6 {
-  white-space: nowrap;
-  overflow-x: scroll;
 }
 

@@ -40,7 +40,8 @@
 .song-banner.data-v-37e800ea {
   width: 80rpx;
   height: 80rpx;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
 }
 .info.data-v-37e800ea {
   width: 230rpx;

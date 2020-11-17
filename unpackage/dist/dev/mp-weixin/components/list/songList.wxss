@@ -37,13 +37,19 @@
 .songlist-img.data-v-29ec9679 {
   width: 64rpx;
   height: 64rpx;
-  border-radius: 8rpx;
+  -webkit-border-radius: 8rpx;
+          border-radius: 8rpx;
 }
 .info.data-v-29ec9679 {
   width: 500rpx;
   font-size: 28rpx;
   color: #333333;
   margin-left: 20rpx;
+}
+.info-title.data-v-29ec9679 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .info-text.data-v-29ec9679 {
   display: inline-block;

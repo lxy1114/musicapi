@@ -3,7 +3,14 @@
 		<view class="nav" :class="{'nav1': navIndex == index}" v-for="(item,index) in list" :key="index" v-if="!search" @click="navTab(item)">{{item.title}}</view>
 		<input class="search" v-if="search" @confirm="getSearch" v-model="keywords"/>
 		<!-- <view class="iconfont icon-sousuo" @click="getInput"></view> -->
-		<image class="search-icon" src="../static/images/search.svg" mode="widthFix" @click="getInput"></image>
+		<image 
+			class="search-icon" 
+			src="../static/images/search.svg" 
+			mode="widthFix" 
+			@click="search = true" 
+			v-if="!search">
+		</image>
+		<view class="cancel" v-if="search" @click="search = false">取消</view>
 	</view>
 </template>
 
@@ -26,13 +33,6 @@ export default {
 			uni.navigateTo({
 				url: '/pages/'+item.url+'/'+item.url
 			})
-		},
-		getInput() {
-			if(!this.search){
-				this.search = true
-			}else{
-				this.getSearch()
-			}
 		},
 		getSearch() {
 			api.search({
@@ -73,9 +73,9 @@ export default {
 	color: #FFFFFF;
 }
 .search{
-	width: 80%;
-	height: 60%;
-	border: 2upx solid #999999;
+	width: 83%;
+	height: 85%;
+	border: 2upx solid #9ECBC9;
 	border-radius: 60upx;
 	margin-left: 30upx;
 	box-sizing: border-box;
@@ -86,5 +86,9 @@ export default {
 	height: 40upx;
 	position: absolute;
 	right: 30upx;
+}
+.cancel{
+	font-size: 28rpx;
+	margin-left: 30rpx;
 }
 </style>
