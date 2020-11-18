@@ -4,7 +4,12 @@
 		<view class="list" v-for="(item,index) in catList" :key="index">
 			<view class="list-title">{{item}}</view>
 			<view class="list-con">
-				<navigator class="label" v-for="(items,index1) in sub" :key="index1" v-if="items.category == index" :url="'/pages/sheet/sheet?name='+items.name">
+				<navigator 
+					class="label" 
+					v-for="(items,index1) in sub" 
+					:key="index1" 
+					v-if="items.category == index" 
+					:url="'/pages/sheet/sheet?name='+items.name">
 					{{items.name}}
 				</navigator>
 			</view>

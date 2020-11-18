@@ -1,11 +1,19 @@
 <template>
 	<view class="container">
 		<view class="top">
-			<input class="top-input" :placeholder="defaultWords" placeholder-class="placeholder" @confirm="getSearch" v-model="keywords"/>
+			<input 
+				class="top-input" 
+				:placeholder="defaultWords" 
+				placeholder-class="placeholder" 
+				@confirm="getSearch" 
+				v-model="keywords"/>
 			<view class="top-but" @click="keywords = ''">取消</view>
 		</view>
 		<view class="con">
-			<view class="hotList" v-for="(item,index) in hotList" :key="index" @click="getSearch(item.searchWord)">
+			<view class="hotList" 
+				v-for="(item,index) in hotList" 
+				:key="index" 
+				@click="getSearch(item.searchWord)">
 				<image class="hotList-icon" :src="item.iconUrl" mode="widthFix"></image>
 				<view class="info">
 					<view class="info-title">{{item.searchWord}}</view>

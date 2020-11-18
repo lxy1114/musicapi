@@ -17,9 +17,35 @@
 				<line-nav :list="navList" @navTab="navTab"></line-nav>
 			</view>
 			<view class="con">
-				<song-list v-for="(item,index) in detail.hotSongs" :key="index" :list="detail.hotSongs" :index="index" :picUrl="detail.artist.picUrl" :title="item.name" :name="[{name: detail.artist.name}]" v-if="navIndex == 0" @getDetail="getDetail(item)"></song-list>
-				<mv-block v-for="(item,index) in mvList" :key="index" :data="item" :picUrl="item.imgurl" :duration="item.duration" :name="item.name" v-if="navIndex == 1" @goVideo="goVideo(item,index)"></mv-block>
-				<albums-box v-for="(item,index) in albumsList" :key="index" :picUrl="item.picUrl" :name="item.name" @goAlbums="goAlbums(item,index)" v-if="navIndex == 2"></albums-box>
+				<song-list 
+					v-for="(item,index) in detail.hotSongs" 
+					:key="index" 
+					:list="detail.hotSongs" 
+					:index="index" 
+					:picUrl="detail.artist.picUrl" 
+					:title="item.name" 
+					:name="[{name: detail.artist.name}]" 
+					v-if="navIndex == 0" 
+					@getDetail="getDetail(item)">
+				</song-list>
+				<mv-block 
+					v-for="(item,index) in mvList" 
+					:key="index" 
+					:data="item" 
+					:picUrl="item.imgurl" 
+					:duration="item.duration" 
+					:name="item.name" 
+					v-if="navIndex == 1" 
+					@goVideo="goVideo(item,index)">
+				</mv-block>
+				<albums-box 
+					v-for="(item,index) in albumsList" 
+					:key="index" 
+					:picUrl="item.picUrl" 
+					:name="item.name" 
+					@goAlbums="goAlbums(item,index)" 
+					v-if="navIndex == 2">
+				</albums-box>
 				<block v-if="navIndex == 3">
 					<view class="desc">{{ins.briefDesc}}</view>
 					<block v-for="(item,index) in ins.introduction">

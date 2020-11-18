@@ -2,7 +2,16 @@
 	<view class="container">
 		<line-nav :list="navList" @navTab="navTab"></line-nav>
 		<view class="con">
-			<user-box v-for="(item,index) in list" :key="index" :avatar="item.avatarUrl" :name="item.nickname" :gender="item.gender" :followed="item.followed" @getFollow="getFollow(item,index)" @goUser="goUser(item)"></user-box>
+			<user-box 
+				v-for="(item,index) in list" 
+				:key="index" 
+				:avatar="item.avatarUrl" 
+				:name="item.nickname" 
+				:gender="item.gender" 
+				:followed="item.followed" 
+				@getFollow="getFollow(item,index)" 
+				@goUser="goUser(item)">
+			</user-box>
 		</view>
 	</view>
 </template>

@@ -1,7 +1,16 @@
 <template>
 	<view class="container">
 		<view class="con">
-			<song-list v-for="(item,index) in list" :key="index" :list="list" :picUrl="item.album.picUrl" :title="item.name" :name="item.artists" :index="index" @getDetail="getDetail(item)"></song-list>
+			<song-list 
+				v-for="(item,index) in list" 
+				:key="index" 
+				:list="list" 
+				:picUrl="item.album.picUrl" 
+				:title="item.name" 
+				:name="item.artists" 
+				:index="index" 
+				@getDetail="getDetail(item)">
+			</song-list>
 		</view>
 		<view class="mask" v-if="popupShow" @click="popupShow = false"></view>
 		<song-popup :data="popupData" v-if="popupShow" @getHide="getHide"></song-popup>

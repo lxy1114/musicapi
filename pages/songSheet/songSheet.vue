@@ -1,7 +1,12 @@
 <template>
 	<view class="container">
 		<view class="top">
-			<view class="top-nav" :class="{'top-nav1': navIndex == index}" v-for="(item,index) in tags" :key="index" @click="navTab(item,index)">
+			<view 
+				class="top-nav" 
+				:class="{'top-nav1': navIndex == index}" 
+				v-for="(item,index) in tags" 
+				:key="index" 
+				@click="navTab(item,index)">
 				{{item.name}}
 			</view>
 			<!-- <navigator class="top-more" url="/pages/sheetCat/sheetCat">

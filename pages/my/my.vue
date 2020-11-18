@@ -2,9 +2,15 @@
 	<view class="container">
 		<view class="top" :style="'background-image: url('+loginInfo.profile.backgroundUrl+')'">
 			<view class="top-info">
-				<image class="avatar" :src="loginInfo.profile.avatarUrl || '/static/images/avatar.svg'" @click="login"></image>
+				<image class="avatar" 
+					:src="loginInfo.profile.avatarUrl || '/static/images/avatar.svg'" 
+					@click="login">
+				</image>
 				<view class="nickname">{{loginInfo.profile.nickname || '未登录'}}</view>
-				<image class="gender" :src="loginInfo.profile.gender == 1 ? '/static/images/boy.svg' : '/static/images/girl.svg'" mode="widthFix"></image>
+				<image class="gender" 
+					:src="loginInfo.profile.gender == 1 ? '/static/images/boy.svg' : '/static/images/girl.svg'" 
+					mode="widthFix">
+				</image>
 			</view>
 			<view class="topbut" v-if="loginInfo.profile">
 				<navigator class="topbut-list" v-for="(item,index) in topNav" :key="index" :url="'/pages/'+item.url+'/'+item.url">
@@ -19,7 +25,16 @@
 					<view class="title-text" :class="{'title-text1': sheetNav == 0}" @click="sheetNav = 0">我的歌单</view>
 					<view class="title-text" :class="{'title-text1': sheetNav == 1}" @click="sheetNav = 1">收藏歌单</view>
 				</view>
-				<my-sheet v-for="(item,index) in sheetList" :key="index" :banner="item.coverImgUrl" :name="item.name" :ordered="item.ordered" v-if="sheetNav == 0 && !item.ordered || sheetNav == 1 && item.ordered" @click="getDelete(item)" @goList="goList(item)"></my-sheet>
+				<my-sheet 
+					v-for="(item,index) in sheetList" 
+					:key="index" 
+					:banner="item.coverImgUrl" 
+					:name="item.name" 
+					:ordered="item.ordered" 
+					v-if="sheetNav == 0 && !item.ordered || sheetNav == 1 && item.ordered" 
+					@click="getDelete(item)" 
+					@goList="goList(item)">
+				</my-sheet>
 				<view class="add" @click="add = true" v-if="sheetNav == 0">
 					<image class="add-icon" src="/static/images/add.svg" mode="widthFix"></image>
 					<view class="add-text">新建歌单</view>
@@ -31,7 +46,14 @@
 					<navigator class="title-more" url="/pages/recordList/recordList">更多</navigator>
 				</view>
 				<view class="myrecord">
-					<my-record v-for="(item,index) in recordList" :key="index" :cover="item.song.al.picUrl" :name="item.song.name" @goPlay="goPlay(item,index)" v-if="index < 6"></my-record>
+					<my-record 
+						v-for="(item,index) in recordList" 
+						:key="index" 
+						:cover="item.song.al.picUrl" 
+						:name="item.song.name" 
+						@goPlay="goPlay(item,index)" 
+						v-if="index < 6">
+					</my-record>
 				</view>
 			</view>
 		</view>

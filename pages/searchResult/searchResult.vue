@@ -2,13 +2,76 @@
 	<view class="container">
 		<line-nav :list="navList" @navTab="navTab"></line-nav>
 		<view class="con">
-			<song-list :list="list" :picUrl="item.album.artist.img1v1Url" :title="item.name" :name="item.artists" :index="index" v-for="(item,index) in list" :key="index" v-if="type == 1" @getDetail="getDetail(item)"></song-list>			
-			<albums-box v-for="(item,index) in list" :key="index" :picUrl="item.picUrl" :name="item.name" v-if="type == 10" @goAlbums="goAlbums(item,index)"></albums-box>
-			<singer-box v-for="(item,index) in list" :key="index" :avatar="item.picUrl" :name="item.name" :followed="item.followed" v-if="type == 100" @goSinger="goSinger(item)" @getFollow="getSingerFollow(item)"></singer-box>
+			<song-list 
+				:list="list" 
+				:picUrl="item.album.artist.img1v1Url" 
+				:title="item.name" 
+				:name="item.artists" 
+				:index="index" 
+				v-for="(item,index) in list" 
+				:key="index" 
+				v-if="type == 1" 
+				@getDetail="getDetail(item)">
+			</song-list>			
+			<albums-box 
+				v-for="(item,index) in list" 
+				:key="index" 
+				:picUrl="item.picUrl" 
+				:name="item.name" 
+				v-if="type == 10" 
+				@goAlbums="goAlbums(item,index)">
+			</albums-box>
+			<singer-box 
+				v-for="(item,index) in list" 
+				:key="index" 
+				:avatar="item.picUrl" 
+				:name="item.name" 
+				:followed="item.followed" 
+				v-if="type == 100" 
+				@goSinger="goSinger(item)" 
+				@getFollow="getSingerFollow(item)">
+			</singer-box>
 			<pic-cart :list="list" v-if="type == 1000"></pic-cart>
-			<user-box v-for="(item,index) in list" :key="index" :avatar="item.avatarUrl" :name="item.nickname" :gender="item.gender" :followed="item.followed" :id="item.userId" v-if="type == 1002" @goUser="goUser(item)" @getFollow="getFollow(item)"></user-box>
-			<video-list :list="list" v-for="(item,index) in list" :key="index" :cover="item.cover" :duration="item.duration" :title="item.name" :text="item.briefDesc" :name="item.artistName" :id="item.id" :index="index" v-if="type == 1004" @goPlay="goPlay(item,index)"></video-list>
-			<video-list :list="list" v-for="(item,index) in list" :key="index" :cover="item.coverUrl" :duration="item.duration" :title="item.title" :label="item.creator" type="video" :id="item.id" :index="index" v-if="type == 1014" @goPlay="goPlay(item,index)"></video-list>
+			<user-box 
+				v-for="(item,index) in list" 
+				:key="index" 
+				:avatar="item.avatarUrl" 
+				:name="item.nickname" 
+				:gender="item.gender" 
+				:followed="item.followed" 
+				:id="item.userId" 
+				v-if="type == 1002" 
+				@goUser="goUser(item)" 
+				@getFollow="getFollow(item)">
+			</user-box>
+			<video-list 
+				:list="list" 
+				v-for="(item,index) in list" 
+				:key="index" 
+				:cover="item.cover" 
+				:duration="item.duration" 
+				:title="item.name" 
+				:text="item.briefDesc" 
+				:name="item.artistName" 
+				:id="item.id" 
+				:index="index" 
+				v-if="type == 1004" 
+				@goPlay="goPlay(item,index)">
+			</video-list>
+			<video-list 
+				:list="list" 
+				v-for="(item,index) in list" 
+				:key="index" 
+				:cover="item.coverUrl" 
+				:duration="item.duration" 
+				:title="item.title" 
+				:label="item.creator" 
+				type="video" 
+				:id="item.id" 
+				:index="index" 
+				v-if="type == 1014" 
+				@goPlay="goPlay(item,index)">
+			</video-list>
 		</view>
 		<view class="mask" @click="popupShow = false" v-if="popupShow"></view>
 		<song-popup :data="popupData" v-if="popupShow"></song-popup>

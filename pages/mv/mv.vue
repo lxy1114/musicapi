@@ -3,21 +3,71 @@
 		<line-nav :list="navList" @navTab="navTab"></line-nav>
 		<view class="menu" v-if="navIndex == 0 || navIndex == 1">
 			<view class="menu-title">地区</view>
-			<view class="menu-text" :class="{'menu-text1': area == item }" v-for="(item,index) in areaList" :key="index" @click="getMenu(item,'area')">{{item}}</view>
+			<view class="menu-text" 
+				:class="{'menu-text1': area == item }" 
+				v-for="(item,index) in areaList" 
+				:key="index" 
+				@click="getMenu(item,'area')">
+				{{item}}
+			</view>
 		</view>
 		<view class="menu" v-if="navIndex == 0">
 			<view class="menu-title">类型</view>
-			<view class="menu-text" :class="{'menu-text1': type == item }" v-for="(item,index) in typeList" :key="index" @click="getMenu(item,'area')">{{item}}</view>
+			<view class="menu-text" 
+				:class="{'menu-text1': type == item }" 
+				v-for="(item,index) in typeList" 
+				:key="index" 
+				@click="getMenu(item,'area')">
+				{{item}}
+			</view>
 		</view>
 		<view class="menu" v-if="navIndex == 0">
 			<view class="menu-title">排序</view>
-			<view class="menu-text" :class="{'menu-text1': order == item }" v-for="(item,index) in orderList" :key="index" @click="getMenu(item,'area')">{{item}}</view>
+			<view class="menu-text" 
+				:class="{'menu-text1': order == item }" 
+				v-for="(item,index) in orderList" 
+				:key="index" 
+				@click="getMenu(item,'area')">
+				{{item}}
+			</view>
 		</view>
 		<view class="con">
-			<mv-block v-for="(item,index) in allList" :key="index" :picUrl="item.cover" :name="item.name" :duration="item.duration" @goVideo="goVideo(item,index)" v-if="navIndex == 0"></mv-block>
-			<mv-block v-for="(item,index) in newList" :key="index" :picUrl="item.cover" :name="item.name" :duration="item.duration" @goVideo="goVideo(item,index)" v-if="navIndex == 1"></mv-block>
-			<mv-block v-for="(item,index) in recomList" :key="index" :picUrl="item.picUrl" :name="item.name" :duration="item.duration" @goVideo="goVideo(item,index)" v-if="navIndex == 2"></mv-block>
-			<mv-block v-for="(item,index) in offList" :key="index" :picUrl="item.cover" :name="item.name" :duration="item.duration" @goVideo="goVideo(item,index)" v-if="navIndex == 3"></mv-block>
+			<mv-block 
+				v-for="(item,index) in allList" 
+				:key="index" 
+				:picUrl="item.cover" 
+				:name="item.name" 
+				:duration="item.duration" 
+				@goVideo="goVideo(item,index)" 
+				v-if="navIndex == 0">
+			</mv-block>
+			<mv-block 
+				v-for="(item,index) in newList" 
+				:key="index" 
+				:picUrl="item.cover" 
+				:name="item.name" 
+				:duration="item.duration" 
+				@goVideo="goVideo(item,index)" 
+				v-if="navIndex == 1">
+			</mv-block>
+			<mv-block 
+				v-for="(item,index) in recomList" 
+				:key="index" 
+				:picUrl="item.picUrl" 
+				:name="item.name" 
+				:duration="item.duration" 
+				@goVideo="goVideo(item,index)" 
+				v-if="navIndex == 2">
+			</mv-block>
+			<mv-block 
+				v-for="(item,index) in offList" 
+				:key="index" 
+				:picUrl="item.cover" 
+				:name="item.name" 
+				:duration="item.duration" 
+				@goVideo="goVideo(item,index)" 
+				v-if="navIndex == 3">
+			</mv-block>
 		</view>
 	</view>
 </template>

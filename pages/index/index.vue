@@ -3,7 +3,10 @@
 		<top-nav navIndex="1"></top-nav>
 		<view class="swiper">
 			<swiper indicator-dots="true" autoplay>
-				<swiper-item v-for="(item,index) in bannerList" :key="index" @click="goPlay(bannerList,index)">
+				<swiper-item 
+					v-for="(item,index) in bannerList" 
+					:key="index" 
+					@click="goPlay(bannerList,index)">
 					<image :src="item.pic" mode="widthFix"></image>
 				</swiper-item>
 		   </swiper>
@@ -19,15 +22,35 @@
 			<view class="title-but" @click="playAll(newSongList)">播放全部</view>
 		</view>
 		<view class="newSong">
-			<new-song v-for="(item,index) in newSongList" :key="index" :cover="item.picUrl" :title="item.name" :name="item.song.artists" @goPlay="goPlay(newSongList,index)"></new-song>
+			<new-song 
+			v-for="(item,index) in newSongList" 
+			:key="index" 
+			:cover="item.picUrl" 
+			:title="item.name" 
+			:name="item.song.artists" 
+			@goPlay="goPlay(newSongList,index)">
+		</new-song>
 		</view>
 		<view class="title">推荐歌单</view>
 		<view class="recomm">
-			<sheet-box v-for="(item,index) in recommendList" :key="index" :picUrl="item.picUrl" :name="item.name" @goSongList="goSongList(item)"></sheet-box>
+			<sheet-box 
+				v-for="(item,index) in recommendList" 
+				:key="index" 
+				:picUrl="item.picUrl" 
+				:name="item.name" 
+				@goSongList="goSongList(item)">
+			</sheet-box>
 		</view>
 		<view class="title">推荐MV</view>
 		<view class="recomm">
-			<mv-list v-for="(item,index) in mvList" :key="index" :picUrl="item.picUrl" :name="item.name" :duration="item.duration" @goVideo="goVideo(item,index)"></mv-list>
+			<mv-list 
+				v-for="(item,index) in mvList" 
+				:key="index" 
+				:picUrl="item.picUrl" 
+				:name="item.name" 
+				:duration="item.duration" 
+				@goVideo="goVideo(item,index)">
+			</mv-list>
 		</view>
 	</view>
 </template>

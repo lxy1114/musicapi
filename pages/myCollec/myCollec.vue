@@ -2,10 +2,51 @@
 	<view class="container">
 		<line-nav :list="navList" @navTab="navTab"></line-nav>
 		<view class="con">	
-			<song-list :list="songsList" v-for="(item,index) in songsList" :key="index" :picUrl="item.al.picUrl" :title="item.name" :name="item.ar" :index="index" v-if="navIndex == 0" @getDetail="getDetail(item)"></song-list>
-			<albums-box v-for="(item,index) in albumsList" :key="index" :picUrl="item.picUrl" :name="item.name" v-if="navIndex == 3" @goAlbums="goAlbums(item,index)"></albums-box>
-			<singer-box v-for="(item,index) in singerList" :key="index" :avatar="item.picUrl" :name="item.name" :albums="item.albumSize" :mv="item.mvSize" :followed="true" v-if="navIndex == 1" @getFollow="getFollow(item,index)" @goSinger="goSinger(item)"></singer-box>
-			<video-list :list="list" v-for="(item,index) in mvList" :key="index" :cover="item.coverUrl" :duration="item.durationms" :title="item.title" :text="item.briefDesc" :name="item.creator[0].userName" :id="item.vid" :index="index" v-if="navIndex == 2" @goPlay="goPlay(item,index)"></video-list>
+			<song-list 
+				:list="songsList" 
+				v-for="(item,index) in songsList" 
+				:key="index" 
+				:picUrl="item.al.picUrl" 
+				:title="item.name" 
+				:name="item.ar" 
+				:index="index" 
+				v-if="navIndex == 0" 
+				@getDetail="getDetail(item)">
+			</song-list>
+			<albums-box 
+				v-for="(item,index) in albumsList" 
+				:key="index" 
+				:picUrl="item.picUrl" 
+				:name="item.name" 
+				v-if="navIndex == 3" 
+				@goAlbums="goAlbums(item,index)">
+			</albums-box>
+			<singer-box 
+				v-for="(item,index) in singerList" 
+				:key="index" 
+				:avatar="item.picUrl" 
+				:name="item.name" 
+				:albums="item.albumSize" 
+				:mv="item.mvSize" 
+				:followed="true" 
+				v-if="navIndex == 1" 
+				@getFollow="getFollow(item,index)" 
+				@goSinger="goSinger(item)">
+			</singer-box>
+			<video-list 
+				:list="list" 
+				v-for="(item,index) in mvList" 
+				:key="index" 
+				:cover="item.coverUrl" 
+				:duration="item.durationms" 
+				:title="item.title" 
+				:text="item.briefDesc" 
+				:name="item.creator[0].userName" 
+				:id="item.vid" 
+				:index="index" 
+				v-if="navIndex == 2" 
+				@goPlay="goPlay(item,index)">
+			</video-list>
 		</view>
 		<view class="mask" v-if="popupShow" @click="popupShow = false"></view>
 		<song-popup :data="popupData" v-if="popupShow" type="collec" @getHide="getHide"></song-popup>
