@@ -50,11 +50,11 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-bottom: 30upx;
+	margin-bottom: 30rpx;
 }
 .cover{
-	width: 240upx;
-	height: 180upx;
+	width: 240rpx;
+	height: 180rpx;
 	position: relative;
 	&-img{
 		width: 100%;
@@ -66,52 +66,52 @@ export default {
 	align-items: center;
 	justify-content: space-between;
 	width: 90%;
-	height: 40upx;
+	height: 40rpx;
 	position: absolute;
-	bottom: 0upx;
+	bottom: 0rpx;
 	left: 5%;
 	.play{
-		width: 30upx;
-		height: 30upx;
+		width: 30rpx;
+		height: 30rpx;
 	}
 	.duration{
-		font-size: 24upx;
+		font-size: 24rpx;
 		color: #FFFFFF;
 	}
 }
 .info{
-	width: 400upx;
+	width: 400rpx;
 	color: #333333;
 	.title{
-		font-size: 36upx;
-		margin-bottom: 10upx;
+		font-size: 36rpx;
+		margin-bottom: 10rpx;
 	}
 	.title.title1{
-		font-size: 28upx;
+		font-size: 28rpx;
 	}
 	.text{
-		font-size: 28upx;
+		font-size: 28rpx;
 		color: #999999;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
 	.name{
-		font-size: 28upx;
+		font-size: 28rpx;
 		color: #666666;
-		margin-top: 10upx;
+		margin-top: 10rpx;
 	}
 }
 .label{
-	margin-top: 20upx;
+	margin-top: 20rpx;
 	&-text{
 		display: inline-block;
-		padding: 2upx 10upx;
-		border-radius: 8upx;
+		padding: 2rpx 10rpx;
+		border-radius: 8rpx;
 		background: #A5D6D4;
-		font-size: 24upx;
+		font-size: 24rpx;
 		color: #ffffff;
-		margin-right: 20upx;
+		margin-right: 20rpx;
 	}
 }
 </style>

@@ -59,7 +59,7 @@
   -webkit-border-radius: 60rpx;
           border-radius: 60rpx;
   margin-bottom: 20rpx;
-  margin-right: 20rpx;
+  margin-right: 36rpx;
   font-size: 24rpx;
   text-align: center;
 }

@@ -28,15 +28,15 @@ export default {
 
 <style lang="scss" scoped>
 .nav{
-	line-height: 80upx;
-	border-bottom: 2upx solid #EEEEEE;
+	line-height: 80rpx;
+	border-bottom: 2rpx solid #EEEEEE;
 	white-space: nowrap;
 	overflow-x: scroll;
 	&-text{
 		display: inline-block;
-		font-size: 28upx;
+		font-size: 28rpx;
 		color: #333333;
-		padding: 0upx 30upx;
+		padding: 0rpx 30rpx;
 		position: relative;
 	}
 	&-text.nav-text1{
@@ -45,13 +45,13 @@ export default {
 	&-text.nav-text1::after{
 		content: '';
 		display: block;
-		width: 40upx;
-		height: 4upx;
+		width: 40rpx;
+		height: 4rpx;
 		background: $uni-bg-color-system;
 		position: absolute;
-		bottom: 0upx;
+		bottom: 0rpx;
 		left: 50%;
-		margin-left: -20upx;
+		margin-left: -20rpx;
 	}
 }
 </style>

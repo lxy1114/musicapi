@@ -74,51 +74,51 @@ export default {
 	width: 100%;
 	position: relative;
 	background: $color-bg;
-	border-radius: 0upx 0upx 28upx 28upx;
+	border-radius: 0rpx 0rpx 28rpx 28rpx;
 	// background: linear-gradient(left, #B7D9DB, #8CB6B4);
 	.bg{
 		width: 100%;
 		height: 100%;
 		position: absolute;
-		top: 0upx;
-		left: 0upx;
+		top: 0rpx;
+		left: 0rpx;
 	}
 	.introduc{
-		padding: 0upx 30upx 30upx;
-		font-size: 28upx;
+		padding: 0rpx 30rpx 30rpx;
+		font-size: 28rpx;
 		color: #4F6D67;
 	}
 }
 .user{
 	display: flex;
 	align-items: center;
-	height: 180upx;
-	padding: 0upx 30upx;
+	height: 180rpx;
+	padding: 0rpx 30rpx;
 	position: relative;
 	&-avatar{
-		width: 80upx;
-		height: 80upx;
+		width: 80rpx;
+		height: 80rpx;
 		border-radius: 100%;
 	}
 	&-name{
-		font-size: 28upx;
+		font-size: 28rpx;
 		color: #4F6D67;
-		margin-left: 20upx;
+		margin-left: 20rpx;
 	}
 	&-follow{
-		width: 150upx;
-		height: 50upx;
-		line-height: 50upx;
-		border: 2upx solid #A9D6D4;
-		border-radius: 10upx;
-		font-size: 28upx;
+		width: 150rpx;
+		height: 50rpx;
+		line-height: 50rpx;
+		border: 2rpx solid #A9D6D4;
+		border-radius: 10rpx;
+		font-size: 28rpx;
 		color: #45605A;
 		text-align: center;
 		position: absolute;
-		right: 30upx;
+		right: 30rpx;
 	}
 }
 .con{
-	padding: 40upx 30upx 30upx;
+	padding: 40rpx 30rpx 30rpx;
 }
 </style>

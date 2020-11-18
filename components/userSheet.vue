@@ -41,42 +41,42 @@ export default {
 	display: flex;
 	align-items: center;
 	position: relative;
-	font-size: 32upx;
+	font-size: 32rpx;
 	color: #333333;
-	margin-bottom: 30upx;
+	margin-bottom: 30rpx;
 	&-cover{
-		width: 150upx;
-		height: 150upx;
-		border-radius: 12upx;
+		width: 150rpx;
+		height: 150rpx;
+		border-radius: 12rpx;
 	}
 }
 .info{
-	width: 520upx;
-	margin-left: 20upx;
+	width: 520rpx;
+	margin-left: 20rpx;
 	&-title{
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
 	&-text{
-		font-size: 28upx;
+		font-size: 28rpx;
 		color: #666666;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		margin-top: 10upx;
+		margin-top: 10rpx;
 	}
 }
 .label{
-	margin-top: 10upx;
+	margin-top: 10rpx;
 	&-text{
 		display: inline-block;
-		padding: 2upx 10upx;
-		border-radius: 8upx;
+		padding: 2rpx 10rpx;
+		border-radius: 8rpx;
 		background: #A5D6D4;
-		font-size: 24upx;
+		font-size: 24rpx;
 		color: #ffffff;
-		margin-right: 20upx;
+		margin-right: 20rpx;
 	}
 }
 </style>

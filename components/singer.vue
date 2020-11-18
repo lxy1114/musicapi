@@ -44,32 +44,32 @@ export default {
 .singer{
 	display: flex;
 	align-items: center;
-	margin-bottom: 30upx;
-	font-size: 28upx;
+	margin-bottom: 30rpx;
+	font-size: 28rpx;
 	color: #333333;
 	position: relative;
 	&-avatar{
-		width: 70upx;
-		height: 70upx;
+		width: 70rpx;
+		height: 70rpx;
 		border-radius: 100%;
-		margin-right: 20upx;
+		margin-right: 20rpx;
 	}
 	.text{
 		display: inline-block;
-		margin-right: 20upx;
-		font-size: 24upx;
+		margin-right: 20rpx;
+		font-size: 24rpx;
 		color: #999999;
 	}
 	&-but{
-		width: 150upx;
-		height: 40upx;
-		line-height: 40upx;
-		border-radius: 50upx;
+		width: 150rpx;
+		height: 40rpx;
+		line-height: 40rpx;
+		border-radius: 50rpx;
 		color: #d4237a;
 		text-align: center;
-		border: 2upx solid #d4237a;
+		border: 2rpx solid #d4237a;
 		position: absolute;
-		right: 0upx;
+		right: 0rpx;
 	}
 	&-but.singer-but1{
 		color: #999999;

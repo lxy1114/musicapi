@@ -76,49 +76,49 @@ export default {
 .box{
 	width: 100%;
 	position: fixed;
-	bottom: 0upx;
+	bottom: 0rpx;
 }
 .blank{
-	height: 80upx;
+	height: 80rpx;
 }
 .play{
 	display: flex;
 	align-items: center;
 	width: 100%;
-	height: 80upx;
+	height: 80rpx;
 	box-sizing: border-box;
-	padding: 0upx 30upx;
+	padding: 0rpx 30rpx;
 	overflow: hidden;
-	border-top: 2upx solid #EEEEEE;
+	border-top: 2rpx solid #EEEEEE;
 	position: relative;
 	&-cover{
-		width: 60upx;
-		height: 60upx;
+		width: 60rpx;
+		height: 60rpx;
 		border-radius: 100%;
 	}
 }
 .info{
-	margin-left: 20upx;
+	margin-left: 20rpx;
 	&-title{
-		font-size: 28upx;
+		font-size: 28rpx;
 		color: #333333;
 	}
 	&-lyric{
-		font-size: 24upx;
+		font-size: 24rpx;
 		color: #666666;
-		margin-top: 4upx;
+		margin-top: 4rpx;
 	}
 }
 .progress{
-	width: 50upx;
-	height: 50upx;
+	width: 50rpx;
+	height: 50rpx;
 	position: absolute;
-	right: 100upx;
+	right: 100rpx;
 }
 .listicon{
-	width: 50upx;
-	height: 50upx;
+	width: 50rpx;
+	height: 50rpx;
 	position: absolute;
-	right: 30upx;
+	right: 30rpx;
 }
 </style>

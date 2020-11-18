@@ -216,72 +216,72 @@ export default {
 	background-repeat: no-repeat;
 	background-position: center;
 	// background: #4A304A;
-	padding: 30upx 30upx 50upx;
-	font-size: 32upx;
+	padding: 30rpx 30rpx 50rpx;
+	font-size: 32rpx;
 	color: #FFFFFF;
 }
 .top-info{
 	display: flex;
 	align-items: center;
 	.avatar{
-		width: 70upx;
-		height: 70upx;
+		width: 70rpx;
+		height: 70rpx;
 		border-radius: 100%;
-		margin-right: 20upx;
+		margin-right: 20rpx;
 	}
 }
 .gender{
-	width: 20upx;
-	height: 40upx;
+	width: 20rpx;
+	height: 40rpx;
 	position: relative;
-	margin: -20upx 0upx 0upx 10upx;
+	margin: -20rpx 0rpx 0rpx 10rpx;
 }
 .topbut{
-	margin-top: 60upx;
+	margin-top: 60rpx;
 	&-list{
 		display: inline-block;
 		width: 25%;
 		text-align: center;
-		font-size: 24upx;
+		font-size: 24rpx;
 		color: #FFFFFF;
 		&-icon{
-			width: 50upx;
-			height: 50upx;
-			margin-bottom: 10upx;
+			width: 50rpx;
+			height: 50rpx;
+			margin-bottom: 10rpx;
 		}
 	}
 }
 .con{
 	background: #FFFFFF;
 	position: relative;
-	margin-top: -20upx;
-	border-radius: 16upx 16upx 0upx 0upx;
-	padding: 30upx;
+	margin-top: -20rpx;
+	border-radius: 16rpx 16rpx 0rpx 0rpx;
+	padding: 30rpx;
 }
 .block{
-	margin-bottom: 30upx;
+	margin-bottom: 30rpx;
 }
 .title{
 	display: flex;
 	position: relative;
 	width: 100%;
-	font-size: 32upx;
+	font-size: 32rpx;
 	color: #666666;
 	&-text{
-		margin-right: 30upx;
+		margin-right: 30rpx;
 	}
 	&-text.title-text1{
 		color: #333333;
 		font-weight: bold;
 	}
 	&-more{
-		// padding: 2upx 30upx;
-		// border: 2upx solid #999999;
-		// border-radius: 30upx;
-		font-size: 28upx;
+		// padding: 2rpx 30rpx;
+		// border: 2rpx solid #999999;
+		// border-radius: 30rpx;
+		font-size: 28rpx;
 		color: #999999;
 		position: absolute;
-		right: 0upx;
+		right: 0rpx;
 	}
 }
 .add{
@@ -289,77 +289,77 @@ export default {
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: 80upx;
+	height: 80rpx;
 	box-sizing: border-box;
-	border: 2upx solid #666666;
-	border-radius: 16upx;
-	font-size: 34upx;
+	border: 2rpx solid #666666;
+	border-radius: 16rpx;
+	font-size: 34rpx;
 	color: #666666;
-	margin-top: 30upx;
+	margin-top: 30rpx;
 	&-icon{
-		width: 40upx;
-		height: 40upx;
-		margin-right: 20upx;
+		width: 40rpx;
+		height: 40rpx;
+		margin-right: 20rpx;
 	}
 }
 .addbox{
-	width: 660upx;
+	width: 660rpx;
 	box-sizing: border-box;
-	padding: 40upx 0upx;
+	padding: 40rpx 0rpx;
 	background: #FFFFFF;
-	border-radius: 8upx;
+	border-radius: 8rpx;
 	position: fixed;
 	top: 40%;
-	left: 45upx;
+	left: 45rpx;
 	text-align: center;
 	&-input{
-		width: 600upx;
-		height: 60upx;
+		width: 600rpx;
+		height: 60rpx;
 		text-align: left;
-		border: 2upx solid #666666;
-		border-radius: 8upx;
+		border: 2rpx solid #666666;
+		border-radius: 8rpx;
 		box-sizing: border-box;
-		padding: 10upx 20upx;
-		margin: 0upx auto;
+		padding: 10rpx 20rpx;
+		margin: 0rpx auto;
 	}
 	.private{
 		display: flex;
 		align-items: center;
-		margin: 15upx 0upx 30upx 30upx;
+		margin: 15rpx 0rpx 30rpx 30rpx;
 	}
 	&-check{
 		display: inline-block;
-		width: 20upx;
-		height: 20upx;
+		width: 20rpx;
+		height: 20rpx;
 		border-radius: 100%;
-		border: 2upx solid #666666;
+		border: 2rpx solid #666666;
 	}
 	&-check.addbox-check1{
-		width: 24upx;
-		height: 24upx;
+		width: 24rpx;
+		height: 24rpx;
 		border-style: none;
 	}
 	&-text{
 		display: inline-block;
-		font-size: 28upx;
-		margin-left: 10upx;
+		font-size: 28rpx;
+		margin-left: 10rpx;
 		color: #666666;
 	}
 	.addbox-but{
 		display: flex;
 		justify-content: center;
 		view{
-			padding: 10upx 60upx;
-			border: 2upx solid #666666;
-			border-radius: 8upx;
-			font-size: 28upx;
+			padding: 10rpx 60rpx;
+			border: 2rpx solid #666666;
+			border-radius: 8rpx;
+			font-size: 28rpx;
 			color: #666666;
 		}
 		view:nth-last-child(1){
 			background: $uni-color-success;
 			border-color: $uni-color-success;
 			color: #FFFFFF;
-			margin-left: 50upx;
+			margin-left: 50rpx;
 		}
 	}
 }

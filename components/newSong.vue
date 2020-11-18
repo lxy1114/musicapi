@@ -31,16 +31,16 @@ export default {
 	align-items: center;
 	justify-content: space-between;
 	width: 48%;
-	margin-bottom: 30upx;
+	margin-bottom: 30rpx;
 	&-banner{
-		width: 80upx;
-		height: 80upx;
-		border-radius: 8upx;
+		width: 80rpx;
+		height: 80rpx;
+		border-radius: 8rpx;
 	}
 }
 .info{
-	width: 230upx;
-	font-size: 28upx;
+	width: 230rpx;
+	font-size: 28rpx;
 	color: #333333;
 	.title,.name{
 		white-space: nowrap;
@@ -48,7 +48,7 @@ export default {
 		text-overflow: ellipsis;
 	}
 	.name{
-		font-size: 24upx;
+		font-size: 24rpx;
 		color: #999999;
 		&-text{
 			display: inline-block;

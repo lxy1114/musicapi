@@ -73,29 +73,29 @@ export default {
 
 <style lang="scss" scoped>
 .top{
-	line-height: 70upx;
-	border-bottom: 2upx solid #EEEEEE;
+	line-height: 70rpx;
+	border-bottom: 2rpx solid #EEEEEE;
 	white-space: nowrap;
 	overflow-x: scroll;
 	&-nav{
 		display: inline-block;
-		padding: 0upx 30upx;
-		font-size: 28upx;
+		padding: 0rpx 30rpx;
+		font-size: 28rpx;
 		color: #333333;
 		text-align: center;
 		position: relative;
 	}
 	&-more{
-		width: 60upx;
-		height: 66upx;
+		width: 60rpx;
+		height: 66rpx;
 		background: #FFFFFF;
 		position: fixed;
-		top: 95upx;
-		right: 0upx;
+		top: 95rpx;
+		right: 0rpx;
 		text-align: center;
 		&-icon{
-			width: 30upx;
-			height: 30upx;
+			width: 30rpx;
+			height: 30rpx;
 		}
 	}
 	&-nav.top-nav1{
@@ -104,16 +104,16 @@ export default {
 	&-nav.top-nav1::after{
 		content: '';
 		display: block;
-		width: 50upx;
-		height: 4upx;
+		width: 50rpx;
+		height: 4rpx;
 		background: $uni-bg-color-system;
 		position: absolute;
-		bottom: 0upx;
+		bottom: 0rpx;
 		left: 50%;
-		margin-left: -25upx;
+		margin-left: -25rpx;
 	}
 }
 .con{
-	padding: 30upx;
+	padding: 30rpx;
 }
 </style>

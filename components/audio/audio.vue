@@ -154,38 +154,38 @@ export default {
 <style lang="scss" scoped>
 @import '@/uni.scss';
 .total{
-	width: 690upx;
-	height: 4upx;
+	width: 690rpx;
+	height: 4rpx;
 	background: #EEEEEE;
-	margin: 100upx auto 10upx;
+	margin: 100rpx auto 10rpx;
 	position: relative;
 	.progress{
 		height: 100%;
 		background: $uni-color-warning;
 		position: absolute;
-		top: 0upx;
-		left: 0upx;
+		top: 0rpx;
+		left: 0rpx;
 	}
 }
 .num{
-	font-size: 24upx;
+	font-size: 24rpx;
 	color: #FFFFFF;
-	margin-top: 10upx;
+	margin-top: 10rpx;
 }
 .but{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 630upx;
-	font-size: 28upx;
+	width: 630rpx;
+	font-size: 28rpx;
 	color: #FFFFFF;
-	margin: 30upx auto;
+	margin: 30rpx auto;
 	&-icon{
-		width: 50upx;
-		height: 50upx;
+		width: 50rpx;
+		height: 50rpx;
 	}
 }
 .iconfont{
-	font-size: 34upx;
+	font-size: 34rpx;
 }
 </style>

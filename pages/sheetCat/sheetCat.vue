@@ -39,37 +39,37 @@ export default {
 
 <style lang="scss" scoped>
 .container{
-	padding: 30upx;
+	padding: 30rpx;
 	color: #333333;
 }
 .title{
-	font-size: 32upx;
-	margin-bottom: 30upx;
+	font-size: 32rpx;
+	margin-bottom: 30rpx;
 	font-weight: bold;
 }
 .list{
 	display: flex;
-	border-bottom: 2upx solid #EEEEEE;
-	padding: 30upx 0upx;
+	border-bottom: 2rpx solid #EEEEEE;
+	padding: 30rpx 0rpx;
 	&-title{
 		display: inline-block;
-		font-size: 28upx;
-		line-height: 50upx;
+		font-size: 28rpx;
+		line-height: 50rpx;
 	}
 	&-con{
 		display: inline-block;
-		width: 570upx;
-		margin-left: 30upx;
+		width: 570rpx;
+		margin-left: 30rpx;
 		.label{
 			display: inline-block;
-			width: 150upx;
-			height: 50upx;
-			line-height: 50upx;
-			border: 2upx solid #EEEEEE;
-			border-radius: 60upx;
-			margin-bottom: 20upx;
-			margin-right: 20upx;
-			font-size: 24upx;
+			width: 150rpx;
+			height: 50rpx;
+			line-height: 50rpx;
+			border: 2rpx solid #EEEEEE;
+			border-radius: 60rpx;
+			margin-bottom: 20rpx;
+			margin-right: 36rpx;
+			font-size: 24rpx;
 			text-align: center;
 		}
 	}

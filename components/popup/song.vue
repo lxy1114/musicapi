@@ -91,44 +91,44 @@ export default {
 <style lang="scss" scoped>
 .box{
 	width: 100%;
-	border-radius: 32upx 32upx 0upx 0upx;
-	border-top: 2upx solid #EEEEEE;
+	border-radius: 32rpx 32rpx 0rpx 0rpx;
+	border-top: 2rpx solid #EEEEEE;
 	background: #FFFFFF;
 	position: fixed;
-	bottom: 0upx;
+	bottom: 0rpx;
 }
 .popuptop{
 	display: flex;
 	align-items: center;
-	width: 690upx;
-	border-bottom: 2upx solid #EEEEEE;
-	margin: 0upx auto;
-	padding: 30upx 0upx;
-	font-size: 28upx;
+	width: 690rpx;
+	border-bottom: 2rpx solid #EEEEEE;
+	margin: 0rpx auto;
+	padding: 30rpx 0rpx;
+	font-size: 28rpx;
 	color: #333333;
 	&-cover{
-		width: 80upx;
-		height: 80upx;
-		border-radius: 8upx;
-		margin-right: 20upx;
+		width: 80rpx;
+		height: 80rpx;
+		border-radius: 8rpx;
+		margin-right: 20rpx;
 	}
 	&-name{
-		width: 550upx;
+		width: 550rpx;
 	}
 }
 .popuplist{
 	display: flex;
 	align-items: center;
-	line-height: 100upx;
-	border-bottom: 2upx solid #EEEEEE;
-	width: 690upx;
-	margin: 0upx auto;
-	font-size: 28upx;
+	line-height: 100rpx;
+	border-bottom: 2rpx solid #EEEEEE;
+	width: 690rpx;
+	margin: 0rpx auto;
+	font-size: 28rpx;
 	color: #333333;
 	&-icon{
-		width: 50upx;
-		height: 50upx;
-		margin-right: 20upx;
+		width: 50rpx;
+		height: 50rpx;
+		margin-right: 20rpx;
 	}
 }
 .singer{

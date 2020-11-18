@@ -144,7 +144,7 @@ export default {
 
 <style lang="scss" scoped>
 .con{
-	padding: 0upx 30upx;
-	margin-top: 20upx;
+	padding: 0rpx 30rpx;
+	margin-top: 20rpx;
 }
 </style>

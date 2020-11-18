@@ -84,16 +84,16 @@ export default {
 }
 .nav{
 	width: 60%;
-	line-height: 60upx;
-	margin: 0upx auto;
+	line-height: 60rpx;
+	margin: 0rpx auto;
 	background: #BAE2E0;
-	border-radius: 6upx;
-	margin-bottom: 100upx;
+	border-radius: 6rpx;
+	margin-bottom: 100rpx;
 	&-title{
 		display: inline-block;
 		width: 50%;
 		height: 100%;
-		font-size: 32upx;
+		font-size: 32rpx;
 		color: #628280;
 		text-align: center;
 	}
@@ -105,26 +105,26 @@ export default {
 .list{
 	display: flex;
 	align-items: center;
-	width: 630upx;
-	height: 80upx;
-	margin: 30upx auto 0upx;
-	border-bottom: 2upx solid #EEEEEE;
+	width: 630rpx;
+	height: 80rpx;
+	margin: 30rpx auto 0rpx;
+	border-bottom: 2rpx solid #EEEEEE;
 	.iconfont{
-		font-size: 44upx;
+		font-size: 44rpx;
 	}
 	&-input{
 		width: 80%;
-		padding: 20upx;
+		padding: 20rpx;
 		color: #628280;
 	}
 	&-icon{
-		width: 44upx;
-		height: 44upx;
+		width: 44rpx;
+		height: 44rpx;
 	}
 }
 .footer{
-	width: 690upx;
-	margin: 100upx auto;
+	width: 690rpx;
+	margin: 100rpx auto;
 }
 .placeholder{
 	color: #E0F6F5;

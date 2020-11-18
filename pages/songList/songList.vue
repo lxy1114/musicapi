@@ -1,18 +1,18 @@
 <template>
 	<view class="container">
-		<view class="top" :style="'top:'+statusBarHeight+'upx'">
+		<view class="top" :style="'top:'+statusBarHeight+'rpx'">
 			<image class="top-banner" :src="sheetDetail.coverImgUrl || sheetDetail.picUrl"></image>
 			<view class="top-info">
 				<view class="top-info-name">{{sheetDetail.name}}</view>
 				<view class="user" @click="goUser" v-if="type != 'albums'">
 					<image class="user-avatar" :src="user.profile && user.profile.avatarUrl"></image>
 					<view class="user-name">{{user.profile && user.profile.nickname}}</view>
-					<view class="iconfont icon-gengduo3" :style="'font-size:'+40+'upx'"></view>
+					<view class="iconfont icon-gengduo3" :style="'font-size:'+40+'rpx'"></view>
 				</view>
 			</view>
 		</view>
 		<view class="con">
-			<view class="con-top" :class="{'con-top1': fixed}" :style="'top:'+statusBarHeight+'upx'">
+			<view class="con-top" :class="{'con-top1': fixed}" :style="'top:'+statusBarHeight+'rpx'">
 				<view class="play" @click="goPlay">
 					<!-- <view class="iconfont icon-bofang"></view> -->
 					<image class="play-icon" src="/static/images/play.svg" mode="widthFix"></image>
@@ -149,68 +149,68 @@ export default {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	height: 320upx;
+	height: 320rpx;
 	position: fixed;
-	top: 0upx;
-	left: 0upx;
+	top: 0rpx;
+	left: 0rpx;
 	box-sizing: border-box;
-	padding: 40upx 30upx;
+	padding: 40rpx 30rpx;
 	background: $color-bg;
 	color: #FFFFFF;
 	&-banner{
-		width: 200upx;
-		height: 200upx;
-		border-radius: 8upx;
+		width: 200rpx;
+		height: 200rpx;
+		border-radius: 8rpx;
 	}
 	&-info{
-		width: 460upx;
+		width: 460rpx;
 		&-name{
-			font-size: 32upx;
+			font-size: 32rpx;
 		}
 	}
 }
 .user{
 	display: flex;
 	align-items: center;
-	margin-top: 30upx;
+	margin-top: 30rpx;
 	&-avatar{
-		width: 50upx;
-		height: 50upx;
+		width: 50rpx;
+		height: 50rpx;
 		border-radius: 100%;
-		margin-right: 20upx;
+		margin-right: 20rpx;
 	}
 	&-name{
-		font-size: 28upx;
+		font-size: 28rpx;
 	}
 }
 .con{
-	margin-top: 280upx;
+	margin-top: 280rpx;
 	position: relative;
 	background: #FFFFFF;
-	border-radius: 16upx 16upx 0upx 0upx;
+	border-radius: 16rpx 16rpx 0rpx 0rpx;
 	&-top{
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
 		box-sizing: border-box;
-		padding: 0upx 30upx;
-		line-height: 80upx;
-		font-size: 28upx;
+		padding: 0rpx 30rpx;
+		line-height: 80rpx;
+		font-size: 28rpx;
 		color: #333333;
 		background: #FFFFFF;
 		z-index: 999;
-		border-radius: 16upx 16upx 0upx 0upx;
+		border-radius: 16rpx 16rpx 0rpx 0rpx;
 	}
 	&-top.con-top1{
 		position: fixed;
-		top: 0upx;
+		top: 0rpx;
 	}
 	&-right{
 		display: flex;
 	}
 	&-list{
-		padding: 0upx 30upx;
+		padding: 0rpx 30rpx;
 	}
 }
 .play,.like{
@@ -218,14 +218,14 @@ export default {
 	align-items: center;
 }
 .play-icon{
-	width: 36upx;
-	height: 36upx;
-	margin-right: 10upx;
+	width: 36rpx;
+	height: 36rpx;
+	margin-right: 10rpx;
 }
 .like{
-	margin-left: 30upx;
+	margin-left: 30rpx;
 }
 .iconfont{
-	margin-right: 10upx;
+	margin-right: 10rpx;
 }
 </style>

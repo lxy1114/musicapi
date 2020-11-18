@@ -26,13 +26,13 @@ export default {
 .recomlist{
 	display: inline-block;
 	width: 30%;
-	font-size: 28upx;
+	font-size: 28rpx;
 	color: #333333;
-	margin-right: 30upx;
+	margin-right: 30rpx;
 	&-img{
 		width: 100%;
-		height: 207upx;
-		margin-bottom: 10upx;
+		height: 207rpx;
+		margin-bottom: 10rpx;
 	}
 	&-text{
 		white-space: nowrap;

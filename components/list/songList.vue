@@ -45,19 +45,19 @@ export default {
 .songlist{
 	display: flex;
 	align-items: center;
-	margin-bottom: 30upx;
+	margin-bottom: 30rpx;
 	position: relative;
 	&-img{
-		width: 64upx;
-		height: 64upx;
-		border-radius: 8upx;
+		width: 64rpx;
+		height: 64rpx;
+		border-radius: 8rpx;
 	}
 }
 .info{
-	width: 500upx;
-	font-size: 28upx;
+	width: 500rpx;
+	font-size: 28rpx;
 	color: #333333;
-	margin-left: 20upx;
+	margin-left: 20rpx;
 	&-title{
 		white-space: nowrap;
 		overflow: hidden;
@@ -69,7 +69,7 @@ export default {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		font-size: 24upx;
+		font-size: 24rpx;
 		color: #999999;
 		&-name{
 			display: inline-block;
@@ -78,10 +78,10 @@ export default {
 }
 .right{
 	position: absolute;
-	right: 0upx;
+	right: 0rpx;
 	&-icon{
-		width: 40upx;
-		height: 4upx;
+		width: 40rpx;
+		height: 4rpx;
 	}
 }
 </style>

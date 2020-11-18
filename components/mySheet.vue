@@ -36,33 +36,33 @@ export default {
 .sheet{
 	display: flex;
 	align-items: center;
-	margin-top: 30upx;
-	font-size: 28upx;
+	margin-top: 30rpx;
+	font-size: 28rpx;
 	color: #333333;
 	position: relative;
 	&-banner{
-		width: 70upx;
-		height: 70upx;
-		border-radius: 8upx;
-		margin-right: 20upx;
+		width: 70rpx;
+		height: 70rpx;
+		border-radius: 8rpx;
+		margin-right: 20rpx;
 	}
 	&-name{
-		width: 400upx;
+		width: 400rpx;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
 	&-but{
-		width: 150upx;
-		height: 40upx;
-		line-height: 40upx;
-		border: 2upx solid #d4237a;
-		border-radius: 8upx;
-		font-size: 28upx;
+		width: 150rpx;
+		height: 40rpx;
+		line-height: 40rpx;
+		border: 2rpx solid #d4237a;
+		border-radius: 8rpx;
+		font-size: 28rpx;
 		color: #d4237a;
 		text-align: center;
 		position: absolute;
-		right: 0upx;
+		right: 0rpx;
 	}
 }
 </style>

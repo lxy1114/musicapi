@@ -15,15 +15,15 @@
 <style>
 	/*每个页面公共css */
 	*{
-		margin: 0upx;
-		padding: 0upx;
+		margin: 0rpx;
+		padding: 0rpx;
 		outline: none;
 	}
 	uni-button:after{
 		border-style: none;
 	}
 	.placeholder{
-		font-size: 28upx;
+		font-size: 28rpx;
 		color: #999999;
 	}
 	::-webkit-scrollbar {
@@ -37,30 +37,30 @@
 		background: #000000;
 		opacity: 0.5;
 		position: fixed;
-		left: 0upx;
-		top: 0upx;
+		left: 0rpx;
+		top: 0rpx;
 	}
 	.placeholder{
-		font-size: 24upx;
+		font-size: 24rpx;
 	}
 	.linetitle{
-		font-size: 32upx;
-		line-height: 32upx;
+		font-size: 32rpx;
+		line-height: 32rpx;
 		color: #333333;
 		font-weight: bold;
-		margin-left: 20upx;
+		margin-left: 20rpx;
 		position: relative;
-		margin-bottom: 40upx;
+		margin-bottom: 40rpx;
 	}
 	.linetitle::before{
 		content: '';
 		display: block;
-		width: 6upx;
+		width: 6rpx;
 		height: 100%;
-		border-radius: 10upx;
+		border-radius: 10rpx;
 		background: #617C77;
 		position: absolute;
-		top: 0upx;
-		left: -20upx;
+		top: 0rpx;
+		left: -20rpx;
 	}
 </style>

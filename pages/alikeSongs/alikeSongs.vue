@@ -50,6 +50,6 @@ export default {
 
 <style lang="scss" scoped>
 .con{
-	padding: 30upx;
+	padding: 30rpx;
 }
 </style>

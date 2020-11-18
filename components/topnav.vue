@@ -55,16 +55,16 @@ export default {
 .box{
 	display: flex;
 	align-items: center;
-	height: 80upx;
-	line-height: 80upx;
+	height: 80rpx;
+	line-height: 80rpx;
 	background: $uni-bg-color-hover;
 	position: relative;
 }
 .nav{
 	width: 20%;
-	line-height: 80upx;
+	line-height: 80rpx;
 	text-align: center;
-	font-size: 28upx;
+	font-size: 28rpx;
 	color: #333333;
 }
 .nav.nav1{
@@ -75,17 +75,17 @@ export default {
 .search{
 	width: 83%;
 	height: 85%;
-	border: 2upx solid #9ECBC9;
-	border-radius: 60upx;
-	margin-left: 30upx;
+	border: 2rpx solid #9ECBC9;
+	border-radius: 60rpx;
+	margin-left: 30rpx;
 	box-sizing: border-box;
-	padding: 0upx 30upx;
+	padding: 0rpx 30rpx;
 }
 .search-icon{
-	width: 40upx;
-	height: 40upx;
+	width: 40rpx;
+	height: 40rpx;
 	position: absolute;
-	right: 30upx;
+	right: 30rpx;
 }
 .cancel{
 	font-size: 28rpx;

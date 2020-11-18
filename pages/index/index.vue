@@ -129,39 +129,39 @@ export default {
 	width: 100%;
 }
 .nav{
-	margin-top: 30upx;
+	margin-top: 30rpx;
 	&-list{
 		display: inline-block;
 		width: 25%;
-		font-size: 24upx;
+		font-size: 24rpx;
 		color: #666666;
 		text-align: center;
 		&-icon{
-			width: 50upx;
-			height: 50upx;
+			width: 50rpx;
+			height: 50rpx;
 		}
 	}
 }
 .title{
 	display: flex;
 	align-items: center;
-	font-size: 32upx;
+	font-size: 32rpx;
 	color: #333333;
 	font-weight: bold;
-	margin: 30upx 0upx 0upx 30upx;
+	margin: 30rpx 0rpx 0rpx 30rpx;
 	&-but{
-		padding: 5upx 20upx;
-		border: 2upx solid #666666;
-		border-radius: 30upx;
-		font-size: 24upx;
+		padding: 5rpx 20rpx;
+		border: 2rpx solid #666666;
+		border-radius: 30rpx;
+		font-size: 24rpx;
 		color: #666666;
 		font-weight: 400;
 		position: absolute;
-		right: 30upx;
+		right: 30rpx;
 	}
 }
 .recomm,{
-	padding: 30upx 0upx 0upx 30upx;
+	padding: 30rpx 0rpx 0rpx 30rpx;
 	white-space: nowrap;
 	overflow-x: scroll;
 }
@@ -169,6 +169,6 @@ export default {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	padding: 30upx 30upx 0upx;
+	padding: 30rpx 30rpx 0rpx;
 }
 </style>

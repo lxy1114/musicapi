@@ -135,24 +135,24 @@ export default {
 .menu{
 	display: flex;
 	align-items: center;
-	padding: 15upx 30upx;
-	font-size: 28upx;
+	padding: 15rpx 30rpx;
+	font-size: 28rpx;
 	color: #333333;
 	&-title{
 		font-weight: bold;
-		margin-right: 30upx;
+		margin-right: 30rpx;
 	}
 	&-text{
-		padding: 2upx 15upx;
+		padding: 2rpx 15rpx;
 		text-align: center;
 	}
 	&-text.menu-text1{
 		background: $color-bg;
 		color: #ffffff;
-		border-radius: 30upx;
+		border-radius: 30rpx;
 	}
 }
 .con{
-	padding: 30upx;
+	padding: 30rpx;
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
 	<view class="container">
-		<!-- <view class="num" @touchmove="mouseMove" @touchend="mouseEnd" @touchstart="mouseStart" :style="'top:-'+top+'upx'"> -->
-		<scroll-view class="scroll" :style="'height:'+height+'upx'" :scroll-y="true" :scroll-into-view="'scroll'+numIndex" :scroll-with-animation="animation" :data-index="numIndex" @scroll="setScroll">
+		<!-- <view class="num" @touchmove="mouseMove" @touchend="mouseEnd" @touchstart="mouseStart" :style="'top:-'+top+'rpx'"> -->
+		<scroll-view class="scroll" :style="'height:'+height+'rpx'" :scroll-y="true" :scroll-into-view="'scroll'+numIndex" :scroll-with-animation="animation" :data-index="numIndex" @scroll="setScroll">
 			<view class="num" :id="'scroll'+item" v-for="(item,index1) in numList" :key="item"></view>
-			<view class="num" :style="numIndex+7 == index ? 'height: 80upx;line-height: 80upx;font-size: 36upx;font-weight: bold;opacity: 1;' : ''" :id="'scroll'+index" v-for="(item,index) in list" :key="index" @touchstart="touchstart" @touchend="touchend" @click="setLyric(index)">{{item.text}}</view>
-			<!-- <view class="current" :style="'top: '+scrollTop+'upx'"></view> -->
+			<view class="num" :style="numIndex+7 == index ? 'height: 80rpx;line-height: 80rpx;font-size: 36rpx;font-weight: bold;opacity: 1;' : ''" :id="'scroll'+index" v-for="(item,index) in list" :key="index" @touchstart="touchstart" @touchend="touchend" @click="setLyric(index)">{{item.text}}</view>
+			<!-- <view class="current" :style="'top: '+scrollTop+'rpx'"></view> -->
 			<view style="height: 500px;"></view>
 		</scroll-view>
 		<!-- </view> -->
@@ -79,21 +79,21 @@ export default {
 
 <style lang="less" scoped>
 .scroll{
-	height: 1000upx;
+	height: 1000rpx;
 	.current{
 		width: 100%;
-		height: 80upx;
-		border-top: 2upx solid rgba(255,255,255,0.8);
-		border-bottom: 2upx solid rgba(255,255,255,0.8);
+		height: 80rpx;
+		border-top: 2rpx solid rgba(255,255,255,0.8);
+		border-bottom: 2rpx solid rgba(255,255,255,0.8);
 		position: fixed;
-		top: 480upx;
+		top: 480rpx;
 	}
 }
 .num{
 	text-align: center;
-	height: 60upx;
-	line-height: 60upx;
-	font-size: 28upx;
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 28rpx;
 	color: #ffffff;
 	opacity: 0.8;
 }

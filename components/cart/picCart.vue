@@ -35,13 +35,13 @@ export default {
 }
 .recomlist{
 	width: 30%;
-	height: 330upx;
-	font-size: 28upx;
+	height: 330rpx;
+	font-size: 28rpx;
 	color: #333333;
 	&-img{
 		width: 100%;
-		height: 207upx;
-		margin-bottom: 10upx;
+		height: 207rpx;
+		margin-bottom: 10rpx;
 	}
 	&-text{
 		overflow : hidden;

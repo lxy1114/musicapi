@@ -72,12 +72,12 @@ export default {
 
 <style lang="scss" scoped>
 .nav{
-	padding: 0upx 30upx;
+	padding: 0rpx 30rpx;
 	&-text{
 		display: inline-block;
-		width: 60upx;
-		line-height: 30upx;
-		font-size: 28upx;
+		width: 60rpx;
+		line-height: 30rpx;
+		font-size: 28rpx;
 		color: #666666;
 		font-weight: bold;
 		text-align: center;
@@ -88,6 +88,6 @@ export default {
 	}
 }
 .con{
-	padding: 30upx;
+	padding: 30rpx;
 }
 </style>

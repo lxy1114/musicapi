@@ -184,39 +184,39 @@ export default {
 	background: $color-play-bg;
 }
 .playswiper{
-	padding-top: 200upx;
+	padding-top: 200rpx;
 }
 .banner{
 	display: block;
-	width: 360upx;
-	height: 360upx;
-	border-radius: 8upx;
-	margin: 0upx auto 0upx;
+	width: 360rpx;
+	height: 360rpx;
+	border-radius: 8rpx;
+	margin: 0rpx auto 0rpx;
 }
 .title{
-	font-size: 32upx;
+	font-size: 32rpx;
 	color: #333333;
-	margin: 30upx auto 0upx;
+	margin: 30rpx auto 0rpx;
 	text-align: center;
 	color: #FFFFFF;
 }
 .btn{
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-end;
 	width: 690rpx;
 	margin: 32% auto 0rpx;
 	font-size: 28rpx;
 	color: #FFFFFF;
 }
 .playbox{
-	width: 690upx;
-	margin: 30rpx auto 0upx;
+	width: 690rpx;
+	margin: 30rpx auto 0rpx;
 }
 .lyric{
 	color: #FFFFFF;
-	font-size: 26upx;
+	font-size: 26rpx;
 	text-align: center;
-	line-height: 42upx;
+	line-height: 42rpx;
 }
 </style>

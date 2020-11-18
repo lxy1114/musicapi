@@ -1,8 +1,8 @@
 <template>
 	<view class="container">
-		<view class="top" :style="'top:'+statusBarHeight+'upx'"></view>
+		<view class="top" :style="'top:'+statusBarHeight+'rpx'"></view>
 		<view class="con">
-			<view class="nav" :class="{'nav1': fixed}" :style="fixed ? 'top:'+statusBarHeight+'upx' : 'top: 0upx'">
+			<view class="nav" :class="{'nav1': fixed}" :style="fixed ? 'top:'+statusBarHeight+'rpx' : 'top: 0rpx'">
 				<view class="nav-play">
 					<image class="nav-play-icon" src="/static/images/play.svg" mode="widthFix"></image>
 					<view @click="playAll">全部播放</view>
@@ -89,19 +89,19 @@ export default {
 <style lang="scss" scoped>
 .top{
 	width: 100%;
-	height: 275upx;
+	height: 275rpx;
 	background: url(../../static/images/banner.png) 100% 100% no-repeat;
 	background-size: cover;
 	position: fixed;
-	top: 0upx;
+	top: 0rpx;
 }
 .con{
 	width: 100%;
 	position: relative;
 	background: #FFFFFF;
-	border-radius: 16upx 16upx 0upx 0upx;
+	border-radius: 16rpx 16rpx 0rpx 0rpx;
 	// height: 1200px;	
-	margin-top: 200upx;
+	margin-top: 200rpx;
 	box-sizing: border-box;
 }
 .nav{
@@ -109,9 +109,9 @@ export default {
 	align-items: center;
 	background: #FFFFFF;
 	box-sizing: border-box;
-	padding: 30upx;
-	border-radius: 16upx 16upx 0upx 0upx;
-	font-size: 28upx;
+	padding: 30rpx;
+	border-radius: 16rpx 16rpx 0rpx 0rpx;
+	font-size: 28rpx;
 	color: #333333;
 	font-weight: bold;
 	position: relative;
@@ -119,38 +119,38 @@ export default {
 		display: flex;
 		align-items: center;
 		&-icon{
-			width: 32upx;
-			height: 32upx;
-			margin-right: 10upx;
+			width: 32rpx;
+			height: 32rpx;
+			margin-right: 10rpx;
 		}
 	}
 	.date{
 		font-weight: 400;
 		position: absolute;
-		right: 30upx;
+		right: 30rpx;
 	}
 }
 .nav1{
 	width: 100%;
 	position: fixed;
-	top: 0upx;
+	top: 0rpx;
 	z-index: 999;
 }
 .label{
-	border: 2upx solid #FFFFFF;
-	border-radius: 30upx;
-	padding: 10upx 20upx;
+	border: 2rpx solid #FFFFFF;
+	border-radius: 30rpx;
+	padding: 10rpx 20rpx;
 }
 .nav-text{
 	border-color: #333333;
 	color: #333333;
 }
 .label:nth-last-child(1){
-	margin-left: 20upx;
+	margin-left: 20rpx;
 }
 .contain{
 	background: #FFFFFF;
 	height: 1200px;
-	padding: 0upx 30upx 30upx;
+	padding: 0rpx 30rpx 30rpx;
 }
 </style>

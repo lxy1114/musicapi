@@ -43,13 +43,13 @@ export default {
 .recomlist{
 	display: inline-block;
 	width: 31.4%;
-	font-size: 28upx;
+	font-size: 28rpx;
 	color: #333333;
-	margin-right: 20upx;
+	margin-right: 20rpx;
 	&-img{
 		width: 100%;
-		height: 207upx;
-		margin-bottom: 10upx;
+		height: 207rpx;
+		margin-bottom: 10rpx;
 	}
 	&-text{
 		white-space: nowrap;
@@ -61,11 +61,11 @@ export default {
 	}
 }
 .recomlist:nth-child(3n){
-	margin-right: 0upx;
+	margin-right: 0rpx;
 }
 .cover{
-	width: 208upx;
-	height: 156upx;
+	width: 208rpx;
+	height: 156rpx;
 	position: relative;
 	&-img{
 		width: 100%;
@@ -77,16 +77,16 @@ export default {
 	align-items: center;
 	justify-content: space-between;
 	width: 90%;
-	height: 40upx;
+	height: 40rpx;
 	position: absolute;
-	bottom: 0upx;
+	bottom: 0rpx;
 	left: 5%;
 	.play{
-		width: 30upx;
-		height: 30upx;
+		width: 30rpx;
+		height: 30rpx;
 	}
 	.duration{
-		font-size: 24upx;
+		font-size: 24rpx;
 		color: #FFFFFF;
 	}
 }

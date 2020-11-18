@@ -56,40 +56,40 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 30upx;
+	padding: 30rpx;
 	&-input{
 		width: 85%;
-		height: 70upx;
-		border: 2upx solid #666666;
-		border-radius: 60upx;
+		height: 70rpx;
+		border: 2rpx solid #666666;
+		border-radius: 60rpx;
 		box-sizing: border-box;
-		padding: 20upx;
+		padding: 20rpx;
 	}
 	&-but{
-		font-size: 34upx;
+		font-size: 34rpx;
 		color: #333333;
 	}
 }
 .con{
-	padding: 30upx;
+	padding: 30rpx;
 }
 .hotList{
 	display: inline-flex;
 	align-items: center;
 	width: 50%;
-	margin-bottom: 30upx;
+	margin-bottom: 30rpx;
 	&-icon{
-		width: 30upx;
-		height: 30upx;
+		width: 30rpx;
+		height: 30rpx;
 	}
 }
 .info{
-	width: 290upx;
-	font-size: 28upx;
+	width: 290rpx;
+	font-size: 28rpx;
 	color: #333333;
-	margin-left: 20upx;
+	margin-left: 20rpx;
 	&-text{
-		font-size: 24upx;
+		font-size: 24rpx;
 		color: #666666;
 		white-space: nowrap;
 		overflow: hidden;
